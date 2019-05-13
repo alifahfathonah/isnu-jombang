@@ -1,7 +1,7 @@
 <?php 
 $host 		= "localhost";
 $username 	= "root";
-$password 	= "";
+$password 	= "maulayyacyber17";
 $db_name 	= "isnu_db";
 
 $connect = mysqli_connect($host,$username,$password,$db_name);
