@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <!-- link style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 <body>
 	<!-- navbar -->
@@ -30,16 +31,49 @@
   </div>
   </div>
 </nav>
-	<!-- akhir navbar -->
-			<!-- sidebar -->
+
+
+<div class="container-fluid" style="margin-top: 80px">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="card">
+			  <div class="card-body">
+			    <h5 class="card-title"><i class="fa fa-list-ul"></i> MAIN MENU</h5>
+					<ul class="list-group">
+					  <li class="list-group-item"><i class="fa fa-home"></i> DASHBOARD</li>
+					  <li class="list-group-item"><i class="fa fa-users"></i> DATA PENDAFTAR</li>
+					</ul>
+			  </div>
+			</div>
+		</div>
+
+
+		<div class="col-md-9">
+			<div class="card">
+			  <div class="card-body">
+			    	<h5 class="card-title">FORM DATA SARJANA NU JOMBANG</h5>
+			    	<hr>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+<!-- 
 			<div class="container">		
 				<section class="sidebar">
 				
 				</section>
 			</div>
-    		<!-- akhir sidebar -->
+    	
   		<div class="row">
-    		<!-- form -->
+    		
     		<div class="col-md-8 offset-md-4" >
     	<h2 style="text-align: center;">FORM DATA SARJANA NU JOMBANG</h2><hr><br>
 	<form method="post" action="save-post.php" enctype="multipart/form-data">
@@ -47,7 +81,7 @@
         	<tr>
 	          	<td>Nama</td>
 	          	<td>:</td>
-	          	<td><input type="text" name="nama" placeholder="Nama" style="width:60%"></td>
+	          	<td><input type="text" class="form-control" name="nama" placeholder="Nama"> </td>
         	</tr>
         	<tr>
 	          	<td>No KTP</td>
@@ -139,7 +173,7 @@
       		</div>
 		</div>
     </div>
-    </div>
+    </div> -->
     		
 
     <!-- akhir form -->
