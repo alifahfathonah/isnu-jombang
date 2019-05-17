@@ -8,20 +8,17 @@
 	<!-- link bootstrap -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <!-- link style.css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 <body>
 	<!-- navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-  <button type="button" class="btn btn-secondary" style="margin-right: 20px">Home</button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <button type="button" class="btn btn-secondary">Daftar Anggota</button>
-      </li>
-    </ul>
+  	<div class="card" style="width: 3rem;">
+  		<img src="../assets/gambar/header.png" class="card-img-top" alt="...">
+	</div>
+  	<h4 class="text-white">Ikatan Sarjana Nahdlatul Ulama</h4>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" style="margin-right: 20px">Search</button>
@@ -42,17 +39,24 @@
 			    <h5 class="card-title text-center"><i class="fa fa-list-ul"></i > MAIN MENU</h5>
 			    <hr>
 					<ul class="list-group"">
-					  <li class="list btn-outline-secondary text-center" type="button" ><i class="fa fa-home"></i>
+					  <li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
 					  DASHBOARD
 					  </li>
 					  <br>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					    <a class="dropdown-item" href="#">Data Pendaftar</a>
-					    <a class="dropdown-item" href="#">Edit Data Pendaftar</a>
-					    <a class="dropdown-item" href="#">Delete Data Pedaftar</a>
-					  </div>
+
+					  <!-- Example single danger button -->
+						<div class="btn-group">
+						  <button type="button" class="btn btn-danger fa fa-users dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    DATA PENDAFTAR
+						  </button>
+						  <div class="dropdown-menu">
+						    <a class="dropdown-item" href="#">Data Pendaftar</a>
+						    <a class="dropdown-item" href="#">Edit Data Pendaftar</a>
+						    <a class="dropdown-item" href="#">Deleter Data Pendaftar</a>
+						  </div>
+						</div>
 					  <br>
-					  <li class="list btn-outline-secondary text-center" type="button"><i class="fa fa-users"></i> USER
+					  <li class="list btn btn-danger text-center" type="button"><i class="fa fa-users"></i> USER
 					  </li>
 					</ul>
 			  </div>
@@ -64,7 +68,7 @@
 			<div class="card">
 			  <div class="card-body">
 			    	<h5 class="card-title text-center"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
-            <hr>
+            	<hr>
 
               <form>
                 

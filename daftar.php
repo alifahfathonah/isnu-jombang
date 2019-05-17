@@ -7,13 +7,46 @@ include('public_part/header.php');
 
 
 <!-- content -->
-<div class="container" style="margin-top: 80px">
+<!-- sidebar -->
+<div class="container-fluid" style="margin-top: 80px">
   <div class="row">
-    <div class="col-md-12">
+
+    <div class="col-md-3">
       <div class="card">
         <div class="card-body">
-            <h5 class="card-title"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
-            <hr>
+          <h5 class="card-title text-center"><i class="fa fa-list-ul"></i > MAIN MENU</h5>
+          <hr>
+          <ul class="list-group"">
+            <li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
+            DASHBOARD
+            </li>
+            <br>
+
+            <!-- Example single danger button -->
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger fa fa-users dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                DATA PENDAFTAR
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Data Pendaftar</a>
+                <a class="dropdown-item" href="#">Edit Data Pendaftar</a>
+                <a class="dropdown-item" href="#">Deleter Data Pendaftar</a>
+              </div>
+            </div>
+            <br>
+            <li class="list btn btn-danger text-center" type="button"><i class="fa fa-users"></i> USER
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<!-- akhir sidebar -->
+<!-- form -->
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title text-center"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
+              <hr>
 
               <form>
                 
@@ -109,13 +142,11 @@ include('public_part/header.php');
                 <button type="reset" class="btn btn-warning"><i class="fas fa-undo"></i> RESET</button>
 
               </form>
-
-
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+<!-- akhir form -->
 <!-- end content -->
 
 
