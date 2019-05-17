@@ -1,5 +1,5 @@
 <?php
-	include "../config/koneksi.php";
+	include ('../config/koneksi.php');
 
 	$id 			= $_POST['id'];
 	$nama 			= $_POST['nama'];
@@ -15,11 +15,11 @@
 	$jurusan 		= $_POST['jurusan'];
 	$pt_univ 		= $_POST['pt_univ'];
 
-	$query = "UPDATE data_sarjana SET nama='$nama', no_ktp='$no_ktp', jenis_kelamin='$jenis_kelamin', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', dusun_desa='$dusun_desa', kecamatan='$kecamatan', kota='$kota', nomor_telepon='$nomor_telepon', jenjang='$jenjang', jurusan='$jurusan', pt_univ='$pt_univ' WHERE id_sarjana='$id'";
-	$sql = mysqli_query($connect, $query);
-	if($connect->query($sql) == TRUE){
-		header('location:data-sarjana.php');
+	$qEdit = "UPDATE anggota SET nama='$nama', no_ktp='$no_ktp', jenis_kelamin='$jenis_kelamin', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', dusun_desa='$dusun_desa', kecamatan='$kecamatan', kota='$kota', nomor_telepon='$nomor_telepon', jenjang='$jenjang', jurusan='$jurusan', pt_univ='$pt_univ' WHERE id_anggota='$id'";
+	$edit = mysqli_query($connect, $qEdit);
+	if($connect->query($edit) == TRUE){
+		header('location:anggota.php');
 	}else{
-		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal mengubah data'); window.location.href='edit-sarjana.php'</script>");
+		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal mengubah data'); window.location.href='edit-anggota.php'</script>");
 	}
 ?>

@@ -1,15 +1,16 @@
 <?php
-	include "../config/koneksi.php";
+	include ('../config/koneksi.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Tambah Data Sarjana</title>
+		<title>Tambah Data Anggota</title>
 		<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
 	<h2>FORM TAMBAH DATA SARJANA NU JOMBANG</h2><hr><br>
-	<form method="post" action="simpan-sarjana.php">
+	<form method="post" action="simpan-anggota.php">
       	<table cellpadding="3">
         	<tr>
 	          	<td>Nama</td>

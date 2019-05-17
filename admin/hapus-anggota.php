@@ -1,7 +1,7 @@
 <?php
-	include "../config/koneksi.php";
+	include ('../config/koneksi.php');
 	$id = $_GET['id'];
-	$query = "DELETE FROM data_sarjana WHERE id_sarjana='$id'";
-	mysqli_query($connect, $query);
-	header('location:data-sarjana.php');
+	$qDelete = "DELETE FROM anggota WHERE id_anggota='$id'";
+	mysqli_query($connect, $qDelete);
+	header('location:anggota.php');
 ?>

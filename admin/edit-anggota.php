@@ -1,18 +1,19 @@
 <?php
-	include "../config/koneksi.php";
+	include ('../config/koneksi.php');
 	$id 	= $_GET['id'];
-	$query 	= mysqli_query($connect,"SELECT * FROM data_sarjana WHERE id_sarjana='$id'");
-	$row 	= mysqli_fetch_array($query);
+	$qCek	= mysqli_query($connect,"SELECT * FROM anggota WHERE id_anggota='$id'");
+	$row 	= mysqli_fetch_array($qCek);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Data Sarjana</title>
+	<title>Edit Data Anggota</title>
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
 	<h2>FORM EDIT DATA SARJANA NU JOMBANG</h2><hr><br>
-	<form method="post" action="update-sarjana.php">
+	<form method="post" action="update-anggota.php">
       	<table cellpadding="3">
         	<tr>
 	          	<td>Nama</td>
