@@ -22,7 +22,7 @@
 				  	foreach($query as $row){
 				?>
 				<tr>
-					<td><?php echo $row['id_sarjana']; ?></td>
+					<td><?php echo $row['id_sarjana'] ?></td>
 					<td><?php echo $row['nama']; ?></td>
 					<td><?php echo $row['kecamatan']; ?></td>
 					<td><?php echo $row['jurusan']; ?></td>
