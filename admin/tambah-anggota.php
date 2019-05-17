@@ -1,12 +1,13 @@
 <?php
-	include "../config/koneksi.php";
+	include ('../config/koneksi.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tambah Pendaftar</title>
+<title>Tambah Anggota</title>
 	<!-- link bootstrap -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- link style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -42,7 +43,7 @@
 			    <h5 class="card-title"><i class="fa fa-list-ul"></i> MAIN MENU</h5>
 					<ul class="list-group">
 					  <li class="list-group-item"><i class="fa fa-home"></i> DASHBOARD</li>
-					  <li class="list-group-item"><i class="fa fa-users"></i> DATA PENDAFTAR</li>
+					  <li class="list-group-item"><i class="fa fa-users"></i> DATA ANGGOTA</li>
 					</ul>
 			  </div>
 			</div>

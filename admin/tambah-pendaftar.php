@@ -1,12 +1,13 @@
 <?php
-	include "../config/koneksi.php";
+	include ('../config/koneksi.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tambah Pendaftar</title>
+<title>Tambah Angota</title>
 	<!-- link bootstrap -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- link style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -41,15 +42,15 @@
 			  <div class="card-body">
 			    <h5 class="card-title text-center"><i class="fa fa-list-ul"></i > MAIN MENU</h5>
 			    <hr>
-					<ul class="list-group"">
+					<ul class="list-group">
 					  <li class="list btn-outline-secondary text-center" type="button" ><i class="fa fa-home"></i>
 					  DASHBOARD
 					  </li>
 					  <br>
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					    <a class="dropdown-item" href="#">Data Pendaftar</a>
-					    <a class="dropdown-item" href="#">Edit Data Pendaftar</a>
-					    <a class="dropdown-item" href="#">Delete Data Pedaftar</a>
+					    <a class="dropdown-item" href="#">Data Anggota</a>
+					    <a class="dropdown-item" href="#">Edit Data Anggota</a>
+					    <a class="dropdown-item" href="#">Delete Data Anggota</a>
 					  </div>
 					  <br>
 					  <li class="list btn-outline-secondary text-center" type="button"><i class="fa fa-users"></i> USER
