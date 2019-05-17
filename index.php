@@ -7,6 +7,14 @@ include('public_part/header.php');
 
 
 <!-- content -->
+<div class="container-fluid col-md-12 bg-success">
+  <div class="jumbotron col-md-12 bg-success">
+    <div class="text-center">
+      <img src="assets/gambar/ISNU.png" class="rounded" alt="...">
+    </div>
+  </div>
+</div>
+
 <div class="container" style="margin-top: 80px">
   <div class="row">
 
@@ -57,9 +65,26 @@ include('public_part/header.php');
       </div>
       </a>
     </div>
+  </div>
+</div>
 
+<div class="container" style="margin-top: 30px">
+  <div class="row">
+    <div class="col-8">col-8</div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">
+          About ISNU
+        </div>
 
-
+        <div class="card-body" style="font-size: 20px;">
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <i class="fas fa-camera btn btn-primary">Instagram</i>
+        </div>
+    </div>
+    </div>
   </div>
 </div>
 <!-- end content -->

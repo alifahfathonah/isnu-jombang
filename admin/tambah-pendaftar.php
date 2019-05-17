@@ -31,150 +31,140 @@
   </div>
   </div>
 </nav>
-
-
+<!-- akhir navbar -->
+<!-- sidebar -->
 <div class="container-fluid" style="margin-top: 80px">
 	<div class="row">
 
 		<div class="col-md-3">
 			<div class="card">
 			  <div class="card-body">
-			    <h5 class="card-title"><i class="fa fa-list-ul"></i> MAIN MENU</h5>
-					<ul class="list-group">
-					  <li class="list-group-item"><i class="fa fa-home"></i> DASHBOARD</li>
-					  <li class="list-group-item"><i class="fa fa-users"></i> DATA PENDAFTAR</li>
+			    <h5 class="card-title text-center"><i class="fa fa-list-ul"></i > MAIN MENU</h5>
+			    <hr>
+					<ul class="list-group"">
+					  <li class="list btn-outline-secondary text-center" type="button" ><i class="fa fa-home"></i>
+					  DASHBOARD
+					  </li>
+					  <br>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="#">Data Pendaftar</a>
+					    <a class="dropdown-item" href="#">Edit Data Pendaftar</a>
+					    <a class="dropdown-item" href="#">Delete Data Pedaftar</a>
+					  </div>
+					  <br>
+					  <li class="list btn-outline-secondary text-center" type="button"><i class="fa fa-users"></i> USER
+					  </li>
 					</ul>
 			  </div>
 			</div>
 		</div>
-
-
+<!-- akhir sidebar -->
+<!-- form -->
 		<div class="col-md-9">
 			<div class="card">
 			  <div class="card-body">
-			    	<h5 class="card-title">FORM DATA SARJANA NU JOMBANG</h5>
-			    	<hr>
+			    	<h5 class="card-title text-center"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
+            <hr>
+
+              <form>
+                
+                <div class="form-group">
+                  <label for="exampleInputEmail1">NAMA LENGKAP</label>
+                  <input type="text" class="form-control" placeholder="Masukkan Nama Lengkap Anda">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputPassword1">NO. KTP</label>
+                  <input type="text" class="form-control" placeholder="Masukkan No. KTP Anda">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Laki-Laki</option>
+                    <option>Perempuan</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Tempat Lahir</label>
+                  <input type="text" class="form-control" placeholder="Tempat Lahir">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Tanggal Lahir</label>
+                  <input type="text" class="form-control" placeholder="Tanggal Lahir">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Alamat</label>
+                  <input type="text" class="form-control" placeholder="Dusun/Desa">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1"></label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Lain-lain</option>
+                    <option>Jombang</option>
+                    <option>Mojokerto</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1"></label>
+                  <input type="text" class="form-control" placeholder="" disabled="">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Nomor Telepon</label>
+                  <input type="text" class="form-control" placeholder="Masukkan No. Telepon">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Jenjang</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Lain-lain</option>
+                    <option>S1</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Jurusan</label>
+                  <input type="text" class="form-control" placeholder="Masukkan Jurusan">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">PT / Universitas</label>
+                  <input type="text" class="form-control" placeholder="Asal PT/Universitas">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Recaptcha</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Recaptcha</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlFile1">File - EDITABLE</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    (max. 1MB)
+                  </div>
+                </form>
+
+                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> DAFTAR</button>
+                <button type="reset" class="btn btn-warning"><i class="fas fa-undo"></i> RESET</button>
+
+              </form>
 				</div>
 			</div>
 		</div>
 
-	</div>
-</div>
-
-
-
-
-
-<!-- 
-			<div class="container">		
-				<section class="sidebar">
-				
-				</section>
-			</div>
-    	
-  		<div class="row">
-    		
-    		<div class="col-md-8 offset-md-4" >
-    	<h2 style="text-align: center;">FORM DATA SARJANA NU JOMBANG</h2><hr><br>
-	<form method="post" action="save-post.php" enctype="multipart/form-data">
-      	<table cellpadding="3">
-        	<tr>
-	          	<td>Nama</td>
-	          	<td>:</td>
-	          	<td><input type="text" class="form-control" name="nama" placeholder="Nama"> </td>
-        	</tr>
-        	<tr>
-	          	<td>No KTP</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="no_ktp" placeholder="No KTP" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td>Jenis Kelamin</td>
-	          	<td>:</td>
-	          	<td><select name="jenis_kelamin" style="width:61%">
-				  	<option value="laki_laki">Laki-laki</option>
-				  	<option value="perempuan">Perempuan</option>
-					</select>
-				<td>
-        	</tr>
-        	<tr>
-	          	<td>Tempat Lahir</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="tempat_lahir" placeholder="Tempat Lahir" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td>Tanggal Lahir</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="tanggal_lahir" placeholder="Tanggal Lahir" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td>Alamat</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="dusun_desa" placeholder="Dusun/Desa" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td></td>
-	          	<td></td>
-	          	<td><select name="kecamatan" style="width:61%">
-				  	<option value="jombang">Jombang</option>
-				  	<option value="lain_lain">Lain-lain</option>
-					</select>
-				<td>
-        	</tr>
-        	<tr>
-	          	<td></td>
-	          	<td></td>
-	          	<td><input type="text" name="Kabupaten" value="Jombang" style="width:60%" disabled></td>
-        	</tr>
-        	<tr>
-	          	<td>Nomor Telepon</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="nomor_telepon" placeholder="Nomor Telepon" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td>Jenjang</td>
-	          	<td>:</td>
-	          	<td><select name="jenjang" style="width:61%">
-				  	<option value="s1">S1</option>
-				  	<option value="lain_lain">Lain-lain</option>
-					</select>
-				<td>
-        	</tr>
-        	<tr>
-	          	<td>Jurusan</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="jurusan" placeholder="Jurusan" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td>PT / Universitas</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="pt_univ" placeholder="Asal PT / Universitas" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td>Recaptcha</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="jawaban_recaptcha" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td>Recaptcha</td>
-	          	<td>:</td>
-	          	<td><input type="text" name="recaptcha" style="width:60%"></td>
-        	</tr>
-        	<tr>
-	          	<td><b>File - EDITABLE</b></td>
-	          	<td>:</td>
-	          	<td><input type="file" name="photo" value="Telusuri..."><font size="2">(max. 1MB)</font></td>
-        	</tr>
-        	<tr>
-          		<td colspan=3><input type="submit" value="Kirim"></td>
-        	</tr>
-      	</table>
-    </form>
-      		</div>
-		</div>
-    </div>
-    </div> -->
-    		
+<!-- akhir form -->
 
     <!-- akhir form -->
 </body>

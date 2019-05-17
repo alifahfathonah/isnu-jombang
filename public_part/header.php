@@ -16,11 +16,10 @@
   <!-- Navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-  <button type="button" class="btn btn-secondary" style="margin-right: 20px">Home</button>
+  <h4 class="text-white">Ikatan Sarjana Nahdlatul Ulama</h4>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <button type="button" class="btn btn-secondary">Daftar Anggota</button>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
