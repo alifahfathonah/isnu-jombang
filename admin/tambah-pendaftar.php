@@ -169,7 +169,5 @@
 		</div>
 
 <!-- akhir form -->
-
-    <!-- akhir form -->
 </body>
 </html>
