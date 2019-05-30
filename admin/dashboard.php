@@ -9,7 +9,7 @@
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="../assets/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<!-- Font Awesome -->
+	<!-- Font Awesome
 	<link rel="stylesheet" href="../assets/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="../assets/adminlte/bower_components/Ionicons/css/ionicons.min.css">
@@ -40,7 +40,7 @@
 	      <!-- Sidebar user panel -->
 	      <div class="user-panel">
 	        <div class="pull-left image">
-	          <img src="../adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+	          <img src="../assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 	        </div>
 	        <div class="pull-left info">
 	          <p>Alexander Pierce</p>
@@ -71,8 +71,8 @@
 	          </a>
 	          <ul class="treeview-menu">
 	            <li><a href="index.html"><i class="fa fa-circle-o"></i>Data Pendaftar</a></li>
-	            <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Edit Data Pendaftar</a></li>
-	            <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Delete Data Pendaftar</a></li>
+	            <li class="active"><a href="edit-anggota.php"><i class="fa fa-circle-o"></i>Edit Data Pendaftar</a></li>
+	            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Delete Data Pendaftar</a></li>
 	          </ul>
 	        </li>
 	        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>

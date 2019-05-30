@@ -55,7 +55,7 @@ include('public_part/header.php');
     </div>
 
     <div class="col-md-3" style="margin-top: 10px">
-      <a href="user/login.php" style="color: #000;text-decoration: none">
+      <a href="login/index.php" style="color: #000;text-decoration: none">
       <div class="card">
         <div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
           <i class="fa fa-sign-in-alt"></i>

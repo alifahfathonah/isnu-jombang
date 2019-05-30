@@ -34,6 +34,6 @@
 					}
 				?>
 			</table><br>
-		<a href="tambah-Anggota.php">Tambah Data Anggota</a>
+		<a href="tambah-anggota.php">Tambah Data Anggota</a>
 	</body>
 </html>

@@ -6,16 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-	<?php 
-		if(isset($_GET['pesan'])){
-			if($_GET['pesan']=="gagal"){
-				echo "<div class='alert alert-danger'><center>Username atau Password Anda salah!</center></div>";
-			}
-			if($_GET['pesan']=="sukses"){
-				echo "<div class='alert alert-success'><center>Berhasil daftar, silahkan login!</center></div>";
-			}
-		}
-	?>
 	<!-- navbar -->
 	<nav class="navbar fixed-top navbar-dark bg-dark">
   		<h3 style="color: white">ISNU-Login</h3>
@@ -30,6 +20,16 @@
 		<div class="container" style="width:50%">
 			<br><br><br><br>
 			<div class="jumbotron">
+				<?php 
+					if(isset($_GET['pesan'])){
+						if($_GET['pesan']=="gagal"){
+							echo "<div class='alert alert-danger'><center>Username atau Password Anda salah!</center></div>";
+						}
+						if($_GET['pesan']=="sukses"){
+							echo "<div class='alert alert-success'><center>Berhasil daftar, silahkan login!</center></div>";
+						}
+					}
+				?>
 				<center>
 					<h3 style="color: black">ISNU - LOGIN</h3>
 					<br>
