@@ -17,11 +17,9 @@
 
 	$qEdit = "UPDATE anggota SET nama='$vnama', no_ktp='$vno_ktp', jenis_kelamin='$vjenis_kelamin', tempat_lahir='$vtempat_lahir', tgl_lahir='$vtgl_lahir', dusun_desa='$vdusun_desa', kecamatan='$vkecamatan', kota='$vkota', no_telepon='$vno_telepon', jenjang='$vjenjang', jurusan='$vjurusan', pt_univ='$vpt_univ' WHERE id='$id'";
 	$edit = mysqli_query($connect, $qEdit);
-	header("location:anggota.php");
-
-//	if($connect->query($edit) == TRUE){
-//		header('location:anggota.php');
-//	}else{
-//		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal mengubah data'); window.location.href='edit-anggota.php'</script>");
-//	}
+	if($edit){
+		header('location:anggota.php');
+	}else{
+		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal mengubah data'); window.location.href='anggota.php'</script>");
+	}
 ?>
