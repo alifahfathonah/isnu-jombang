@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="../assets/css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 	<!-- navbar -->
@@ -164,25 +165,17 @@
 								<input type="text" name="fpt_univ" class="form-control" placeholder="Asal PT/Universitas">
 							</div>
 
+							<div class="g-recaptcha" data-sitekey="6LdLMKkUAAAAAHap-4beGm4OPyKP3f9nNqjbidV1"></div><br>
+
 							<!--
-							<div class="form-group">
-								<label>Recaptcha</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-
-							<div class="form-group">
-								<label>Recaptcha</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-
 							<div class="form-group">
 								<label>File - EDITABLE</label>
 								<input type="file" class="form-control-file">
 								(max. 1MB)
 							</div>
 							-->
-
-							<button type="submit" class="btn btn-success"><i class="fa fa-save"></i>TAMBAHKAN</button>
+							
+							<button type="submit" class="btn btn-success" id="button1"><i class="fa fa-save"></i>TAMBAHKAN</button>
 							<button type="reset" class="btn btn-warning"><i class="fas fa-undo"></i>RESET</button>
 
 						</form>
