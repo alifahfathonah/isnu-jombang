@@ -1,20 +1,20 @@
 <?php
 	include ('../config/koneksi.php');
 	
-	$nama 			= $_POST['nama'];
-	$no_ktp 		= $_POST['no_ktp'];
-	$jenis_kelamin 	= $_POST['jenis_kelamin'];
-	$tempat_lahir 	= $_POST['tempat_lahir'];
-	$tanggal_lahir 	= $_POST['tanggal_lahir'];
-	$dusun_desa 	= $_POST['dusun_desa'];
-	$kecamatan 		= $_POST['kecamatan'];
-	$kota 			= $_POST['kota'];
-	$nomor_telepon 	= $_POST['nomor_telepon'];
-	$jenjang 		= $_POST['jenjang'];
-	$jurusan 		= $_POST['jurusan'];
-	$pt_univ 		= $_POST['pt_univ'];
+	$vnama = $_POST['fnama'];
+	$vno_ktp = $_POST['fno_ktp'];
+	$vjenis_kelamin = $_POST['fjenis_kelamin'];
+	$vtempat_lahir = $_POST['ftempat_lahir'];
+	$vtgl_lahir = $_POST['ftgl_lahir'];
+	$vdusun_desa = $_POST['fdusun_desa'];
+	$vkecamatan = $_POST['fkecamatan'];
+	$vkota = $_POST['fkota'];
+	$vno_telepon = $_POST['fno_telepon'];
+	$vjenjang = $_POST['fjenjang'];
+	$vjurusan = $_POST['fjurusan'];
+	$vpt_univ = $_POST['fpt_univ'];
 
-	$qTambah = "INSERT INTO anggota (nama, no_ktp, jenis_kelamin, tempat_lahir, tanggal_lahir, dusun_desa, kecamatan, kota, nomor_telepon, jenjang, jurusan, pt_univ) VALUES('$nama', '$no_ktp', '$jenis_kelamin', '$tempat_lahir', '$tanggal_lahir', '$dusun_desa', '$kecamatan', '$kota', '$nomor_telepon', '$jenjang', '$jurusan', '$pt_univ')";
+	$qTambah = "INSERT INTO anggota VALUES('','$vnama','$vno_ktp','$vjenis_kelamin','$vtempat_lahir','$vtgl_lahir','$vdusun_desa','$vkecamatan','$vkota','$vno_telepon','$vjenjang','$vjurusan','$vpt_univ')";
 	$tambah = mysqli_query($connect, $qTambah);
 	if($tambah){
 		header('location:anggota.php');

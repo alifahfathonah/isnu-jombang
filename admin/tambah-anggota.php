@@ -81,78 +81,88 @@
 			    	<h5 class="card-title text-center"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
             	<hr>
 
-              <form>
+              <form method="post" action="simpan-anggota.php">
                 
                 <div class="form-group">
                   <label for="exampleInputEmail1">NAMA LENGKAP</label>
-                  <input type="text" class="form-control" placeholder="Masukkan Nama Lengkap Anda">
+                  <input type="text" name="fnama" class="form-control" placeholder="Masukkan Nama Lengkap Anda">
                 </div>
                 
                 <div class="form-group">
                   <label for="exampleInputPassword1">NO. KTP</label>
-                  <input type="text" class="form-control" placeholder="Masukkan No. KTP Anda">
+                  <input type="text" name="fno_ktp" class="form-control" placeholder="Masukkan No. KTP Anda">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                  <input type="text" name="fjenis_kelamin" class="form-control" placeholder="Jenis Kelamin">
+                  <!--
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>Laki-Laki</option>
                     <option>Perempuan</option>
                   </select>
+                  -->
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tempat Lahir</label>
-                  <input type="text" class="form-control" placeholder="Tempat Lahir">
+                  <input type="text" name="ftempat_lahir" class="form-control" placeholder="Tempat Lahir">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tanggal Lahir</label>
-                  <input type="text" class="form-control" placeholder="Tanggal Lahir">
+                  <input type="text" name="ftgl_lahir" class="form-control" placeholder="Tanggal Lahir">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Alamat</label>
-                  <input type="text" class="form-control" placeholder="Dusun/Desa">
+                  <label for="exampleInputPassword1">Dusun/Desa</label>
+                  <input type="text" name="fdusun_desa" class="form-control" placeholder="Dusun/Desa">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1"></label>
+                  <label for="exampleFormControlSelect1">Kecamatan</label>
+                  <input type="text" name="fkecamatan" class="form-control" placeholder="Kecamatan">
+                  <!--
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>Lain-lain</option>
                     <option>Jombang</option>
                     <option>Mojokerto</option>
                   </select>
+                  -->
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1"></label>
-                  <input type="text" class="form-control" placeholder="" disabled="">
+                  <label for="exampleInputPassword1">Kota</label>
+                  <input type="text" name="fkota" class="form-control" placeholder="Kota"><!-- disabled=""> -->
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nomor Telepon</label>
-                  <input type="text" class="form-control" placeholder="Masukkan No. Telepon">
+                  <input type="text" name="fno_telepon" class="form-control" placeholder="Masukkan No. Telepon">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Jenjang</label>
+                  <input type="text" name="fjenjang" class="form-control" placeholder="Jenjang">
+                  <!--
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>Lain-lain</option>
                     <option>S1</option>
                   </select>
+                  -->
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Jurusan</label>
-                  <input type="text" class="form-control" placeholder="Masukkan Jurusan">
+                  <input type="text" name="fjurusan" class="form-control" placeholder="Masukkan Jurusan">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">PT / Universitas</label>
-                  <input type="text" class="form-control" placeholder="Asal PT/Universitas">
+                  <input type="text" name="fpt_univ" class="form-control" placeholder="Asal PT/Universitas">
                 </div>
 
+                <!--
                 <div class="form-group">
                   <label for="exampleInputPassword1">Recaptcha</label>
                   <input type="text" class="form-control" placeholder="">
@@ -170,6 +180,7 @@
                     (max. 1MB)
                   </div>
                 </form>
+                -->
 
                 <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> DAFTAR</button>
                 <button type="reset" class="btn btn-warning"><i class="fas fa-undo"></i> RESET</button>

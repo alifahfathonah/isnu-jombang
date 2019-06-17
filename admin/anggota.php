@@ -19,16 +19,17 @@
 					<th colspan='2' width='150'><center><strong>Aksi</strong></center></th>
 				</tr>
 				<?php
+					$no = 1;
 				  	$qTampil = mysqli_query($connect, "SELECT * FROM anggota");
 				  	foreach($qTampil as $row){
 				?>
 				<tr>
-					<td><?php echo $row['id_anggota'] ?></td>
+					<td><?php echo $no++; ?></td>
 					<td><?php echo $row['nama']; ?></td>
 					<td><?php echo $row['kecamatan']; ?></td>
 					<td><?php echo $row['jurusan']; ?></td>
-					<td align='right'><a href='edit-anggota.php?id=<?php echo $row['id_anggota']; ?>'>Edit</a></td>
-					<td align='left'><a href='hapus-anggota.php?id=<?php echo $row['id_anggota']; ?>'>Hapus</a></td>
+					<td align='right'><a href='edit-anggota.php?id=<?php echo $row['id']; ?>'>Edit</a></td>
+					<td align='left'><a href='hapus-anggota.php?id=<?php echo $row['id']; ?>'>Hapus</a></td>
 				</tr>
 				<?php
 					}
