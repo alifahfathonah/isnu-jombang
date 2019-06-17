@@ -35,9 +35,10 @@
 					<div class="card-body">
 						<h5 class="card-title text-center"><i class="fa fa-list-ul"></i>MAIN MENU</h5>
 						<hr>
+
 						<ul class="list-group">
 							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
-								DASHBOARD
+							DASHBOARD
 							</li><br>
 							<div class="btn-group">
 								<button type="button" class="btn btn-danger fa fa-users dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DATA PENDAFTAR</button>
@@ -48,16 +49,12 @@
 								</div>
 							</div>
 						</ul>
-						<ul class="list-group">
-							<li class="list btn-outline-secondary text-center" type="button" ><i class="fa fa-home"></i>
-								DASHBOARD
-							</li><br>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<a class="dropdown-item" href="#">Data Anggota</a>
-								<a class="dropdown-item" href="#">Edit Data Anggota</a>
-								<a class="dropdown-item" href="#">Delete Data Anggota</a>
-							</div><br>
+						<ul class="list-group mt-4">
 							<li class="list btn btn-danger text-center" type="button"><i class="fa fa-users"></i>USER
+							</li>
+						</ul>
+						<ul class="list-group mt-4">
+							<li class="list btn btn-danger text-center" type="button"><i class="fa fa-out"></i>LOGOUT
 							</li>
 						</ul>
 					</div>
@@ -192,5 +189,9 @@
 			<!-- akhir form -->
 		</div>
 	</div>
+		<div class="footer bg-secondary text-center mt-5" style="color: white">
+		  <div class="card-body">
+		  <h5>Copyright © 2019 Bisma Labs, All Rights Reserved.</h5>
+  		</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 	//memanggil header
-	include('public_part/header.php');
+	include('./public_part/header.php');
 ?>
 
 <!-- content -->
@@ -27,7 +27,7 @@
 		</div>
 
 		<div class="col-md-3" style="margin-top: 10px">
-			<a href="daftar.php" style="color: #000;text-decoration: none">
+			<a href="profil.php" style="color: #000;text-decoration: none">
 			<div class="card">
 				<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
 					<i class="fa fa-users"></i>
