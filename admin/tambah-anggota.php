@@ -74,13 +74,22 @@
 							<form method="post" action="simpan-anggota.php">
 
 								<div class="form-group">
-									<label for="exampleInputEmail1">NAMA LENGKAP</label>
+									<label for="exampleInputEmail1">Nama</label>
 									<input type="text" name="fnama" class="form-control" placeholder="Nama">
 								</div>
 								                
 								<div class="form-group">
-									<label for="exampleInputPassword1">NO. KTP</label>
-									<input type="text" name="fno_ktp" class="form-control" placeholder="No. KTP">
+									<label for="exampleInputPassword1">No. KTP</label>
+									<input type="text" name="fno_ktp" maxlength="16" onkeypress="return hanyaAngka(event)" class="form-control" placeholder="No. Telepon">
+									<script>
+										function hanyaAngka(evt) {
+										  	var charCode = (evt.which) ? evt.which : event.keyCode
+										   	if (charCode > 31 && (charCode < 48 || charCode > 57))
+								 
+										    return false;
+										  	return true;
+										}
+									</script>
 								</div>
 
 								<div class="form-group">
@@ -90,7 +99,7 @@
 									-->
 
 									<select name="fjenis_kelamin" class="form-control" id="exampleFormControlSelect1">
-										<option>Laki-Laki</option>
+										<option>Laki-laki</option>
 										<option>Perempuan</option>
 									</select>
 								</div>
@@ -102,50 +111,56 @@
 
 								<div class="form-group">
 									<label for="exampleInputPassword1">Tanggal Lahir</label>
-									<input type="text" name="ftgl_lahir" class="form-control" placeholder="Tanggal Lahir">
+									<input type="text" name="ftgl_lahir" class="form-control" placeholder="01/01/1980">
 								</div>
 
 								<div class="form-group">
-									<label for="exampleInputPassword1">Dusun/Desa</label>
+									<label for="exampleInputPassword1">Alamat</label>
 									<input type="text" name="fdusun_desa" class="form-control" placeholder="Dusun/Desa">
-								</div>
+									<br>
+									<select name="fkecamatan" class="form-control" id="exampleFormControlSelect1">
+										<?php
+										  	$qTampilKecamatan = "SELECT * FROM kecamatan";
+										  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
+											while($row = mysqli_fetch_assoc($tampilKecamatan) ){
+										?>
 
-								<div class="form-group">
-									<label for="exampleFormControlSelect1">Kecamatan</label>
-									<input type="text" name="fkecamatan" class="form-control" placeholder="Kecamatan">
-									<!--
-									<select class="form-control" id="exampleFormControlSelect1">
-									<option>Lain-lain</option>
-									<option>Jombang</option>
-									<option>Mojokerto</option>
+    									<option value="<?php echo $row['kecamatan']; ?>"><?php echo $row['kecamatan']; ?></option>
+
+   										<?php 
+   											} 
+   										?>
 									</select>
-									-->
-								</div>
-
-								<div class="form-group">
-									<label for="exampleInputPassword1"></label>
-									<input type="text" name="fkota" class="form-control" placeholder="Kota"><!-- disabled=""> -->
+									<br>
+									<input type="text" name="fkota" class="form-control" value="Kab. Jombang" readonly>
 								</div>
 
 								<div class="form-group">
 									<label for="exampleInputPassword1">Nomor Telepon</label>
-									<input type="text" name="fno_telepon" class="form-control" placeholder="Masukkan No. Telepon">
+									<input type="text" name="fno_telepon" maxlength="13" onkeypress="return hanyaAngka(event)" class="form-control" placeholder="No. Telepon">
+									<script>
+										function hanyaAngka(evt) {
+										  	var charCode = (evt.which) ? evt.which : event.keyCode
+										   	if (charCode > 31 && (charCode < 48 || charCode > 57))
+								 
+										    return false;
+										  	return true;
+										}
+									</script>
 								</div>
 
 								<div class="form-group">
 									<label for="exampleFormControlSelect1">Jenjang</label>
-									<input type="text" name="fjenjang" class="form-control" placeholder="Jenjang">
-									<!--
-									<select class="form-control" id="exampleFormControlSelect1">
-									<option>Lain-lain</option>
-									<option>S1</option>
+									<select name="fjenjang" class="form-control" id="exampleFormControlSelect1">
+										<option>S1</option>
+										<option>S2</option>
+										<option>S3</option>
 									</select>
-									-->
 								</div>
 
 								<div class="form-group">
 									<label for="exampleInputPassword1">Jurusan</label>
-									<input type="text" name="fjurusan" class="form-control" placeholder="Masukkan Jurusan">
+									<input type="text" name="fjurusan" class="form-control" placeholder="Jurusan">
 								</div>
 
 								<div class="form-group">

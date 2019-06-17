@@ -2,7 +2,7 @@
 	$host 		= "localhost";
 	$username 	= "root";
 	$password 	= "";
-	$db_name 	= "isnu_db";
+	$db_name 	= "db_isnu";
 
 	$connect = mysqli_connect($host,$username,$password,$db_name);
 
