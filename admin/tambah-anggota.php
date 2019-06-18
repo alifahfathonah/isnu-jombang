@@ -41,22 +41,16 @@
 							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
 							DASHBOARD
 							</li><br>
-							<div class="btn-group">
-								<button type="button" class="btn btn-danger fa fa-users dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DATA PENDAFTAR</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">Data Pendaftar</a>
-									<a class="dropdown-item" href="#">Edit Data Pendaftar</a>
-									<a class="dropdown-item" href="#">Deleter Data Pendaftar</a>
-								</div>
-							</div>
 						</ul>
-						<ul class="list-group mt-4">
-							<li class="list btn btn-danger text-center" type="button"><i class="fa fa-users"></i>USER
-							</li>
+						<ul class="list-group">
+							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-user"></i>
+							ANGGOTA
+							</li><br>
 						</ul>
-						<ul class="list-group mt-4">
-							<li class="list btn btn-danger text-center" type="button"><i class="fa fa-out"></i>LOGOUT
-							</li>
+						<ul class="list-group">
+							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
+							LOGOUT
+							</li><br>
 						</ul>
 					</div>
 				</div>
