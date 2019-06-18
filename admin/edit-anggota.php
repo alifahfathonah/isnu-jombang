@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tambah Angota</title>
+	<title>Edit Anggota</title>
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="../assets/css/style.css">
@@ -66,7 +66,7 @@
 						<h5 class="card-title text-center"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
 						<hr>
 
-						<form method="post" action="simpan-anggota.php">
+						<form method="post" action="update-anggota.php">
 
 							<div class="form-group">
 								<label>Nama</label>

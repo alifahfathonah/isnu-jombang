@@ -19,6 +19,6 @@
 	if($tambah){
 		header('location:anggota.php');
 	}else{
-		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal menambahkan data'); window.location.href='tambah-anggota.php'</script>");
+		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal menambahkan data'); window.location.href='anggota.php'</script>");
 	}
 ?>
