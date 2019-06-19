@@ -15,11 +15,10 @@
 	</nav>
 	<!-- akhir navbar -->
 	<!-- bg -->
- 	<div class="p-3 mb-2 bg-warning text-white">
+ 	<div class="bg-warning text-white" style="padding-top:200px; height: 660px">
 	 	<!-- login -->
 		<div class="container" style="width:50%">
-			<br><br><br><br>
-			<div class="jumbotron">
+			<div>
 				<?php 
 					if(isset($_GET['pesan'])){
 						if($_GET['pesan']=="gagal"){
@@ -42,7 +41,7 @@
 					<input type="submit" class="btn btn-primary btn-lg btn-block" value="LOGIN">
 		 			<br>
 					<center>
-						<a href="daftar.php">Daftar</a>
+						<a href="daftar.php">DAFTAR</a>
 					</center>
 				</form>
 			</div>

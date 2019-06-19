@@ -1,14 +1,14 @@
-<?php
-	include ('../config/koneksi.php');
-	include ('part/header.php');
-?>
-
-<br>
-<br>
-<br>
-<br>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tambah Angota</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
 <body>
-
 	<!-- navbar -->
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
@@ -25,8 +25,18 @@
 		</div>
 	</nav>
 	<!-- end navbar -->	
-
-	<div class="card col-md-10 offset-md-1">
+<?php
+	include ('../config/koneksi.php');
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Anggota</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+	<div class="card col-md-10 offset-md-1" style="padding-top: 100px">
 	  <div class="card-header">
 	  	<i class="fa fa-list"></i>
 	    Data Anggota
