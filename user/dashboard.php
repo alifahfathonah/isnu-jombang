@@ -1,3 +1,11 @@
+<?php
+  include ('../config/koneksi.php');
+
+  session_start();
+    if(empty($_SESSION['username'])){
+        header("location:../login/index.php");
+    }else{
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,3 +123,6 @@
   </div>
 </body>
 </html>
+<?php
+  }
+?>
