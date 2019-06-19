@@ -32,7 +32,7 @@
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" style="margin-right: 20px">Search</button>
           <hr>
-          <button type="button" class="btn btn-secondary">Login</button>
+          <button type="button" class="btn btn-secondary" onclick="window.location.href='../logout.php'">Logout</button>
         </form>
       </div>
     </div>
@@ -61,25 +61,13 @@
       </a>
     </div>
 
-    <div class="col-md-4" style="margin-top: 10px">
-      <a href="anggota.php" style="color: #000;text-decoration: none">
-      <div class="card">
-        <div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
-          <i class="fa fa-list-ul"></i>
-          <hr>
-          DAFTAR ANGGOTA
-        </div>
-      </div>
-      </a>
-    </div>
-
     <div class="col-md-3" style="margin-top: 10px">
-      <a href="login/index.php" style="color: #000;text-decoration: none">
+      <a href="profil.php" style="color: #000;text-decoration: none">
       <div class="card">
         <div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
           <i class="fa fa-sign-in-alt"></i>
           <hr>
-          LOGIN 
+          PROFIL
         </div>
       </div>
       </a>

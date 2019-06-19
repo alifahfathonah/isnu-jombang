@@ -28,7 +28,7 @@
 				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 				<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" style="margin-right: 20px">Search</button>
 				<hr>
-				<button type="button" class="btn btn-secondary">Logout</button>
+				<button type="button" class="btn btn-secondary" onclick="window.location.href='../logout.php'">Logout</button>
 			</form>
 		</div>
 	</nav>
