@@ -49,7 +49,7 @@
 
 <div class="container" style="margin-top: 80px">
   <div class="row">
-    <div class="offset-md-1 col-md-3" style="margin-top: 10px">
+    <div class="offset-md-3 col-md-3" style="margin-top: 10px">
       <a href="" style="color: #000;text-decoration: none">
       <div class="card">
         <div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
@@ -65,7 +65,7 @@
       <a href="profil.php" style="color: #000;text-decoration: none">
       <div class="card">
         <div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
-          <i class="fa fa-sign-in-alt"></i>
+          <i class="fa fa-user"></i>
           <hr>
           PROFIL
         </div>
