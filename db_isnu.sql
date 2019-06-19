@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Jun 2019 pada 05.02
+-- Generation Time: 19 Jun 2019 pada 05.27
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -28,26 +28,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `anggota` (
   `id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `no_ktp` varchar(50) NOT NULL,
-  `jenis_kelamin` varchar(50) NOT NULL,
-  `tempat_lahir` varchar(50) NOT NULL,
-  `tgl_lahir` date NOT NULL,
-  `dusun_desa` varchar(50) NOT NULL,
-  `kecamatan` varchar(50) NOT NULL,
-  `kota` varchar(50) NOT NULL,
-  `no_telepon` varchar(50) NOT NULL,
-  `jenjang` varchar(50) NOT NULL,
-  `jurusan` varchar(50) NOT NULL,
-  `pt_univ` varchar(50) NOT NULL
+  `id_user` int(11) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `no_ktp` varchar(50) DEFAULT NULL,
+  `jenis_kelamin` varchar(50) DEFAULT NULL,
+  `tempat_lahir` varchar(50) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `dusun_desa` varchar(50) DEFAULT NULL,
+  `kecamatan` varchar(50) DEFAULT NULL,
+  `kota` varchar(50) DEFAULT NULL,
+  `no_telepon` varchar(50) DEFAULT NULL,
+  `jenjang` varchar(50) DEFAULT NULL,
+  `jurusan` varchar(50) DEFAULT NULL,
+  `pt_univ` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `anggota`
---
-
-INSERT INTO `anggota` (`id`, `nama`, `no_ktp`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `dusun_desa`, `kecamatan`, `kota`, `no_telepon`, `jenjang`, `jurusan`, `pt_univ`) VALUES
-(21, 'q', '1', 'Laki-laki', 'q', '1990-10-10', 'q', 'Bandar Kedungmulyo', 'Kab. Jombang', '1', 'S1', 'q', 'q');
 
 -- --------------------------------------------------------
 
@@ -116,7 +110,8 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `level`) VALUES
 -- Indexes for table `anggota`
 --
 ALTER TABLE `anggota`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`,`id_user`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `kecamatan`
@@ -138,7 +133,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `kecamatan`
 --
@@ -148,7 +143,17 @@ ALTER TABLE `kecamatan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `anggota`
+--
+ALTER TABLE `anggota`
+  ADD CONSTRAINT `anggota_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
