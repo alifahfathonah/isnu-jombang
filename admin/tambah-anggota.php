@@ -4,57 +4,23 @@
 ?>
 
 <body>
-	<!-- navbar -->
-	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-		<div class="container">
-			<div class="card" style="width: 3rem;">
-				<img src="../assets/gambar/header.png" class="card-img-top" alt="...">
-			</div>
-			<h4 class="text-white">Ikatan Sarjana Nahdlatul Ulama</h4>
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" style="margin-right: 20px">Search</button>
-				<hr>
-				<button type="button" class="btn btn-secondary">Logout</button>
-			</form>
-		</div>
-	</nav>
-	<!-- end navbar -->
-	<!-- sidebar -->
+	<?php
+		include ('part/navbar.php');
+	?>
+
 	<div class="container-fluid" style="margin-top: 80px">
 		<div class="row">
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title text-center"><i class="fa fa-list-ul"></i>MAIN MENU</h5>
-						<hr>
+			<?php
+				include ('part/sidebar.php');
+			?>
 
-						<ul class="list-group">
-							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
-							DASHBOARD
-							</li><br>
-						</ul>
-						<ul class="list-group">
-							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-user"></i>
-							ANGGOTA
-							</li><br>
-						</ul>
-						<ul class="list-group">
-							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
-							LOGOUT
-							</li><br>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- end sidebar -->
-			<!-- form -->
 			<div class="col-md-9">
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title text-center"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
 						<hr>
-
+						
+						<!-- form -->
 						<form method="post" action="simpan-anggota.php">
 
 							<div class="form-group">
@@ -160,17 +126,15 @@
 							
 							<button type="submit" class="btn btn-success" id="button1"><i class="fa fa-save"></i>TAMBAHKAN</button>
 							<button type="reset" class="btn btn-warning"><i class="fas fa-undo"></i>RESET</button>
-
 						</form>
+						<!-- akhir form -->
 					</div>
 				</div>
 			</div>
-			<!-- akhir form -->
 		</div>
 	</div>
-		<div class="footer bg-secondary text-center mt-5" style="color: white">
-		  <div class="card-body">
-		  <h5>Copyright © 2019 Bisma Labs, All Rights Reserved.</h5>
-  		</div>
 </body>
-</html>
+
+<?php
+	include ('part/footer.php');
+?>

@@ -2,56 +2,22 @@
 	include ('../config/koneksi.php');
 	include ('part/header.php');
 
-	$id 	= $_GET['id'];
-	$qCek	= mysqli_query($connect,"SELECT * FROM anggota WHERE id='$id'");
+	$id 		= $_GET['id'];
+	$qCek		= mysqli_query($connect,"SELECT * FROM anggota WHERE id='$id'");
 	while($row 	= mysqli_fetch_array($qCek)){
 ?>
 
 <body>
-	<!-- navbar -->
-	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-		<div class="container">
-			<div class="card" style="width: 3rem;">
-				<img src="../assets/gambar/header.png" class="card-img-top" alt="...">
-			</div>
-			<h4 class="text-white">Ikatan Sarjana Nahdlatul Ulama</h4>
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" style="margin-right: 20px">Search</button>
-				<hr>
-				<button type="button" class="btn btn-secondary">Logout</button>
-			</form>
-		</div>
-	</nav>
-	<!-- end navbar -->
-	<!-- sidebar -->
+	<?php
+		include ('part/navbar.php');
+	?>
+
 	<div class="container-fluid" style="margin-top: 80px">
 		<div class="row">
-			<div class="col-md-3">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title text-center"><i class="fa fa-list-ul"></i>MAIN MENU</h5>
-						<hr>
+			<?php
+				include ('part/sidebar.php');
+			?>
 
-						<ul class="list-group">
-							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
-							DASHBOARD
-							</li><br>
-						</ul>
-						<ul class="list-group">
-							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-user"></i>
-							ANGGOTA
-							</li><br>
-						</ul>
-						<ul class="list-group">
-							<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
-							LOGOUT
-							</li><br>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- end sidebar -->
 			<!-- form -->
 			<div class="col-md-9">
 				<div class="card">
@@ -60,17 +26,14 @@
 						<hr>
 
 						<form method="post" action="update-anggota.php">
-
 							<div class="form-group">
 								<label>Nama</label>
-								<input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 								<input type="text" name="fnama" class="form-control" value="<?php echo $row['nama']; ?>">
 							</div>
 							                
 							<div class="form-group">
 								<label>No. KTP</label>
 								<input type="text" name="fno_ktp" maxlength="16" onkeypress="return hanyaAngka(event)" class="form-control" value="<?php echo $row['no_ktp']; ?>">
-
 								<script>
 									function hanyaAngka(evt) {
 									  	var charCode = (evt.which) ? evt.which : event.keyCode
@@ -104,6 +67,7 @@
 
 								<input type="text" name="fkecamatan" class="form-control" value="<?php echo $row['kecamatan']; ?>">
 								<br>
+
 								<input type="text" name="fkota" class="form-control" value="Kab. Jombang" readonly>
 							</div>
 
@@ -123,7 +87,6 @@
 
 							<div class="form-group">
 								<label>Jenjang</label>
-
 								<select type="text" name="fjenjang" class="form-control" value="<?php echo $row['jenjang']; ?>">
 									<option>S1</option>
 									<option>S2</option>
@@ -153,7 +116,6 @@
 							
 							<button type="submit" class="btn btn-success" id="button1"><i class="fa fa-save mr-sm-1"></i>SIMPAN</button>
 							<button type="reset" class="btn btn-warning"><i class="fas fa-undo mr-sm-1"></i>RESET</button>
-
 						</form>
 					</div>
 				</div>
@@ -161,14 +123,9 @@
 			<!-- akhir form -->
 		</div>
 	</div>
-		<div class="footer bg-secondary text-center mt-5" style="color: white">
-		  <div class="card-body">
-		  <h5>Copyright © 2019 Bisma Labs, All Rights Reserved.</h5>
-  		</div>
 </body>
-</html>
+	
 <?php
+	include ('part/footer.php');
 	}
 ?>
-</body>
-</html>
