@@ -4,6 +4,8 @@
   session_start();
     if(empty($_SESSION['username'])){
         header("location:../login/index.php");
+    }else if($_SESSION['level'] = "user"){
+    	header("location:../user/dashboard.php");
     }else{
 ?>
 <!DOCTYPE html>

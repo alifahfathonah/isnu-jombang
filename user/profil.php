@@ -71,7 +71,9 @@
 				<div class="card-body">
 					<h5 class="card-title">Isi Konten</h5>
 					<p class="card-text"></p>
-					
+					<?php
+						echo $_SESSION['level']; 
+					?>
 				</div>
 			</div>
 		</div>

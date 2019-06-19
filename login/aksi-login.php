@@ -16,6 +16,7 @@
 
 			header("location:../admin/dashboard.php");
 		}else if($login['level']=="user"){
+			$_SESSION['id_user'] = $id_user;
 			$_SESSION['username'] = $username;
 			$_SESSION['level'] = "user";
 
