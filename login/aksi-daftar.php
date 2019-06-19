@@ -8,6 +8,7 @@
 
     $qCekUser   = mysqli_query($connect, "SELECT * FROM users WHERE username='$_POST[username]'");
     $row        = mysqli_num_rows($qCekUser);
+
     if($row > 0){
         echo '<script language="javascript">alert ("Username sudah digunakan!"); window.location="daftar.php";</script>';
         exit();
