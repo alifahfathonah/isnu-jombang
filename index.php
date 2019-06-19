@@ -26,7 +26,7 @@
 			</a>
 		</div>
 
-		<div class="col-md-3" style="margin-top: 10px">
+		<div class="col-md-4" style="margin-top: 10px">
 			<a href="anggota.php" style="color: #000;text-decoration: none">
 			<div class="card">
 				<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">

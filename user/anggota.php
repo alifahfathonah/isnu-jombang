@@ -1,6 +1,6 @@
 <?php
 	//memanggil header
-	include('public_part/user-header.php');
+	include('../public_part/user-header.php');
 ?>
 
 <!-- content -->
@@ -20,5 +20,5 @@
 
 <?php
 	//memanggil footer
-	include('public_part/footer.php');
+	include('../public_part/footer.php');
 ?>
