@@ -2,7 +2,7 @@
 	session_start();
 	include ('../config/koneksi.php');
 
-	$id 			= $_POST['id'];
+	$id 			= $_POST['fid'];
 	$vid_user		= $_SESSION['id_user'];
 	$vnama 			= $_POST['fnama'];
 	$vno_ktp 		= $_POST['fno_ktp'];
@@ -17,7 +17,7 @@
 	$vjurusan 		= $_POST['fjurusan'];
 	$vpt_univ 		= $_POST['fpt_univ'];
 
-	$qEdit 	= "UPDATE anggota SET nama='$vnama', no_ktp='$vno_ktp', jenis_kelamin='$vjenis_kelamin', tempat_lahir='$vtempat_lahir', tgl_lahir='$vtgl_lahir', dusun_desa='$vdusun_desa', kecamatan='$vkecamatan', kota='$vkota', no_telepon='$vno_telepon', jenjang='$vjenjang', jurusan='$vjurusan', pt_univ='$vpt_univ' WHERE id='$id'";
+	$qEdit 	= "UPDATE anggota SET nama='$vnama', no_ktp='$vno_ktp', jenis_kelamin='$vjenis_kelamin', tempat_lahir='$vtempat_lahir', tgl_lahir='$vtgl_lahir', dusun_desa='$vdusun_desa', kecamatan='$vkecamatan', kota='$vkota', no_telepon='$vno_telepon', jenjang='$vjenjang', jurusan='$vjurusan', pt_univ='$vpt_univ' WHERE id_user='$id'";
 	$edit 	= mysqli_query($connect, $qEdit);
 	
 	if($edit){

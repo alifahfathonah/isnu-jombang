@@ -24,10 +24,14 @@
 					<!-- form -->
 					<form method="post" action="update-profil.php">
 							<div class="form-group">
+								<input type="hidden" name="fid" class="form-control" value="<?php echo $row['id_user']; ?>">
+							</div>
+							
+							<div class="form-group">
 								<label>Nama</label>
 								<input type="text" name="fnama" class="form-control" value="<?php echo $row['nama']; ?>">
 							</div>
-							                
+			  
 							<div class="form-group">
 								<label>No. KTP</label>
 								<input type="text" name="fno_ktp" maxlength="16" onkeypress="return hanyaAngka(event)" class="form-control" value="<?php echo $row['no_ktp']; ?>">

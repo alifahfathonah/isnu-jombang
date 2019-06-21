@@ -69,12 +69,15 @@
 					<?php
 						$username = $_SESSION['username'];
 
-						$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM users AS A RIGHT JOIN anggota AS B ON A.id_user = B.id_user WHERE A.username = '$username' ");
+						$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM users AS A RIGHT JOIN anggota AS B ON A.id_user = B.id_user WHERE A.username = '$username'");
 						foreach($qTampil as $row){
 							echo $row['nama'];
-						}
+						
 					?>
 					<a href='edit-profil.php?id=<?php echo $row['id']; ?>'>Edit</a>
+					<?php
+				}
+				?>
 				</div>
 			</div>
 		</div>
