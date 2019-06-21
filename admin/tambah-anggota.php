@@ -110,8 +110,6 @@
 								<input type="text" name="fpt_univ" class="form-control" placeholder="Asal PT/Universitas">
 							</div>
 
-							<div class="g-recaptcha" data-sitekey="6LdLMKkUAAAAAHap-4beGm4OPyKP3f9nNqjbidV1"></div><br>
-
 							<!--
 							<div class="form-group">
 								<label>File - EDITABLE</label>

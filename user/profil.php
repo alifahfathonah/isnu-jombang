@@ -1,16 +1,11 @@
 <?php
+	include ('../config/koneksi.php');
 	include('part/header.php');
+
+	session_start();
 ?>
 
 <!-- content -->
-<div class="container-fluid col-md-12 bg-success">
-	<div class="jumbotron col-md-12 bg-success">
-		<div class="text-center">
-			<img src="../assets/gambar/ISNU.png" class="rounded" alt="...">
-		</div>
-	</div>
-</div>
-
 <div class="container" style="margin-top: 80px">
 	<div class="row">
 		<div class="col-md-3" style="margin-top: 10px">
@@ -71,7 +66,12 @@
 					<h5 class="card-title">Isi Konten</h5>
 					<p class="card-text"></p>
 					<?php
-						echo $_SESSION['level']; 
+						$username = $_SESSION['username'];
+
+						$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM users AS A RIGHT JOIN anggota AS B ON A.id_user = B.id_user WHERE A.username = '$username' ");
+						foreach($qTampil as $row){
+							echo $row['nama'];
+						}
 					?>
 				</div>
 			</div>

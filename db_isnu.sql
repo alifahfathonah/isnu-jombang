@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 19 Jun 2019 pada 05.27
+-- Generation Time: 21 Jun 2019 pada 05.35
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -42,6 +42,13 @@ CREATE TABLE `anggota` (
   `jurusan` varchar(50) DEFAULT NULL,
   `pt_univ` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `anggota`
+--
+
+INSERT INTO `anggota` (`id`, `id_user`, `nama`, `no_ktp`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `dusun_desa`, `kecamatan`, `kota`, `no_telepon`, `jenjang`, `jurusan`, `pt_univ`) VALUES
+(2, 2, 'al', '12345', 'laki', 'jombang', '2019-06-02', 'mojosongo', 'diwek', 'jombang', '1234', 's1', 'ti', 'unhasy');
 
 -- --------------------------------------------------------
 
@@ -133,7 +140,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `kecamatan`
 --
@@ -143,7 +150,7 @@ ALTER TABLE `kecamatan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
