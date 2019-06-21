@@ -44,7 +44,11 @@
 
 							<div class="form-group">
 								<label>Jenis Kelamin</label>
-								<input type="text" name="fjenis_kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>">
+								<select name="fjenis_kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" required>
+								  <option value="">--Jenis Kelamin--</option>
+								  <option value="Laki-laki">Laki-laki</option>
+								  <option value="Perempuan">Perempuan</option>
+								</select>
 							</div>
 
 							<div class="form-group">
@@ -62,7 +66,8 @@
 								<input type="text" name="fdusun_desa" class="form-control" value="<?php echo $row['dusun_desa']; ?>">
 								<br>
 
-								<select name="fkecamatan" class="form-control">
+								<select name="fkecamatan" class="form-control" required>
+									<option value="">--Pilih Kecamatan--</option>
 									<?php
 									  	$qTampilKecamatan = "SELECT * FROM kecamatan";
 									  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
@@ -75,7 +80,7 @@
 										} 
 									?>
 								</select>
-								<br>
+								<br
 
 								<input type="text" name="fkota" class="form-control" value="Kab. Jombang" readonly>
 							</div>
@@ -96,10 +101,11 @@
 
 							<div class="form-group">
 								<label>Jenjang</label>
-								<select type="text" name="fjenjang" class="form-control" value="<?php echo $row['jenjang']; ?>">
-									<option>S1</option>
-									<option>S2</option>
-									<option>S3</option>
+								<select type="text" name="fjenjang" class="form-control" value="<?php echo $row['jenjang']; ?>" required>
+									<option value="">--Pilih Jenjang--</option>
+									<option value="S1">S1</option>
+									<option value="S2">S2</option>
+									<option value="S3">S3</option>
 								</select>
 							</div>
 
