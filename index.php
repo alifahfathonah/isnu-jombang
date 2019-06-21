@@ -1,17 +1,9 @@
 <?php
-	//memanggil header
-	include('public_part/header.php');
+	include ('public_part/header.php');
+	include ('public_part/navbar.php');
 ?>
 
 <!-- content -->
-<div class="container-fluid col-md-12 bg-success">
-	<div class="jumbotron col-md-12 bg-success">
-		<div class="text-center">
-			<img src="assets/gambar/ISNU.png" class="rounded" alt="...">
-		</div>
-	</div>
-</div>
-
 <div class="container" style="margin-top: 80px">
 	<div class="row">
 		<div class="offset-md-1 col-md-3" style="margin-top: 10px">
@@ -82,6 +74,5 @@
 <!-- end content -->
 
 <?php
-	//memanggil footer
 	include('public_part/footer.php');
 ?>
