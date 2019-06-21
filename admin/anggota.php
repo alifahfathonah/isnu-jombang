@@ -1,12 +1,8 @@
 <?php
 	include ('../config/koneksi.php');
 	include ('part/header.php');
+	include ('part/navbar.php');
 ?>
-
-<body>
-	<?php
-		include ('part/navbar.php');
-	?>
 	
 	<div class="card col-md-10 offset-md-1" style="padding-top: 100px">
 		<div class="card-header">

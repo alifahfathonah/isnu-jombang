@@ -1,16 +1,13 @@
 <?php
 	include ('../config/koneksi.php');
 	include ('part/header.php');
+	include ('part/navbar.php');
 
 	$id 		= $_GET['id'];
 	$qCek		= mysqli_query($connect,"SELECT * FROM anggota WHERE id='$id'");
+	
 	while($row 	= mysqli_fetch_array($qCek)){
 ?>
-
-<body>
-	<?php
-		include ('part/navbar.php');
-	?>
 
 	<div class="container-fluid" style="margin-top: 80px">
 		<div class="row">
@@ -123,7 +120,6 @@
 			<!-- akhir form -->
 		</div>
 	</div>
-</body>
 	
 <?php
 	include ('part/footer.php');

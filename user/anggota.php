@@ -1,6 +1,6 @@
 <?php
-	//memanggil header
-	include('../public_part/user-header.php');
+	include ('part/header.php');
+	include ('part/navbar.php');
 ?>
 
 <!-- content -->
@@ -19,6 +19,5 @@
 <!-- end content -->
 
 <?php
-	//memanggil footer
-	include('../public_part/footer.php');
+	include ('part/footer.php');
 ?>

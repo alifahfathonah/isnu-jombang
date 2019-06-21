@@ -1,10 +1,7 @@
 <?php
     include ('part/header.php');
+    include ('part/navbar.php');
 ?> 
-<body>
-    <?php
-        include ('part/navbar.php');
-    ?> 
 
     <!-- bg -->
     <div class="bg-warning text-white" style="padding-top:200px; height: 660px">
@@ -42,5 +39,6 @@
         </div>
         <!-- akhir login -->
     </div>  
-</body>  
-</html> 
+<?php
+    include ('part/footer.php');
+?> 

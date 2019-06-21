@@ -1,12 +1,8 @@
 <?php
 	include ('../config/koneksi.php');
 	include ('part/header.php');
+	include ('part/navbar.php');
 ?>
-
-<body>
-	<?php
-		include ('part/navbar.php');
-	?>
 
 	<div class="container-fluid" style="margin-top: 80px">
 		<div class="row">
@@ -133,8 +129,7 @@
 			</div>
 		</div>
 	</div>
-</body>
-
+	
 <?php
 	include ('part/footer.php');
 ?>
