@@ -9,15 +9,9 @@
 				<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
 					DASHBOARD
 				</li><br>
-			</ul>
-
-			<ul class="list-group">
-				<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-user"></i>
+				<button onclick="window.location.href='anggota.php'"><li class="list btn btn-danger text-center" type="button" ><i class="fa fa-user"></i>
 				ANGGOTA
-				</li><br>
-			</ul>
-
-			<ul class="list-group">
+				</li></button><br>
 				<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
 				LOGOUT
 				</li><br>

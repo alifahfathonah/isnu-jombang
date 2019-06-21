@@ -62,7 +62,19 @@
 								<input type="text" name="fdusun_desa" class="form-control" value="<?php echo $row['dusun_desa']; ?>">
 								<br>
 
-								<input type="text" name="fkecamatan" class="form-control" value="<?php echo $row['kecamatan']; ?>">
+								<select name="fkecamatan" class="form-control">
+									<?php
+									  	$qTampilKecamatan = "SELECT * FROM kecamatan";
+									  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
+										while($rows = mysqli_fetch_assoc($tampilKecamatan) ){
+									?>
+
+   									<option value="<?php echo $rows['kecamatan']; ?>"><?php echo $rows['kecamatan']; ?></option>
+
+									<?php 
+										} 
+									?>
+								</select>
 								<br>
 
 								<input type="text" name="fkota" class="form-control" value="Kab. Jombang" readonly>

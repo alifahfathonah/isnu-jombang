@@ -1,6 +1,6 @@
 <?php
 	include ('../config/koneksi.php');
-	
+
 	$vnama 			= $_POST['fnama'];
 	$vno_ktp 		= $_POST['fno_ktp'];
 	$vjenis_kelamin = $_POST['fjenis_kelamin'];
@@ -14,7 +14,7 @@
 	$vjurusan 		= $_POST['fjurusan'];
 	$vpt_univ 		= $_POST['fpt_univ'];
 
-	$qTambah 	= "INSERT INTO anggota VALUES('','$vnama','$vno_ktp','$vjenis_kelamin','$vtempat_lahir','$vtgl_lahir','$vdusun_desa','$vkecamatan','$vkota','$vno_telepon','$vjenjang','$vjurusan','$vpt_univ')";
+	$qTambah 	= "INSERT INTO anggota VALUES('', '$vnama','$vno_ktp','$vjenis_kelamin','$vtempat_lahir','$vtgl_lahir','$vdusun_desa','$vkecamatan','$vkota','$vno_telepon','$vjenjang','$vjurusan','$vpt_univ')";
 	$tambah 	= mysqli_query($connect, $qTambah);
 	
 	if($tambah){

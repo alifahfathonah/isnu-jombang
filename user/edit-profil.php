@@ -1,6 +1,13 @@
 <?php
+	include ('../config/koneksi.php');
 	include ('part/header.php');
 	include ('part/navbar.php');
+
+	session_start();
+	$username 	= $_SESSION['username'];
+	$qCek		= mysqli_query($connect,"SELECT A.*,B.* FROM users AS A LEFT JOIN anggota AS B ON A.id_user = B.id_user WHERE A.username = '$username'");
+	
+	while($row 	= mysqli_fetch_array($qCek)){
 ?>
 
 <div class="container-fluid" style="margin-top: 80px">
@@ -16,111 +23,107 @@
 					<hr>
 					<!-- form -->
 					<form method="post" action="update-profil.php">
-
-						<div class="form-group">
-							<label>Nama</label>
-							<input type="text" name="fnama" class="form-control" placeholder="Nama">
-						</div>
+							<div class="form-group">
+								<label>Nama</label>
+								<input type="text" name="fnama" class="form-control" value="<?php echo $row['nama']; ?>">
+							</div>
 							                
-						<div class="form-group">
-							<label>No. KTP</label>
-							<input type="text" name="fno_ktp" maxlength="16" onkeypress="return hanyaAngka(event)" class="form-control" placeholder="No. Telepon">
-							<script>
-								function hanyaAngka(evt) {
-								  	var charCode = (evt.which) ? evt.which : event.keyCode
-								   	if (charCode > 31 && (charCode < 48 || charCode > 57))
+							<div class="form-group">
+								<label>No. KTP</label>
+								<input type="text" name="fno_ktp" maxlength="16" onkeypress="return hanyaAngka(event)" class="form-control" value="<?php echo $row['no_ktp']; ?>">
+								<script>
+									function hanyaAngka(evt) {
+									  	var charCode = (evt.which) ? evt.which : event.keyCode
+									   	if (charCode > 31 && (charCode < 48 || charCode > 57))
 							 
-								    return false;
-								  	return true;
-								}
-							</script>
-						</div>
+									    return false;
+									  	return true;
+									}
+								</script>
+							</div>
 
-						<div class="form-group">
-							<label>Jenis Kelamin</label>
-							<select name="fjenis_kelamin" class="form-control">
-								<option>Laki-laki</option>
-								<option>Perempuan</option>
-							</select>
-						</div>
+							<div class="form-group">
+								<label>Jenis Kelamin</label>
+								<input type="text" name="fjenis_kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>">
+							</div>
 
-						<div class="form-group">
-							<label>Tempat Lahir</label>
-							<input type="text" name="ftempat_lahir" class="form-control" placeholder="Tempat Lahir">
-						</div>
+							<div class="form-group">
+								<label>Tempat Lahir</label>
+								<input type="text" name="ftempat_lahir" class="form-control" value="<?php echo $row['tempat_lahir']; ?>">
+							</div>
 
-						<div class="form-group">
-							<label>Tanggal Lahir</label>
-							<input type="text" name="ftgl_lahir" class="form-control" placeholder="YYYY-MM-DD">
-						</div>
+							<div class="form-group">
+								<label>Tanggal Lahir</label>
+								<input type="text" name="ftgl_lahir" class="form-control" value="<?php echo $row['tgl_lahir']; ?>">
+							</div>
 
-						<div class="form-group">
-							<label>Alamat</label>
-							<input type="text" name="fdusun_desa" class="form-control" placeholder="Dusun/Desa">
-							<br>
-							<select name="fkecamatan" class="form-control">
-								<?php
-								  	$qTampilKecamatan = "SELECT * FROM kecamatan";
-								  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
-									while($row = mysqli_fetch_assoc($tampilKecamatan) ){
-								?>
+							<div class="form-group">
+								<label>Alamat</label>
+								<input type="text" name="fdusun_desa" class="form-control" value="<?php echo $row['dusun_desa']; ?>">
+								<br>
 
-   								<option value="<?php echo $row['kecamatan']; ?>"><?php echo $row['kecamatan']; ?></option>
+								<select name="fkecamatan" class="form-control">
+									<?php
+									  	$qTampilKecamatan = "SELECT * FROM kecamatan";
+									  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
+										while($rows = mysqli_fetch_assoc($tampilKecamatan) ){
+									?>
 
-								<?php 
-									} 
-								?>
-							</select>
-							<br>
-							<input type="text" name="fkota" class="form-control" value="Kab. Jombang" readonly>
-						</div>
+   									<option value="<?php echo $rows['kecamatan']; ?>"><?php echo $rows['kecamatan']; ?></option>
 
-						<div class="form-group">
-							<label>Nomor Telepon</label>
-							<input type="text" name="fno_telepon" maxlength="13" onkeypress="return hanyaAngka(event)" class="form-control" placeholder="No. Telepon">
-							<script>
-								function hanyaAngka(evt){
-								  	var charCode = (evt.which) ? evt.which : event.keyCode
-								   	if (charCode > 31 && (charCode < 48 || charCode > 57))
-							 
-								    return false;
-								  	return true;
-								}
-							</script>
-						</div>
+									<?php 
+										} 
+									?>
+								</select>
+								<br>
 
-						<div class="form-group">
-							<label>Jenjang</label>
-							<select name="fjenjang" class="form-control">
-								<option>S1</option>
-								<option>S2</option>
-								<option>S3</option>
-							</select>
-						</div>
+								<input type="text" name="fkota" class="form-control" value="Kab. Jombang" readonly>
+							</div>
 
-						<div class="form-group">
-							<label>Jurusan</label>
-							<input type="text" name="fjurusan" class="form-control" placeholder="Jurusan">
-						</div>
+							<div class="form-group">
+								<label>Nomor Telepon</label>
+								<input type="text" name="fno_telepon" class="form-control" value="<?php echo $row['no_telepon']; ?>">
+								<script>
+									function hanyaAngka(evt) {
+									  	var charCode = (evt.which) ? evt.which : event.keyCode
+									   	if (charCode > 31 && (charCode < 48 || charCode > 57))
+								 
+									    return false;
+									  	return true;
+									}
+								</script>
+							</div>
 
-						<div class="form-group">
-							<label>PT / Universitas</label>
-							<input type="text" name="fpt_univ" class="form-control" placeholder="Asal PT/Universitas">
-						</div>
+							<div class="form-group">
+								<label>Jenjang</label>
+								<select type="text" name="fjenjang" class="form-control" value="<?php echo $row['jenjang']; ?>">
+									<option>S1</option>
+									<option>S2</option>
+									<option>S3</option>
+								</select>
+							</div>
 
-						<div class="g-recaptcha" data-sitekey="6LdLMKkUAAAAAHap-4beGm4OPyKP3f9nNqjbidV1"></div><br>
+							<div class="form-group">
+								<label>Jurusan</label>
+								<input type="text" name="fjurusan" class="form-control" value="<?php echo $row['jurusan']; ?>">
+							</div>
 
-						<!--
-						<div class="form-group">
-							<label>File - EDITABLE</label>
-							<input type="file" class="form-control-file">
-							(max. 1MB)
-						</div>
-						-->
+							<div class="form-group">
+								<label>PT / Universitas</label>
+								<input type="text" name="fpt_univ" class="form-control" value="<?php echo $row['pt_univ']; ?>">
+							</div>
+
+							<!--
+							<div class="form-group">
+								<label>File - EDITABLE</label>
+								<input type="file" class="form-control-file">
+								(max. 1MB)
+							</div>
+							-->
 							
-						<button type="submit" class="btn btn-success" id="button1"><i class="fa fa-save"></i>TAMBAHKAN</button>
-						<button type="reset" class="btn btn-warning"><i class="fas fa-undo"></i>RESET</button>
-					</form>
+							<button type="submit" class="btn btn-success" id="button1"><i class="fa fa-save mr-sm-1"></i>SIMPAN</button>
+							<button type="reset" class="btn btn-warning"><i class="fas fa-undo mr-sm-1"></i>RESET</button>
+						</form>
 					<!-- end form -->
 				</div>
 			</div>
@@ -129,4 +132,5 @@
 
 <?php
 	include ('part/footer.php');
+	}
 ?>

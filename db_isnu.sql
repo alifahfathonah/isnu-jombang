@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Jun 2019 pada 05.35
+-- Generation Time: 21 Jun 2019 pada 08.59
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -48,7 +48,8 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id`, `id_user`, `nama`, `no_ktp`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `dusun_desa`, `kecamatan`, `kota`, `no_telepon`, `jenjang`, `jurusan`, `pt_univ`) VALUES
-(2, 2, 'al', '12345', 'laki', 'jombang', '2019-06-02', 'mojosongo', 'diwek', 'jombang', '1234', 's1', 'ti', 'unhasy');
+(2, 2, 'al', '12345', 'laki', 'jombang', '2019-06-02', 'mojosongo', 'Diwek', 'jombang', '1234', 's1', 'ti', 'unhasy'),
+(3, 3, 'adi f', '1234', 'Laki-laki', 'jombang', '2019-06-06', 'mojosongo', 'Diwek', 'Kab. Jombang', '123', 'S1', 'TI', 'UNHASY');
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `level`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user');
+(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user'),
+(3, 'adi', 'c46335eb267e2e1cde5b017acb4cd799', 'user');
 
 --
 -- Indexes for dumped tables

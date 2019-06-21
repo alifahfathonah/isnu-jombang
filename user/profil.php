@@ -1,6 +1,7 @@
 <?php
 	include ('../config/koneksi.php');
 	include('part/header.php');
+	include('part/navbar.php');
 
 	session_start();
 ?>
@@ -73,6 +74,7 @@
 							echo $row['nama'];
 						}
 					?>
+					<a href='edit-profil.php?id=<?php echo $row['id']; ?>'>Edit</a>
 				</div>
 			</div>
 		</div>
