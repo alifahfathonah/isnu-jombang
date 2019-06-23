@@ -91,7 +91,7 @@
 
 							<div class="form-group">
 								<label>Nomor Telepon</label>
-								<input type="text" name="fno_telepon" class="form-control" value="<?php echo $row['no_telepon']; ?>">
+								<input type="text" name="fno_telepon" maxlength="13" class="form-control" value="<?php echo $row['no_telepon']; ?>">
 								<script>
 									function hanyaAngka(evt) {
 									  	var charCode = (evt.which) ? evt.which : event.keyCode
