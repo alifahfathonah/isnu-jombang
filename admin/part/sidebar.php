@@ -6,13 +6,13 @@
 			<hr>
 			
 			<ul class="list-group">
-				<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
-					DASHBOARD
+				<li class="list btn btn-danger text-center" button onclick="window.location.href='#'" type="button" ><i class="fa fa-home"></i>
+				DASHBOARD
 				</li><br>
-				<button onclick="window.location.href='anggota.php'"><li class="list btn btn-danger text-center" type="button" ><i class="fa fa-user"></i>
+				<li class="list btn btn-danger text-center" button onclick="window.location.href='anggota.php'" type="button" ><i class="fa fa-user"></i>
 				ANGGOTA
-				</li></button><br>
-				<li class="list btn btn-danger text-center" type="button" ><i class="fa fa-home"></i>
+				</li><br>
+				<li class="list btn btn-danger text-center" button onclick="window.location.href='#'" type="button" ><i class="fa fa-sign-out-alt"></i>
 				LOGOUT
 				</li><br>
 			</ul>

@@ -1,6 +1,5 @@
 <?php
     include ('part/header.php');
-    include ('part/navbar.php');
 ?> 
 
     <!-- bg -->
@@ -15,26 +14,23 @@
                         }
                     }
                 ?>
+                <div class="card col-md-12">
+                  <div class="card-body">
+                                <center>
+                                    <h3 style="color: black; padding-bottom: 20px">ISNU - Daftar</h3>
+                                </center>
 
-                <center>
-                    <h3 style="color: black">DAFTAR</h3>
-                    <br>
-                </center>
-
-                <form method="post" action="aksi-daftar.php">
-                    <input type="text" name="username" class="form-control" placeholder="Masukkan Username" required="required">  
-                    <br>
-
-                    <input type="password" name="password" class="form-control" placeholder="Masukkan Password" required="required">                     
-                    <br><br>
-
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="DAFTAR">         
-                    <br>
-                    
-                    <center>
-                        <a href="index.php">LOGIN</a>
-                    </center> 
-                </form>
+                                <form method="post" action="aksi-login.php" >
+                                    <input type="text" name="username" class="form-control" placeholder="Masukkan Username" required="required"><div style="padding-bottom: 20px"></div>
+                                    <input type="password" name="password" class="form-control" placeholder="Masukkan Password" required="required"><div style="padding-bottom: 20px"></div>
+                                    <input type="submit" class="btn btn-primary btn-md btn-block" value="DAFTAR">
+                                    <div style="padding-bottom: 20px"></div>
+                                    <center>
+                                        <a href="index.php">LOGIN</a>
+                                    </center>
+                                </form>
+                  </div>
+                </div>
             </div>
         </div>
         <!-- akhir login -->

@@ -1,6 +1,5 @@
 <?php
     include ('part/header.php');
-	include ('part/navbar.php');
 ?> 
 
 	<!-- bg -->
@@ -18,28 +17,23 @@
 						}
 					}
 				?>
-
-				<center>
-					<h3 style="color: black">ISNU - LOGIN</h3>
-					<br>
+<div class="card col-md-12">
+  <div class="card-body">
+   				<center>
+					<h3 style="color: black; padding-bottom: 20px">ISNU - Login</h3>
 		 		</center>
 
 				<form method="post" action="aksi-login.php" >
-					<input type="text" name="username" class="form-control" placeholder="Masukkan Username" required="required">
-		  			<br>
-
-					<input type="password" name="password" class="form-control" placeholder="Masukkan Password" required="required">
-		  			<br><br>
-
-					<input type="submit" class="btn btn-primary btn-lg btn-block" value="LOGIN">
-		 			<br>
-		 			
+					<input type="text" name="username" class="form-control" placeholder="Masukkan Username" required="required"><div style="padding-bottom: 20px"></div>
+					<input type="password" name="password" class="form-control" placeholder="Masukkan Password" required="required"><div style="padding-bottom: 20px"></div>
+					<input type="submit" class="btn btn-primary btn-md btn-block" value="LOGIN">
+					<div style="padding-bottom: 20px"></div>
 					<center>
 						<a href="daftar.php">DAFTAR</a>
 					</center>
 				</form>
-			</div>
-		</div>
+  </div>
+</div>
 		<!-- akhir login -->
 	</div>
 <?php
