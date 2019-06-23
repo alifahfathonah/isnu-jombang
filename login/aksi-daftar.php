@@ -13,7 +13,7 @@
         echo '<script language="javascript">alert ("Username sudah digunakan!"); window.location="daftar.php";</script>';
         exit();
     }else{
-        $qDaftar = "INSERT INTO users (username, password, level) VALUES('$username', '$password', '$level')";  
+        $qDaftar = "INSERT INTO users (username, password, level) VALUES('$username', '$password', '$level')";
         if(mysqli_query($connect, $qDaftar)){
             header("location:index.php?pesan=sukses");
         }
