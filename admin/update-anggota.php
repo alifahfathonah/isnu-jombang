@@ -1,7 +1,7 @@
 <?php
 	include ('../config/koneksi.php');
 
-	$id 			= $_POST['id'];
+	$id 			= $_POST['fid'];
 	$vnama 			= $_POST['fnama'];
 	$vno_ktp 		= $_POST['fno_ktp'];
 	$vjenis_kelamin = $_POST['fjenis_kelamin'];
@@ -18,6 +18,9 @@
 	$qEdit 	= "UPDATE anggota SET nama='$vnama', no_ktp='$vno_ktp', jenis_kelamin='$vjenis_kelamin', tempat_lahir='$vtempat_lahir', tgl_lahir='$vtgl_lahir', dusun_desa='$vdusun_desa', kecamatan='$vkecamatan', kota='$vkota', no_telepon='$vno_telepon', jenjang='$vjenjang', jurusan='$vjurusan', pt_univ='$vpt_univ' WHERE id='$id'";
 	$edit 	= mysqli_query($connect, $qEdit);
 
+	if($edit){
 		header('location:anggota.php');
-
+	}else{
+		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal mengubah data'); window.location.href='anggota.php'</script>");
+	}
 ?>

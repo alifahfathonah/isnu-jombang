@@ -1,9 +1,7 @@
 <?php
-	session_start();
 	include ('../config/koneksi.php');
 
 	$id 			= $_POST['fid'];
-	$vid_user		= $_SESSION['id_user'];
 	$vnama 			= $_POST['fnama'];
 	$vno_ktp 		= $_POST['fno_ktp'];
 	$vjenis_kelamin = $_POST['fjenis_kelamin'];

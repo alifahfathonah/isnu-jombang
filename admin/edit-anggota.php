@@ -3,7 +3,7 @@
 	include ('part/header.php');
 	include ('part/navbar.php');
 
-	$id 		= $_GET['id'];
+	$id 		= $_GET['fid'];
 	$qCek		= mysqli_query($connect,"SELECT * FROM anggota WHERE id='$id'");
 	
 	while($row 	= mysqli_fetch_array($qCek)){
@@ -14,7 +14,6 @@
 		<?php
 			include ('part/sidebar.php');
 		?>
-
 		<!-- form -->
 		<div class="col-md-9">
 			<div class="card">
@@ -24,7 +23,7 @@
 
 					<form method="post" action="update-anggota.php">
 						<div class="form-group">
-							<input type="hidden" name="fid" class="form-control" value="<?php echo $row['id_user']; ?>">
+							<input type="hidden" name="fid" class="form-control" value="<?php echo $row['id']; ?>">
 						</div>
 
 						<div class="form-group">
@@ -49,9 +48,8 @@
 						<div class="form-group">
 							<label>Jenis Kelamin</label>
 							<select name="fjenis_kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" required>
-							  	<option value="">--Jenis Kelamin--</option>
-							  	<option value="Laki-laki">Laki-laki</option>
-							  	<option value="Perempuan">Perempuan</option>
+							  	<option <?php if($row['jenis_kelamin'] == 'Laki-laki'){ echo 'selected'; } ?> value="Laki-laki">Laki-laki</option>
+							  	<option <?php if($row['jenis_kelamin'] == 'Perempuan'){ echo 'selected'; } ?> value="Perempuan">Perempuan</option>
 							</select>
 						</div>
 
@@ -106,10 +104,9 @@
 						<div class="form-group">
 							<label>Jenjang</label>
 							<select type="text" name="fjenjang" class="form-control" value="<?php echo $row['jenjang']; ?>" required>
-								<option value="">--Pilih Jenjang--</option>
-								<option value="S1">S1</option>
-								<option value="S2">S2</option>
-								<option value="S3">S3</option>
+								<option <?php if($row['jenjang'] == 'S1'){ echo 'selected'; } ?> value="S1">S1</option>
+								<option <?php if($row['jenjang'] == 'S2'){ echo 'selected'; } ?> value="S2">S2</option>
+								<option <?php if($row['jenjang'] == 'S3'){ echo 'selected'; } ?> value="S3">S3</option>
 							</select>
 						</div>
 
