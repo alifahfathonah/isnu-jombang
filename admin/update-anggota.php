@@ -1,7 +1,7 @@
 <?php
 	include ('../config/koneksi.php');
 
-	$id 			= $_POST['fid'];
+	$id 			= $_POST['id'];
 	$vnama 			= $_POST['fnama'];
 	$vno_ktp 		= $_POST['fno_ktp'];
 	$vjenis_kelamin = $_POST['fjenis_kelamin'];
@@ -21,6 +21,6 @@
 	if($edit){
 		header('location:anggota.php');
 	}else{
-		echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal mengubah data'); window.location.href='anggota.php'</script>");
+	 	echo ("<script LANGUAGE='JavaScript'>window.alert('Gagal mengubah data'); window.location.href='anggota.php'</script>");
 	}
 ?>

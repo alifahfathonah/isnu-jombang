@@ -3,10 +3,9 @@
 	include ('part/header.php');
 	include ('part/navbar.php');
 
-	$id 		= $_GET['fid'];
-	$qCek		= mysqli_query($connect,"SELECT * FROM anggota WHERE id='$id'");
-	
-	while($row 	= mysqli_fetch_array($qCek)){
+	$id = $_GET['id'];
+	$qCek = mysqli_query($connect,"SELECT * FROM anggota WHERE id='$id'");
+	while($row = mysqli_fetch_array($qCek)){
 ?>
 
 <div class="container-fluid" style="margin-top: 80px">
@@ -14,23 +13,22 @@
 		<?php
 			include ('part/sidebar.php');
 		?>
-		<!-- form -->
 		<div class="col-md-9">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title text-center"><i class="fa fa-list-ul"></i> FORM DATA SARJANA NU JOMBANG</h5>
 					<hr>
-
+					<!-- form -->
 					<form method="post" action="update-anggota.php">
 						<div class="form-group">
-							<input type="hidden" name="fid" class="form-control" value="<?php echo $row['id']; ?>">
+							<input type="hidden" name="id" class="form-control" value="<?php echo $row['id']; ?>">
 						</div>
 
 						<div class="form-group">
 							<label>Nama</label>
 							<input type="text" name="fnama" class="form-control" value="<?php echo $row['nama']; ?>">
 						</div>
-							                
+			  
 						<div class="form-group">
 							<label>No. KTP</label>
 							<input type="text" name="fno_ktp" maxlength="16" onkeypress="return hanyaAngka(event)" class="form-control" value="<?php echo $row['no_ktp']; ?>">
@@ -75,14 +73,14 @@
 								  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
 									while($rows = mysqli_fetch_assoc($tampilKecamatan) ){
 								?>
-
+									
 								<option value="<?php echo $rows['kecamatan']; ?>"><?php echo $rows['kecamatan']; ?></option>
 
 								<?php 
 									} 
 								?>
 							</select>
-							<br
+							<br>
 
 							<input type="text" name="fkota" class="form-control" value="Kab. Jombang" readonly>
 						</div>
@@ -94,7 +92,7 @@
 								function hanyaAngka(evt) {
 								  	var charCode = (evt.which) ? evt.which : event.keyCode
 								   	if (charCode > 31 && (charCode < 48 || charCode > 57))
-								 
+							 
 								    return false;
 								  	return true;
 								}
@@ -131,7 +129,7 @@
 						<button type="submit" class="btn btn-success" id="button1"><i class="fa fa-save mr-sm-1"></i>SIMPAN</button>
 						<button type="reset" class="btn btn-warning"><i class="fas fa-undo mr-sm-1"></i>RESET</button>
 					</form>
-					<!-- akhir form -->
+					<!-- end form -->
 				</div>
 			</div>
 		</div>

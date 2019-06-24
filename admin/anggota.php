@@ -40,8 +40,6 @@
 						}
 					?>
 				</table><br>
-
-				<a href="tambah-anggota.php" type="button" class="btn-primary">Tambah Data Anggota</a>
 	    	</blockquote>
 	  	</div>
 	</div>
