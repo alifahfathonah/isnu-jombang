@@ -1,4 +1,5 @@
 <?php
+	include ('part/akses.php');
 	include ('../config/koneksi.php');
 	include ('part/header.php');
 	include ('part/navbar.php');
@@ -14,7 +15,6 @@
 					<h5 class="card-title">Profil</h5>
 					<p class="card-text"></p>
 					<?php
-						session_start();
 						$username = $_SESSION['username'];
 
 						$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM users AS A RIGHT JOIN anggota AS B ON A.id_user = B.id_user WHERE A.username = '$username'");

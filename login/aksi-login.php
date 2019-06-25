@@ -2,6 +2,7 @@
 	session_start();
 	include ('../config/koneksi.php');
 	
+
 	$username 	= $_POST['username'];
 	$password 	= md5($_POST['password']);
 	
@@ -12,13 +13,12 @@
 		$login = mysqli_fetch_assoc($qLogin);
 		if($login['level']=="admin"){
 			$_SESSION['username'] = $username;
-			$_SESSION['level'] = "admin";
+			$_SESSION['admin'] = $username;
 
 			header("location:../admin/dashboard.php");
 		}else if($login['level']=="user"){
-			$_SESSION['id_user'] = $id_user;
 			$_SESSION['username'] = $username;
-			$_SESSION['level'] = "user";
+			$_SESSION['user'] = $username;
 
 			header("location:../user/dashboard.php");
 		}else{

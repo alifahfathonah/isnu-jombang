@@ -1,14 +1,10 @@
 <?php
+	include ('part/akses.php');
 	include ('../config/koneksi.php');
 	include ('part/header.php');
 	include ('part/navbar.php');
 	include ('part/img-header.php');
 	include ('part/menu.php');
-
-	session_start();
-	if(empty($_SESSION['username'])){
-		header("location:../login/index.php");
-	}else{
 ?>
 
 <div class="container" style="margin-top: 30px">
@@ -32,5 +28,4 @@
 
 <?php
 	include('part/footer.php');
-	}
 ?>

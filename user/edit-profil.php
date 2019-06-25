@@ -1,9 +1,9 @@
 <?php
+	include ('part/akses.php');
 	include ('../config/koneksi.php');
 	include ('part/header.php');
 	include ('part/navbar.php');
 
-	session_start();
 	$username 	= $_SESSION['username'];
 	$qCek		= mysqli_query($connect,"SELECT A.*,B.* FROM users AS A LEFT JOIN anggota AS B ON A.id_user = B.id_user WHERE A.username = '$username'");
 	

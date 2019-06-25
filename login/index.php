@@ -1,4 +1,5 @@
 <?php
+	include ('part/akses.php');
     include ('part/header.php');
 ?> 
 
@@ -25,7 +26,9 @@
 
 				<form method="post" action="aksi-login.php" >
 					<input type="text" name="username" class="form-control" placeholder="Masukkan Username" required="required"><div style="padding-bottom: 20px"></div>
+
 					<input type="password" name="password" class="form-control" placeholder="Masukkan Password" required="required"><div style="padding-bottom: 20px"></div>
+					
 					<input type="submit" class="btn btn-primary btn-md btn-block" value="LOGIN">
 					<div style="padding-bottom: 20px"></div>
 					<center>
