@@ -49,6 +49,7 @@
 						<div class="form-group">
 							<label>Jenis Kelamin</label>
 							<select name="fjenis_kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" required>
+								<option value="">--Jenis Kelamin--</option>
 							  	<option <?php if($row['jenis_kelamin'] == 'Laki-laki'){ echo 'selected'; } ?> value="Laki-laki">Laki-laki</option>
 							  	<option <?php if($row['jenis_kelamin'] == 'Perempuan'){ echo 'selected'; } ?> value="Perempuan">Perempuan</option>
 							</select>
@@ -105,6 +106,7 @@
 						<div class="form-group">
 							<label>Jenjang</label>
 							<select type="text" name="fjenjang" class="form-control" value="<?php echo $row['jenjang']; ?>" required>
+								<option value="">--Jenjang--</option>
 								<option <?php if($row['jenjang'] == 'S1'){ echo 'selected'; } ?> value="S1">S1</option>
 								<option <?php if($row['jenjang'] == 'S2'){ echo 'selected'; } ?> value="S2">S2</option>
 								<option <?php if($row['jenjang'] == 'S3'){ echo 'selected'; } ?> value="S3">S3</option>

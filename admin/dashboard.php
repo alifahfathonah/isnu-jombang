@@ -14,7 +14,7 @@
 		
 ?>
 	<div class="container-fluid" style="margin-top: 80px">
-		<div class="row">
+		<div class="row" style="min-height: 100vh">
 			<?php
 				include ('part/sidebar.php');
 			?>

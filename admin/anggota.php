@@ -4,13 +4,13 @@
 	include ('part/navbar.php');
 ?>
 	
-	<div class="card col-md-10 offset-md-1" style="padding-top: 100px">
+	<div class="card col-md-10 offset-md-1" style="margin-top: 100px;min-height:100vh;">
 		<div class="card-header">
 	  		<i class="fa fa-list"></i>
 	    	Data Anggota
 		</div>
 
-	  	<div class="card-body">
+	  	<div>
 	    	<blockquote class="blockquote mb-0">
 				<table>
 					<tr>

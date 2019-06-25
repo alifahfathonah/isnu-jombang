@@ -7,7 +7,7 @@
 
 <!-- content -->
 <div class="container" style="margin-top: 40px">
-	<div class="row" style="min-height: 350px">
+	<div class="row" style="min-height: 100vh">
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-body">
