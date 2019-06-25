@@ -2,6 +2,8 @@
 	include ('../config/koneksi.php');
 	include ('part/header.php');
 	include ('part/navbar.php');
+	include ('part/img-header.php');
+	include ('part/menu.php');
 
 	session_start();
 	if(empty($_SESSION['username'])){
@@ -9,83 +11,21 @@
 	}else{
 ?>
 
-<!-- Menu -->
-<div class="container" style="margin-top: 80px">
-	<div class="row">
-		<div class="col-md-3" style="margin-top: 10px">
-			<a href="dashboard.php" style="color: #000;text-decoration: none">
-				<div class="card">
-					<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
-						<i class="fa fa-home"></i>
-						<hr>
-						HOME
-					</div>
-				</div>
-			</a>
-		</div>
-
-		<div class="col-md-3" style="margin-top: 10px">
-			<a href="profil.php" style="color: #000;text-decoration: none">
-				<div class="card">
-					<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
-						<i class="fa fa-users"></i>
-						<hr>
-						PROFIL
-					</div>
-				</div>
-			</a>
-		</div>
-
-		<div class="col-md-3" style="margin-top: 10px">
-			<a href="anggota.php" style="color: #000;text-decoration: none">
-				<div class="card">
-					<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
-						<i class="fa fa-list-ul"></i>
-						<hr>
-						DAFTAR ANGGOTA
-					</div>
-				</div>
-			</a>
-		</div>
-
-		<div class="col-md-3" style="margin-top: 10px">
-			<a href="../login/index.php" style="color: #000;text-decoration: none">
-				<div class="card">
-					<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
-						<i class="fa fa-sign-in-alt"></i>
-						<hr>
-						LOGIN 
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-</div>
-<!-- End Menu -->
-
 <div class="container" style="margin-top: 30px">
 	<div class="row">
 		<div class="col-8">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Isi Konten</h5>
-					<p class="card-text"></p>
+					<p class="card-text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
 				</div>
 			</div>
 		</div>
-		<div class="col-4">
-			<div class="card">
-				<div class="card-header">
-					About ISNU
-				</div>
-				<div class="card-body" style="font-size: 20px;">
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<i class="fas fa-camera btn btn-primary">Instagram</i>
-				</div>
-			</div>
-		</div>
+		<?php
+			include('part/sidecard.php');
+		?>
 	</div>
 </div>
 <!-- end content -->

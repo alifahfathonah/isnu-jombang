@@ -74,7 +74,7 @@
 								<?php
 								  	$qTampilKecamatan = "SELECT * FROM kecamatan";
 								  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
-									while($rows = mysqli_fetch_assoc($tampilKecamatan) ){
+									while($rows = mysqli_fetch_assoc($tampilKecamatan)){
 								?>
 									
 								<option value="<?php echo $rows['kecamatan']; ?>"><?php echo $rows['kecamatan']; ?></option>
