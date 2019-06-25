@@ -1,5 +1,5 @@
 <?php
-    include ('part/cek-session.php');
+    include ('part/akses.php');
     include ('part/header.php');
 ?> 
 

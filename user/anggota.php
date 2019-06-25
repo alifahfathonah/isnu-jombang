@@ -3,6 +3,7 @@
 	include ('../config/koneksi.php');
 	include ('part/header.php');
 	include ('part/navbar.php');
+	include ('part/img-header.php');
 	include ('part/menu.php');
 ?>
 

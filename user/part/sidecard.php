@@ -7,7 +7,7 @@
 			<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
 			<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
 			<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-			<i class="fas fa-camera btn btn-primary">Instagram</i>
+			<i class="fas fa-camera btn btn-primary"> Social Media</i>
 		</div>
 	</div>
 </div>

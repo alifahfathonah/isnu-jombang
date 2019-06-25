@@ -43,7 +43,7 @@
 		</div>
 
 		<div class="col-md-3" style="margin-top: 10px">
-			<a href="login/index.php" style="color: #000;text-decoration: none">
+			<a href="login/daftar.php" style="color: #000;text-decoration: none">
 			<div class="card">
 				<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
 					<i class="fa fa-user-plus"></i>
@@ -62,8 +62,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Isi Konten</h5>
-					<p class="card-text"></p>
-					
+					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
 				</div>
 			</div>
 		</div>
@@ -77,7 +76,7 @@
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<i class="fas fa-camera btn btn-primary">Instagram</i>
+					<i class="fas fa-camera btn btn-primary"> Social Media</i>
 				</div>
 			</div>
 		</div>
