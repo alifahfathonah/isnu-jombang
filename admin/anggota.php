@@ -10,18 +10,20 @@
 	  		<i class="fa fa-list"></i>
 	    	Data Anggota
 		</div>
-
+<br>
 	  	<div>
 	    	<blockquote class="blockquote mb-0">
-				<table>
+				<table class="table table-striped table-bordered" id="table_id">
+					<thead>
 					<tr>
-						<th width='300'><strong>No</strong></th>
-						<th width='700'><strong>Nama</strong></th>
-						<th width='700'><strong>Kecamatan</strong></th>
-						<th width='700'><strong>Jurusan</strong></th>
-						<th colspan='2' width='150'><center><strong>Aksi</strong></center></th>
+						<th><strong>No</strong></th>
+						<th><strong>Nama</strong></th>
+						<th><strong>Kecamatan</strong></th>
+						<th><strong>Jurusan</strong></th>
+						<th><center><strong>Aksi</strong></center></th>
 					</tr>
-
+					</thead>
+					<tbody>
 					<?php
 						$no = 1;
 					  	$qTampil = mysqli_query($connect, "SELECT * FROM anggota");
@@ -33,13 +35,15 @@
 						<td><?php echo $row['nama']; ?></td>
 						<td><?php echo $row['kecamatan']; ?></td>
 						<td><?php echo $row['jurusan']; ?></td>
-						<td align='right'><a href='edit-anggota.php?id=<?php echo $row['id']; ?>'>Edit</a></td>
-						<td align='left'><a href='hapus-anggota.php?id=<?php echo $row['id']; ?>'>Hapus</a></td>
+						<td>		
+							<a class="btn btn-success btn-sm" href='edit-anggota.php?id=<?php echo $row['id']; ?>'><i class="fa fa-edit"></i> Edit</a> <a class="btn btn-danger btn-sm" href='hapus-anggota.php?id=<?php echo $row['id']; ?>'><i class="fa fa-trash"></i> Hapus</a>
+						</td>
 					</tr>
 
 					<?php
 						}
 					?>
+				</tbody>
 				</table><br>
 	    	</blockquote>
 	  	</div>

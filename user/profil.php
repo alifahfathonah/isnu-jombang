@@ -57,7 +57,7 @@
 						<?php echo $row['pt_univ']; ?>
 						<br><br>
 
-					<a href='edit-profil.php?id=<?php echo $row['id']; ?>'>Edit Profil</a>
+					<a class="btn btn-success btn-md" href='edit-profil.php?id=<?php echo $row['id']; ?>'><i class="fa fa-edit"></i> Edit Profil</a>
 					<?php
 						}
 					?>
