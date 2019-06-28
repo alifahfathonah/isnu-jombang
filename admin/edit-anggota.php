@@ -84,8 +84,8 @@
 								<option value="<?php echo $rows['kecamatan']; ?>"><?php echo $rows['kecamatan']; ?></option>
 
 								<?php 
-									} 
-								}
+										} 
+									}
 								?>
 							</select>
 							<br>

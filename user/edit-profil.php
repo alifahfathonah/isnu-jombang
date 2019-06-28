@@ -73,15 +73,21 @@
 							<select name="fkecamatan" class="form-control" required>
 								<option value="">--Pilih Kecamatan--</option>
 								<?php
-								  	$qTampilKecamatan = "SELECT * FROM kecamatan";
-								  	$tampilKecamatan = mysqli_query($connect, $qTampilKecamatan);
-									while($rows = mysqli_fetch_assoc($tampilKecamatan)){
+									$selectedKecamatan	= $row['kecamatan'];
+								  	$qTampilKecamatan 	= "SELECT * FROM kecamatan";
+								  	$tampilKecamatan 	= mysqli_query($connect, $qTampilKecamatan);
+									while($rows = mysqli_fetch_assoc($tampilKecamatan) ){
+										if($rows['kecamatan'] == $selectedKecamatan){
 								?>
-									
+								<option value="<?php echo $rows['kecamatan']; ?>" selected="selected"><?php echo $rows['kecamatan']; ?></option>
+								<?php
+								        }else{
+								?>
 								<option value="<?php echo $rows['kecamatan']; ?>"><?php echo $rows['kecamatan']; ?></option>
 
 								<?php 
-									} 
+										} 
+									}
 								?>
 							</select>
 							<br>
