@@ -1,7 +1,7 @@
 <!-- Menu -->
-<div class="container" style="margin-top: 80px">
+<div class="container" style="margin-top: 40px;margin-bottom: 40px">
 	<div class="row">
-		<div class="offset-md-0 col-md-4" style="margin-top: 10px">
+		<div class="offset-md-0 col-md-4">
 			<a href="dashboard.php" style="color: #000;text-decoration: none">
 				<div class="card">
 					<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
@@ -13,7 +13,7 @@
 			</a>
 		</div>
 
-		<div class="col-md-4" style="margin-top: 10px">
+		<div class="col-md-4">
 			<a href="profil.php" style="color: #000;text-decoration: none">
 				<div class="card">
 					<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">
@@ -25,7 +25,7 @@
 			</a>
 		</div>
 
-		<div class="col-md-4" style="margin-top: 10px">
+		<div class="col-md-4">
 			<a href="anggota.php" style="color: #000;text-decoration: none">
 				<div class="card">
 					<div class="card-body" style="text-align: center;font-size: 20px;font-weight: bold;">

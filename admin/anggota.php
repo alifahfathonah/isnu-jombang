@@ -10,7 +10,7 @@
 	  		<i class="fa fa-list"></i>
 	    	Data Anggota
 		</div>
-<br>
+		<br>
 	  	<div>
 	    	<blockquote class="blockquote mb-0">
 				<table class="table table-striped table-bordered" id="table_id">
@@ -44,7 +44,8 @@
 							}
 						?>
 					</tbody>
-				</table><br>
+				</table>
+				<br>
 	    	</blockquote>
 	  	</div>
 	</div>
