@@ -4,22 +4,22 @@
   	include ('part/header.php');
   	include ('part/navbar.php');
 ?>
-	<div class="container-fluid" style="margin-top: 80px">
-		<div class="row" style="min-height: 100vh">
-			<?php
-				include ('part/sidebar.php');
-			?>
-			<!-- form -->
-			<div class="col-md-9">
-				<div class="card">
-					<div class="card-body ">
-					</div>
+<div class="container-fluid" style="margin-top: 100px; min-height: 100vh">
+	<div class="row">
+		<?php
+			include ('part/sidebar.php');
+		?>
+		<!-- form -->
+		<div class="col-md-9">
+			<div class="card">
+				<div class="card-body ">
+					LOREM IPSUM
 				</div>
 			</div>
-			<!-- akhir form -->
 		</div>
+		<!-- akhir form -->
 	</div>
-
+</div>
 <?php
 	include ('part/footer.php');
 ?>
