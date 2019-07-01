@@ -4,7 +4,6 @@
 	include ('part/header.php');
 	include ('part/navbar.php');
 	include ('part/img-header.php');
-	include ('part/menu.php');
 ?>
 
 <div class="container" style="margin-top: 30px">

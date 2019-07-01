@@ -4,7 +4,7 @@
   	include ('part/header.php');
   	include ('part/navbar.php');
 ?>
-<div class="container-fluid" style="margin-top: 100px; min-height: 100vh">
+<div class="container" style="margin-top: 100px; min-height: 100vh">
 	<div class="row">
 		<?php
 			include ('part/sidebar.php');

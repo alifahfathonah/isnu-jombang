@@ -19,7 +19,7 @@
 			$_SESSION['username'] = $username;
 			$_SESSION['user'] = "user";
 
-			header("location:../user/dashboard.php");
+			header("location:../index.php");
 		}else{
 			header("location:index.php?pesan=gagal");
 		}	
