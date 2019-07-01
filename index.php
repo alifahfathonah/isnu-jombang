@@ -1,6 +1,15 @@
 <?php
-	include ('public_part/header.php');
-	include ('public_part/navbar.php');
+	session_start();
+
+	if(isset($_SESSION['username'])){
+	 	if(isset($_SESSION['admin'])){
+	 		header('location:admin/index.php');
+		}else if(isset($_SESSION['user'])){
+		 	header('location:user/index.php');
+		}
+	}else{
+		include ('public_part/header.php');
+		include ('public_part/navbar.php');
 ?>
 
 <!-- menu -->
@@ -85,5 +94,6 @@
 <!-- end content -->
 
 <?php
-	include('public_part/footer.php');
+		include('public_part/footer.php');
+	}
 ?>

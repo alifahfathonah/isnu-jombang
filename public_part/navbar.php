@@ -5,7 +5,7 @@
 			<img src="assets/gambar/header.png" class="card-img-top" alt="...">
 		</div>
 		<h4 class="text-white">Ikatan Sarjana Nahdlatul Ulama</h4>
-		<button type="button" class="btn btn-secondary" onclick="window.location.href='logout.php'">Logout</button>
+		<button type="button" class="btn btn-secondary" onclick="window.location.href='login/index.php'">Login</button>
 	</div>
 </nav>
 <!-- akhir navbar -->
