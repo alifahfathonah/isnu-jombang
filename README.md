@@ -1,2 +1,0 @@
-# isnu-jombang
-isnu jombang
