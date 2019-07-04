@@ -1,69 +1,72 @@
-<?php
-	///include ('part/akses.php');
-	include ('config/koneksi.php');
-	include ('public_part/header.php');
-	include ('public_part/navbar.php');
-	include ('public_part/menu.php');
-	//include ('part/img-header.php');
-?>
+<?php include 'public_part/header.php';?>
 
+  <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/bg_isnu.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
 
-<div class="container" style="margin-top: 20px; min-height:100vh">
-	<div class="row">
-		<div class="col-md-8">
-			<h5 class="card-title"><i class="fa fa-list-ul"></i> DATA SARJANA NU JOMBANG</h5>
-			<hr>
-			<div class="card">
-				<div class="card-body">
-					<blockquote class="blockquote mb-0">
-						<table class="table table-striped table-bordered" id="table_id">
-							<thead>
-								<tr>
-									<th><strong>No</strong></th>
-									<th><strong>Nama</strong></th>
-									<th><strong>Kecamatan</strong></th>
-									<th><strong>Jurusan</strong></th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php
-									$no = 1;
-								  	$qTampil = mysqli_query($connect, "SELECT * FROM anggota");
-								  	foreach($qTampil as $row){
-								?>
+          <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
+            
+            
+            <div class="row justify-content-center mt-5">
+              <div class="col-md-8 text-center">
+                <h1>DAFTAR ANGGOTA</h1>
+                <p class="mb-0">Ikatan Sarjana Nahdlotul Ulama Jombang.</p>
+              </div>
+            </div>
 
-								<tr>
-									<td><?php echo $no++; ?></td>
-									<td><a href="detail.php?id=<?php echo $row['id']; ?>"><?php echo $row['nama']; ?></a></td>
-									<td><?php echo $row['kecamatan']; ?></td>
-									<td><?php echo $row['jurusan']; ?></td>
-								</tr>
+            
+          </div>
+        </div>
+      </div>
+    </div> 
 
-								<?php
-									}
-								?>
-							</tbody>
-						</table><br>
-			    	</blockquote>
-				</div>
-			</div>
-		</div>
+  <div class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center border-success">
+            <h2 class="font-weight-light text-success">Daftar Anggota</h2>
+            <p class="color-black-opacity-5">Ikatan Sarjana Nahdlotul Ulama Jombang</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped table-bordered" id="table_id">
+              <thead>
+                <tr>
+                  <th><strong>No</strong></th>
+                  <th><strong>Nama</strong></th>
+                        <th><strong>Jenjang</strong></th>
+                  <th><strong>Jurusan</strong></th>
+                        <th><strong>PT / Universitas</strong></th>
+                </tr>
+                </thead>
+                <tbody>
+                  <?php
+                            include ('config/koneksi.php');
+                    $no = 1;
+                    $qTampil = mysqli_query($connect, "SELECT * FROM anggota");
+                    foreach($qTampil as $row){
+                  ?>
 
-		<div class="col-md-4">
-			<div class="card">
-				<div class="card-header">
-					About ISNU
-				</div>
-				<div class="card-body" style="font-size: 20px;">
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					<i class="fas fa-camera btn btn-primary"> Social Media</i>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<?php
-	include ('public_part/footer.php');
-?>
+                  <tr>
+                    <td><?php echo $no++; ?></td>
+                    <td><a href="detail.php?id=<?php echo $row['id_anggota']; ?>"><?php echo $row['nama']; ?></a></td>
+                            <td><?php echo $row['jenjang']; ?></td>
+                              <td><?php echo $row['jurusan']; ?></td>
+                            <td><?php echo $row['pt_univ']; ?></td>
+                  </tr>
+
+                  <?php
+                    }
+                  ?>
+                </tbody>
+            </table>
+            <br>
+            <a class="btn btn-warning btn-md" href='cetak.php'><i class="fa fa-print"></i> Cetak Data Anggota</a>
+          </div>
+          
+
+        </div>
+      </div>
+    </div> 
+<?php include 'public_part/footer.php';?>

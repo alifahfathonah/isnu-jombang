@@ -1,21 +1,24 @@
 <?php
-    include ('../config/koneksi.php');
+	include '../config/koneksi.php';
 
-    $username   = mysqli_real_escape_string($connect, $_POST["username"]);  
-    $password   = mysqli_real_escape_string($connect, $_POST["password"]);  
-    $password   = md5($password);  
-    $level      = "user";
+	$username= $_POST['username'];
+	$password= md5($_POST['password']);
+    $img = $_POST['img'];
 
-    $qCekUser   = mysqli_query($connect, "SELECT * FROM users WHERE username='$_POST[username]'");
+	$qCekUser   = mysqli_query($connect, "SELECT * FROM anggota WHERE username='$username'");
     $row        = mysqli_num_rows($qCekUser);
 
-    if($row > 0){
-        echo '<script language="javascript">alert ("Username sudah digunakan!"); window.location="daftar.php";</script>';
+    if ($row > 0) {
+    	echo '<script language="javascript">alert ("Username sudah digunakan!"); window.location="daftar.php";</script>';
         exit();
+        
     }else{
-        $qDaftar = "INSERT INTO users (username, password, level) VALUES('$username', '$password', '$level')";
+        $qDaftar = "INSERT INTO anggota (username, password, img) VALUES('$username', '$password', '$img')";
         if(mysqli_query($connect, $qDaftar)){
-            header("location:index.php?pesan=sukses");
-        }
+            header("location:login.php?pesan=sukses");
+    	}
     }
+
+	
+
 ?>
