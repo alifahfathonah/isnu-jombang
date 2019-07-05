@@ -1,11 +1,19 @@
+<?php
+  session_start();
+  include '../config/koneksi.php';
+  if(empty($_SESSION['admin'])){
+      header("location:login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ISNU Jombang</title>
+    <title>Admin | ISNU Jombang</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="../fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -45,7 +53,7 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a href="../index.php" class="text-white mb-0"><img src="../images/ISNU.png" width="150"></a></h1>
+            <h1 class="mb-0 site-logo"><img src="../images/ISNU.png" width="150"></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -55,16 +63,14 @@
                 <?php
                   error_reporting(0);
                   session_start();
-                  $username = $_SESSION['username'];
-                  if(isset($_SESSION['username'])){
+                  $username = $_SESSION['admin'];
+                  if(isset($_SESSION['admin'])){
                       echo '
                       <li class="has-children">
-
-                        <a href="#">'.$_SESSION['username'].'</a>
+                        <a href="#">'.$_SESSION['admin'].'</a>
                         <ul class="dropdown">
-                          <li><a href="../index.php">Home</a></li>
-                          <li><a href="profil.php">Profil</a></li>
-                          <li><a href="../logout.php">Logout</a></li>
+                          <li><a href="../index.php">Halaman Depan</a></li>
+                          <li><a href="logout.php">Logout</a></li>
                         </ul>
                       </li>
                       ';

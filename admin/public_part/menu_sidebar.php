@@ -13,10 +13,10 @@
 								<li class="list btn btn-success text-center" button onclick="window.location.href='data_anggota.php'" type="button" ><i class="fa fa-user"></i>
 								DATA ANGGOTA
 								</li><br>
-								<li class="list btn btn-success text-center" button onclick="window.location.href='post.php'" type="button" ><i class="fa fa-user"></i>
+								<li class="list btn btn-success text-center" button onclick="window.location.href='post.php'" type="button" ><i class="fa fa-book"></i>
 								POST
 								</li><br>
-								<li class="list btn btn-success text-center" button onclick="window.location.href='../logout.php'" type="button" ><i class="fa fa-sign-out-alt"></i>
+								<li class="list btn btn-success text-center" button onclick="window.location.href='logout.php'" type="button" ><i class="fa fa-sign-out-alt"></i>
 								LOGOUT
 								</li><br>
 							</ul>
@@ -37,7 +37,7 @@
 				                    <div class="title">
 				                        <h6>Admin</h6>
 				                    </div>
-				                    <div class="desc">Administrator</div>
+				                    <div class="desc" style="color: red;">Anda masuk sebagai Administrator</div>
 									<hr>
 				                </div>
 				                

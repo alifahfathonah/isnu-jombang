@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include ('part/header.php');
+	include ('part_login/header.php');
 ?> 
 
 <div class="container">
@@ -9,21 +9,21 @@
       	<center>
       		<br>
       		<?php 
-				if(isset($_GET['pesan'])){
-					if($_GET['pesan']=="gagal"){
-						echo "<div class='alert alert-danger'><center>Username atau Password Anda salah!</center></div>";
-					}
-					if($_GET['pesan']=="sukses"){
-						echo "<div class='alert alert-success'><center>Berhasil daftar, silahkan login!</center></div>";
-					}
-				}
-			?>
+    				if(isset($_GET['pesan'])){
+    					if($_GET['pesan']=="gagal"){
+    						echo "<div class='alert alert-danger'><center>Username atau Password Anda salah!</center></div>";
+    					}
+    					if($_GET['pesan']=="sukses"){
+    						echo "<div class='alert alert-success'><center>Berhasil daftar, silahkan login!</center></div>";
+    					}
+    				}
+    			?>
       		<br>
       		<img src="../images/ISNU.png" width="300">
       	</center>
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Silahkan Masuk</h5>
+            <h5 class="card-title text-center">Login Administrator</h5>
             <form method="post" action="aksi-login.php" class="form-signin">
               <div class="form-label-group">
                 <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Masukkan Username" required autofocus>
@@ -41,11 +41,9 @@
               </div>
               <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Login</button>
               <hr class="my-4">
-             <p>Belum punya akun? Daftar <a href="daftar.php">disini</a></p>
             </form>
           </div>
         </div>
-        <center class="text-white">Copyright © 2019 Bisma Labs, All Rights Reserved.</center><br>
       </div>
     </div>
 </div>
@@ -53,5 +51,5 @@
 
 
 <?php
-    	include ('part/footer.php');
+    	include ('part_login/footer.php');
 ?>

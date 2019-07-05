@@ -11,8 +11,8 @@
 	
 	if($row > 0){
 		$login = mysqli_fetch_assoc($qLogin);
-		
-			$_SESSION['username'] = $username;
+			
+			$_SESSION['admin'] = $username;
 			$_SESSION['admin'] = "admin";
 
 			header("location:index.php");
