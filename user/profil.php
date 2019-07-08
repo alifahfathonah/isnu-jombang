@@ -147,7 +147,7 @@
 												<th>
 												<a class="btn btn-success btn-md" href='edit-profil.php?id=<?php echo $row['id_anggota']; ?>'><i class="fa fa-edit"></i> Edit Profil</a>
 												
-												<a class="btn btn-warning btn-md" target="_blank" onclick="window.open('kartu.php?id=<?php echo $row['id_anggota']; ?>','Cetak Kartu Ujian');"><i class="fa fa-print"></i> Cetak Kartu</a>
+												<a class="btn btn-warning btn-md" target="_blank" onclick="window.open('kartu.php?id=<?php echo $row['id_anggota']; ?>','Cetak Kartu');"><i class="fa fa-print"></i> Cetak Kartu</a>
 												</th>
 											</tr>
 											<?php

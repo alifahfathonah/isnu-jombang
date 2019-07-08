@@ -56,7 +56,7 @@
                               <?php
                                         include ('config/koneksi.php');
                                 $no = 1;
-                                $qTampil = mysqli_query($connect, "SELECT * FROM anggota");
+                                $qTampil = mysqli_query($connect, "SELECT * FROM anggota order by id_anggota desc");
                                 foreach($qTampil as $row){
                               ?>
 
@@ -68,7 +68,7 @@
                                 <td><?php echo $row['pt_univ']; ?></td>
                                 <td>
                                   <a class="btn btn-success" href='edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-edit"></i></a><hr>
-                                  <a class="btn btn-danger" href='aksi-delet-anggota.php?id=<?php echo $row['id_anggota']; ?>'><i class="fa fa-trash"></i></a>
+                                  <a class="btn btn-danger" href='aksi-delete.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-trash"></i></a>
                                 </td>
                               </tr>
 

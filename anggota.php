@@ -10,7 +10,7 @@
             <div class="row justify-content-center mt-5">
               <div class="col-md-8 text-center">
                 <h1>DAFTAR ANGGOTA</h1>
-                <p class="mb-0">Ikatan Sarjana Nahdlotul Ulama Jombang.</p>
+                <p class="mb-0">Ikatan Sarjana Nahdlatul Ulama Jombang.</p>
               </div>
             </div>
 
@@ -30,15 +30,15 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <table class="table table-striped table-bordered" id="table_id">
-              <thead>
-                <tr>
-                  <th><strong>No</strong></th>
-                  <th><strong>Nama</strong></th>
-                        <th><strong>Jenjang</strong></th>
-                  <th><strong>Jurusan</strong></th>
-                        <th><strong>PT / Universitas</strong></th>
-                </tr>
+            <table class="table table-striped table-bordered table-resposive" id="table_id">
+             <thead>
+                  <tr>
+                    <th><strong>No</strong></th>
+                    <th><strong>Nama</strong></th>
+                    <th><strong>Jenjang</strong></th>
+                    <th><strong>Jurusan</strong></th>
+                    <th><strong>PT / Universitas</strong></th>
+                  </tr>
                 </thead>
                 <tbody>
                   <?php
@@ -50,10 +50,10 @@
 
                   <tr>
                     <td><?php echo $no++; ?></td>
-                    <td><a href="detail.php?id=<?php echo $row['id_anggota']; ?>"><?php echo $row['nama']; ?></a></td>
-                            <td><?php echo $row['jenjang']; ?></td>
-                              <td><?php echo $row['jurusan']; ?></td>
-                            <td><?php echo $row['pt_univ']; ?></td>
+                    <td><?php echo $row['nama']; ?></td>
+                    <td><?php echo $row['jenjang']; ?></td>
+                    <td><?php echo $row['jurusan']; ?></td>
+                    <td><?php echo $row['pt_univ']; ?></td>
                   </tr>
 
                   <?php
@@ -61,8 +61,6 @@
                   ?>
                 </tbody>
             </table>
-            <br>
-            <a class="btn btn-warning btn-md" href='cetak.php'><i class="fa fa-print"></i> Cetak Data Anggota</a>
           </div>
           
 

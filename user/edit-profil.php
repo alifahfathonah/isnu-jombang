@@ -118,7 +118,8 @@
 
 						                <div class="col-lg-12">
 					                  		<label>Foto :</label>
-
+					                  		<br>
+					                  		<small style="color: red;">*/ Mohon untuk upload foto juga!</small>
 						                    <input type="file" name="foto" id="foto" class="form-control rounded" placeholder="Masukkan Foto">
 
 						                </div>

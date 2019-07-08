@@ -296,7 +296,7 @@ h1, h2, h3, h4, h5,
   margin-bottom: 0px;
   z-index: 1999;
   position: absolute;
-  top: 20px;
+  top: 0px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -1689,7 +1689,7 @@ h1, h2, h3, h4, h5,
     border-bottom-right-radius: 7px;
     display: block !important; }
     .listing.vertical .img {
-      height: 150px;
+      height: 225px;
       margin-right: 0;
       border-top-right-radius: 7px;
       border-bottom-left-radius: 0px; }

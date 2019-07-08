@@ -48,16 +48,15 @@ include ('../config/koneksi.php');
 					jurusan = '$jurusan',
 					pt_univ = '$pt_univ',
 					img = '$fotobaru'
-					 WHERE id_anggota='$id'";
+					WHERE id_anggota='$id'";
 	    $sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 	    if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 	      // Jika Sukses, Lakukan :
 	      header("location: profil.php"); // Redirect ke halaman index.php
 	    }
   	}else{
-    // Jika gambar gagal diupload, Lakukan :
-	    echo "Maaf, Gambar gagal untuk diupload.";
-	    echo "<br><a href='edit-profil.php'>Kembali Ke Form</a>";
+    	// Jika gambar gagal diupload, Lakukan :
+	    echo "<script>alert('Peringtan! Gambar/foto harus diupload sekalian!');history.go(-1);</script>";
   }
 
 

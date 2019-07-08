@@ -11,7 +11,7 @@
             <div class="row justify-content-center mt-5">
               <div class="col-md-8 text-center">
                 <h1>INFORMASI ISNU</h1>
-                <p class="mb-0">Ikatan Sarjana Nahdlotul Ulama Jombang.</p>
+                <p class="mb-0">Ikatan Sarjana Nahdlatul Ulama Jombang.</p>
               </div>
             </div>
 
@@ -20,232 +20,77 @@
         </div>
       </div>
     </div> 
-<div class="site-section">
+    <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-
             <div class="row">
-              <div class="col-lg-6">
+              <div class="col-md-7 text-left border-primary">
+                <h2 class="font-weight-light text-primary">Berita Terbaru</h2>
+
+              </div>
+              <div class="col-lg-12">
+                <br>
+                <?php 
+                  include 'config/koneksi.php';
+                  $qTampil = mysqli_query($connect, "SELECT * FROM info where kategori= 'berita' order by id_info desc limit 3");
+                  foreach($qTampil as $row){
+                ?>
+                <div class="d-block d-md-flex listing">
+                  <a href="listings-single.html" class="img d-block" style="background-image: url('admin/img/<?php echo $row['img']; ?>')"></a>
+                  <div class="lh-content">
+
+                    <h3>
+                      <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>"><?php echo $row['judul']; ?></a>
+                    </h3>
+
+                    <p><?php echo substr($row['isi'], 0,160); ?>...</p>
                 
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Cars &amp; Vehicles</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">Red Luxury Car</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
+                    <a href="kategori.php?kategori=<?php echo $row['kategori']; ?>">
+                      <span class="category"><?php echo $row['kategori']; ?></span>
+                    </a>
+
+                    <small style="margin-left: 15px;">
+                      <i class="fas fa-calendar-alt"></i> <?php echo $row['tanggal']; ?>
+                    </small>
                   </div>
                 </div>
-
-              </div>
-              <div class="col-lg-6">
-
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Real Estate</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">House with Swimming Pool</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-lg-6">
-                
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_3.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Furniture</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">Wooden Chair &amp; Table</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-lg-6">
-
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_4.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Electronics</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">iPhone X gray</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-                
+                <?php
+                }
+                ?>
               </div>
 
 
-              <div class="col-lg-6">
-                
+              <div class="col-md-7 text-left border-primary">
+                <h2 class="font-weight-light text-primary">Info Lainya</h2>
+              </div>
+              <?php 
+                include 'config/koneksi.php';
+                $qTampil = mysqli_query($connect, "SELECT * FROM info WHERE NOT kategori='berita' order by id_info desc");
+                foreach($qTampil as $row){
+              ?>
+              <div class="col-lg-6"><br>
                 <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
+                  <a href="#" class="img d-block" style="background-image: url('admin/img/<?php echo $row['img']; ?>')"></a>
                   <div class="lh-content">
-                    <span class="category">Real Estate</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">House with Swimming Pool</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
+                    
                     <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
+                      <a href="kategori.php?kategori=<?php echo $row['kategori']; ?>">
+                        <span class="category"><?php echo $row['kategori']; ?></span>
+                      </a>
+                      <span class="review"><i class="icon-calendar"></i> <?php echo $row['tanggal']; ?></span>
                     </p>
+                    <h3>
+                      <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>"><?php echo $row['judul']; ?></a>
+                    </h3>
+                    <address><?php echo substr($row['isi'], 0,160); ?>...</address>
+                    
                   </div>
                 </div>
-
               </div>
-              <div class="col-lg-6">
-
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_3.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Furniture</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">Wooden Chair &amp; Table</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-                
-              </div>
-
-
-              <div class="col-lg-6">
-                
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Cars &amp; Vehicles</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">Red Luxury Car</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-lg-6">
-
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Real Estate</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">House with Swimming Pool</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-lg-6">
-                
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_3.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Furniture</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">Wooden Chair &amp; Table</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-lg-6">
-
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('images/img_4.jpg')"></a>
-                  <div class="lh-content">
-                    <span class="category">Electronics</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">iPhone X gray</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-warning"></span>
-                      <span class="icon-star text-secondary"></span>
-                      <span class="review">(3 Reviews)</span>
-                    </p>
-                  </div>
-                </div>
-                
-              </div>
-
-
-              
-
+              <?php 
+                }
+              ?>
             </div>
 
             <div class="col-12 mt-5 text-center">

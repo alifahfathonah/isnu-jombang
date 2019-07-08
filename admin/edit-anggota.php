@@ -26,7 +26,7 @@
 				                <form method="post" action="aksi-edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>">
 					                <div class="row align-items-center">
 					                	<div class="col-lg-12">
-						                    <input type="hidden" name="id" class="form-control rounded" placeholder="" required value="<?php echo $row['id_anggota']; ?>">
+						                    <input type="hidden" name="id_anggota" class="form-control rounded" placeholder="" required value="<?php echo $row['id_anggota']; ?>">
 						                </div>
 					                  	<div class="col-lg-12">
 					                  		<label>Nama :</label>
@@ -95,7 +95,7 @@
 
 					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">
 					                  	<br>
-					                    <input type="submit" name="submit" class="btn btn-success btn-block rounded" value="Simpan">
+					                    <input type="submit" name="submit_anggota" class="btn btn-success btn-block rounded" value="Simpan">
 					                  </div>
 					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">
 					                  	<br>

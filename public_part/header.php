@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -44,19 +45,20 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a href="index.php" class="text-white mb-0"><img src="images/ISNU.png" width="170"></a></h1>
+            <h1 class="mb-0 site-logo" style="top: 10px;">
+                <a href="index.php" class="text-white mb-0"><img src="images/ISNU.png" width="170"></a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="info.php">Info Isnu</a></li>
-                <li><a href="anggota.php">Daftar Anggota</a></li>
+                <li class="active"><a href="index.php">HOME</a></li>
+                <li><a href="info.php">INFO ISNU</a></li>
+                <li><a href="anggota.php">DAFTAR ANGGOTA</a></li>
+                <li><a href="tentang.php">TENTANG ISNU</a></li>
                 <?php
                   error_reporting(0);
                   session_start();
-                  $username = $_SESSION['username'];
                   if(isset($_SESSION['username'])){
                       echo '
                       <li class="has-children">
@@ -67,10 +69,21 @@
                         </ul>
                       </li>
                       ';
-                    
+                  }elseif  (isset($_SESSION['admin'])) {
+                    echo '
+                      <li class="has-children">
+                        <a href="#"><span class="border-left pl-xl-4"></span>'.$_SESSION['admin'].'</a>
+                        <ul class="dropdown">
+                          <li><a href="admin/index.php">Admin</a></li>
+                          <li><a href="admin/logout.php">Logout</a></li>
+                        </ul>
+                      </li>
+                    ';
                   }else{
                     echo '<li><a href="login/login.php" class="cta"><span class="bg-success text-white rounded">Login</span></a></li>';
                   }
+
+                  
                 ?>
                 
               </ul>

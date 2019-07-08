@@ -37,6 +37,11 @@
           $('#table_id').DataTable();
       } );
   </script>
-    
+  
+  <script src="../js/ckeditor/ckeditor.js"></script>
+  <script type="text/javascript">
+      $('textarea.texteditor').ckeditor();
+  </script>
+
   </body>
 </html>

@@ -19,7 +19,7 @@
 				                <h5 class="card-title"><i class="fa fa-edit"></i> TAMBAH ANGGOTA</h5>
 								<hr><br>
 								
-				                <form method="post" action="aksi-tambah-anggota.php" enctype="multipart/form-data">
+				                <form method="post" action="aksi-tambah.php" enctype="multipart/form-data">
 					                <div class="row align-items-center">
 					                	
 

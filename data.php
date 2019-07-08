@@ -10,6 +10,7 @@
 	<thead>
 		<tr>
 			<th><strong>No</strong></th>
+			<th><strong>Username</strong></th>
 			<th><strong>Nama</strong></th>
             <th><strong>Jenjang</strong></th>
 			<th><strong>Jurusan</strong></th>
@@ -26,7 +27,8 @@
 
 			<tr>
 				<td><?php echo $no++; ?></td>
-				<td><a href="detail.php?id=<?php echo $row['id']; ?>"><?php echo $row['nama']; ?></a></td>
+				<td><?php echo $row['username']; ?></td>
+				<td><?php echo $row['nama']; ?></td>
                 <td><?php echo $row['jenjang']; ?></td>
 									<td><?php echo $row['jurusan']; ?></td>
                 <td><?php echo $row['pt_univ']; ?></td>
