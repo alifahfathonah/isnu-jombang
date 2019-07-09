@@ -16,5 +16,13 @@
 	 
 		header("location:post.php?pesan=hapus");
 	}
+
+	if ($_GET["id_kategori"]) {
+		$id_kategori = $_GET['id_kategori'];
+		$query="DELETE from kategori_info where id_kategori='$id_kategori'";
+				mysqli_query($connect, $query);
+	 
+		header("location:kategori_post.php?pesan=hapus");
+	}
 	
 ?>

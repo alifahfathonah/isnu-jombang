@@ -43,4 +43,14 @@
 		}
 	}
 
+	if ($_POST["submit_kategori"]) {
+			
+		$nama_kategori	= $_POST['nama_kategori'];
+
+	  	$query="INSERT INTO kategori_info SET nama_kategori='$nama_kategori'";
+	  	$cek=mysqli_query($connect, $query);
+
+		header('location:kategori_post.php?pesan=sukses');
+	}
+
 ?>

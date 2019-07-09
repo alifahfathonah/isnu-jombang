@@ -53,7 +53,8 @@
                             <tbody>
                               <?php
                                 $no = 1;
-                                $qTampil = mysqli_query($connect, "SELECT * FROM info order by id_info desc");
+                                $qTampil = mysqli_query($connect, "
+                                   SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori order by id_info desc");
                                 foreach($qTampil as $row){
                               ?>
 
@@ -61,9 +62,9 @@
                                 <td><?php echo $no++; ?></td>
                                 <td><?php echo $row['judul']; ?></td>
                                 <td><?php echo $row['tanggal']; ?></td>
-                                <td><?php echo $row['kategori']; ?></td>
+                                <td><?php echo $row['nama_kategori']; ?></td>
                                 <td>
-                                  <a class="btn btn-success" href='edit-post.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-edit"></i></a><hr>
+                                  <a class="btn btn-success" href='edit-post.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-pen"></i></a><hr>
                                   <a class="btn btn-danger" href='aksi-delete.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-trash"></i></a>
                                 </td>
                               </tr>

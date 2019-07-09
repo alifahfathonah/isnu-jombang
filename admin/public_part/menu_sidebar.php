@@ -16,6 +16,9 @@
 								<li class="list btn btn-success text-center" button onclick="window.location.href='post.php'" type="button" ><i class="fa fa-book"></i>
 								POST
 								</li><br>
+								<li class="list btn btn-success text-center" button onclick="window.location.href='kategori_post.php'" type="button" ><i class="fa fa-tag"></i>
+								KATEGORI POST
+								</li><br>
 								<li class="list btn btn-success text-center" button onclick="window.location.href='logout.php'" type="button" ><i class="fa fa-sign-out-alt"></i>
 								LOGOUT
 								</li><br>

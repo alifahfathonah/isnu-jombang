@@ -78,7 +78,7 @@
           <div class="col-lg-8">
             <?php 
               include 'config/koneksi.php';
-              $qTampil = mysqli_query($connect, "SELECT * FROM info order by id_info desc limit 3");
+              $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori order by id_info desc limit 3");
               foreach($qTampil as $row){
             ?>
             <div class="d-block d-md-flex listing">
@@ -86,18 +86,19 @@
                 
               </a>
               <div class="lh-content">
-                <h3>
+                <h3 style="font-size: 30px;">
                     <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>"><?php echo $row['judul']; ?></a>
                 </h3>
                 
-                <p><?php echo substr($row['isi'], 0,160); ?>...</p>
-                
+                <small><?php echo substr($row['isi'], 0,160); ?>...</small>
+                <br><br>
                 <a href="kategori.php?kategori=<?php echo $row['kategori']; ?>">
-                  <span class="category"><?php echo $row['kategori']; ?></span>
+                  <span class="category"><?php echo $row['nama_kategori']; ?></span>
                 </a>
                 <small style="margin-left: 15px;">
                   <i class="fas fa-calendar-alt"></i> <?php echo $row['tanggal']; ?>
                 </small>
+                
 
               </div>
             </div>
@@ -110,25 +111,24 @@
           </div>
           <div class="col-md-4 ml-auto">
             <div class="mb-5">
-              <h3 class="h5 text-black mb-3">Cari Info</h3>
-              <div class="d-block d-md-flex listing">
-                <div class="lh-content">
-                  <form action="#" method="post">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Cari info disini...">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-5">
               <h3 class="h5 text-black mb-3">Info Populer</h3>
-              <div class="d-block d-md-flex listing">
-                <div class="lh-content">
-                  <h3><a href="listings-single.html">Own New House</a></h3>
-                  <h3><a href="listings-single.html">Own New House Loream Ipsum</a></h3>
-                </div>
+              <div class="widget-content popular-posts">
+                <ul>
+                  <?php 
+                    include 'config/koneksi.php';
+                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 3");
+                    foreach($qTampil as $row){
+                  ?>
+                  <li>
+                    <div class="item-thumbnail">
+                      <img class="circle" src="admin/img/<?php echo $row['img']; ?>" height="72" width="72">
+                      <span>
+                        <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>"><?php echo $row['judul']; ?></a>
+                      </span>
+                    </div>
+                  </li>
+                <?php } ?>
+                </ul>
               </div>
             </div>
           </div>

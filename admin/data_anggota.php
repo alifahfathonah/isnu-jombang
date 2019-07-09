@@ -67,7 +67,7 @@
                                 <td><?php echo $row['jurusan']; ?></td>
                                 <td><?php echo $row['pt_univ']; ?></td>
                                 <td>
-                                  <a class="btn btn-success" href='edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-edit"></i></a><hr>
+                                  <a class="btn btn-success" href='edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-pen"></i></a><hr>
                                   <a class="btn btn-danger" href='aksi-delete.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-trash"></i></a>
                                 </td>
                               </tr>

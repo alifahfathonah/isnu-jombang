@@ -30,12 +30,23 @@
 
 						                <div class="col-lg-6">
 					                  		<label>Tanggal :</label>
-						                    <input type="date" name="tanggal" class="form-control rounded" placeholder="Masukkan Tanggal" required value="<?php echo date("Y-m-d"); ?>">
+						                    <input type="date" name="tanggal" class="form-control rounded" placeholder="Masukkan Tanggal" required value="<?php echo date("Y-d-m"); ?>">
 						                </div>
 
 					                  	<div class="col-lg-6">
 					                  		<label>Kategori :</label>
-						                    <input type="text" name="kategori" class="form-control rounded" placeholder="Masukkan Kategori" required>
+						                    <select class="browser-default custom-select" name="kategori">
+											  <option selected>-- Pilih Kategori --</option>
+											  <?php 
+								                  $qTampil = mysqli_query($connect, "SELECT * FROM kategori_info");
+								                  foreach($qTampil as $row){
+								                ?>
+											  <option value="<?php echo $row["id_kategori"];?>">
+											  		<?php echo $row["kategori"];?>
+											  </option>
+
+											<?php } ?>
+											</select>
 						                </div>
 
 						                <div class="col-lg-6">

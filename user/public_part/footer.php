@@ -5,7 +5,7 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
             <p class="text-white">
-            Copyright © 2019 Bisma Labs, All Rights Reserved.
+            Copyright © <?php echo date('Y');?> Bisma Labs, All Rights Reserved.
             </p>
             </div>
           </div>
