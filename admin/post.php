@@ -2,13 +2,14 @@
 	include 'public_part/header.php';
 ?>
 <br>
-	<div class="site-section bg-light">
-      	<div class="container">
+    <div class="page-content p-5" id="content">
+        <div class="container">
+          <ol class="breadcrumb default-color">
+            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+            <li class="breadcrumb-item active">Post</li>
+          </ol>
       		<div class="row">
-      			<div class="col-md-3">
-		            <?php include 'public_part/menu_sidebar.php';?>
-		         </div>
-		         <div class="col-md-9">
+		         <div class="col-md-12">
 		         		<div class="mb-5">
                   <?php 
                     if(isset($_GET['pesan'])){
@@ -54,7 +55,7 @@
                               <?php
                                 $no = 1;
                                 $qTampil = mysqli_query($connect, "
-                                   SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori order by id_info desc");
+                                   SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori order by id_info desc");
                                 foreach($qTampil as $row){
                               ?>
 

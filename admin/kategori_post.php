@@ -2,13 +2,14 @@
 	include 'public_part/header.php';
 ?>
 <br>
-	 <div class="site-section bg-light">
+	 <div class="page-content p-5" id="content">
         <div class="container">
+          <ol class="breadcrumb default-color">
+            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+            <li class="breadcrumb-item active">Kategori Post</li>
+          </ol>
       		<div class="row">
-      			 <div class="col-md-3">
-		            <?php include 'public_part/menu_sidebar.php';?>
-		         </div>
-		         <div class="col-md-9">
+		         <div class="col-md-12">
 		         		<div class="mb-5">
                   <?php 
                     if(isset($_GET['pesan'])){

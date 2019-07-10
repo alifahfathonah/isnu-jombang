@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/rangeslider.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
     
   </head>
@@ -80,7 +81,7 @@
                       </li>
                     ';
                   }else{
-                    echo '<li><a href="login/login.php" class="cta"><span class="bg-success text-white rounded">Login</span></a></li>';
+                    echo '<li><a href="login/login.php" class="cta"><span class="btn-success text-white rounded">Login</span></a></li>';
                   }
 
                   

@@ -9,7 +9,7 @@
 
 <br>
     <div class="site-section bg-light">
-      	<div class="container">
+      	<div class="container-fluid">
       		<div class="row">
       			<div class="col-md-3">
 		            <div class="mb-5">
@@ -21,17 +21,29 @@
 							<hr>
 							
 							<ul class="list-group">
-								<li class="list btn btn-success text-center" button onclick="window.location.href='../index.php'" type="button" ><i class="fa fa-home"></i>
-								HOME
+								<li class="list btn btn-success text-left">
+									<a href="../index.php" class="text-white">
+										<i class="fa fa-home"></i>
+										HOME
+									</a>
 								</li><br>
-								<li class="list btn btn-success text-center" button onclick="window.location.href='profil.php'" type="button" ><i class="fas fa-address-card"></i>
-								PROFIL
+								<li class="list btn btn-success text-left">
+									<a href="profil.php" class="text-white">
+										<i class="icon-address-card"></i>
+										PROFIL
+									</a>
 								</li><br>
-								<li class="list btn btn-success text-center" button onclick="window.location.href='../anggota.php'" type="button" ><i class="fa fa-user"></i>
-								ANGGOTA
+								<li class="list btn btn-success text-left">
+									<a href="setting.php" class="text-white">
+										<i class="icon-gear"></i>
+										SETTING
+									</a>
 								</li><br>
-								<li class="list btn btn-success text-center" button onclick="window.location.href='../logout.php'" type="button" ><i class="fa fa-sign-out-alt"></i>
-								LOGOUT
+								<li class="list btn btn-success text-left">
+									<a href="../logout.php" class="text-white">
+										<i class="icon-sign-out"></i>
+										LOGOUT
+									</a>
 								</li><br>
 							</ul>
 		                </div>
@@ -114,14 +126,6 @@
 						                <div class="col-lg-12">
 					                  		<label>PT / Universitas :</label>
 						                    <input type="text" name="pt_univ" class="form-control rounded" placeholder="Masukkan PT / Universitas" required value="<?php echo $row['pt_univ']; ?>">
-						                </div>
-
-						                <div class="col-lg-12">
-					                  		<label>Foto :</label>
-					                  		<br>
-					                  		<small style="color: red;">*/ Mohon untuk upload foto juga!</small>
-						                    <input type="file" name="foto" id="foto" class="form-control rounded" placeholder="Masukkan Foto">
-
 						                </div>
 
 					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">

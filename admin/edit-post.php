@@ -4,15 +4,15 @@
 ?>
 
 <br>
-    <div class="site-section bg-light">
+    <div class="page-content p-5" id="content">
       	<div class="container">
+      		<ol class="breadcrumb default-color">
+	          <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+	          <li class="breadcrumb-item"><a href="post.php">Post</a></li>
+	          <li class="breadcrumb-item active">Edit Post</li>
+	        </ol>
       		<div class="row">
-      			<div class="col-md-3">
-		            <div class="mb-5">
-		              <?php include 'public_part/menu_sidebar.php';?>
-		            </div>
-		        </div>
-		        <div class="col-md-9">
+		        <div class="col-md-12">
 		         	<div class="mb-5">
 			            <div class="d-block d-md-flex listing">
 			        	    <div class="lh-content">
@@ -21,7 +21,7 @@
 								
 								<?php
 									$id_post = $_GET['id_post'];
-									$qTampil = mysqli_query($connect, "SELECT * FROM info WHERE id_info='$id_post'");
+									$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE id_info='$id_post'");
 									foreach($qTampil as $row){
 								?>
 				                <form method="post" action="aksi-edit-post.php" enctype="multipart/form-data">
@@ -40,7 +40,7 @@
 
 					                  	<div class="col-lg-6">
 					                  		<label>Kategori :</label>
-						                    <input type="text" name="kategori" class="form-control rounded" placeholder="Masukkan Kategori" required value="<?php echo $row['kategori']; ?>">
+						                    <input type="text" name="kategori" class="form-control rounded" placeholder="Masukkan Kategori" required value="<?php echo $row['nama_kategori']; ?>">
 						                </div>
 
 						                <div class="col-lg-6">

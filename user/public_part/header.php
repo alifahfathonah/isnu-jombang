@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../css/rangeslider.css">
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/color.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 
     
@@ -40,8 +41,8 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    <header class="site-navbar container-fluid py-0 " role="banner" style="background-color: #4ac363;">
-      <div class="container">
+    <header class="site-navbar container-fluid py-0 " role="banner" style="background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);">
+      <div class="container-fluid">
         <!-- <div class="container"> -->
         <div class="row align-items-center">
           
@@ -71,7 +72,7 @@
                       ';
                     
                   }else{
-                    echo '<li><a href="login/login.php" class="cta"><span class="bg-success text-white rounded">Login</span></a></li>';
+                    echo '<li><a href="login/login.php" class="cta"><span class="btn-success text-white rounded">Login</span></a></li>';
                   }
                 ?>
                 
@@ -87,3 +88,4 @@
         <!-- </div> -->
       </div>
     </header>
+    

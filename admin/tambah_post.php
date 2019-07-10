@@ -4,15 +4,15 @@
 ?>
 
 <br>
-    <div class="site-section bg-light">
+    <div class="page-content p-5" id="content">
       	<div class="container">
+      		<ol class="breadcrumb default-color">
+	          <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+	          <li class="breadcrumb-item"><a href="post.php">Post</a></li>
+	          <li class="breadcrumb-item active">Tambah Post</li>
+	        </ol>
       		<div class="row">
-      			<div class="col-md-3">
-		            <div class="mb-5">
-		              <?php include 'public_part/menu_sidebar.php';?>
-		            </div>
-		        </div>
-		        <div class="col-md-9">
+		        <div class="col-md-12">
 		         	<div class="mb-5">
 			            <div class="d-block d-md-flex listing">
 			        	    <div class="lh-content">
@@ -42,7 +42,7 @@
 								                  foreach($qTampil as $row){
 								                ?>
 											  <option value="<?php echo $row["id_kategori"];?>">
-											  		<?php echo $row["kategori"];?>
+											  		<?php echo $row["nama_kategori"];?>
 											  </option>
 
 											<?php } ?>

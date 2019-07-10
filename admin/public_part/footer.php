@@ -5,7 +5,7 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
             <p class="text-white">
-            Copyright © <?php echo date('Y');?> Bisma Labs, All Rights Reserved.
+            Copyright © <?php echo date('Y');?> ISNU JOMBANG, All Rights Reserved.
             </p>
             </div>
           </div>
@@ -32,6 +32,14 @@
   
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      // Sidebar toggle behavior
+      $('#sidebarCollapse').on('click', function() {
+        $('#sidebar, #content').toggleClass('active');
+      });
+    })
+  </script>
   <script type="text/javascript">
       $(document).ready( function () {
           $('#table_id').DataTable();

@@ -34,7 +34,7 @@
                 <br>
                 <?php 
                   include 'config/koneksi.php';
-                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 3");
+                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 3");
                   foreach($qTampil as $row){
                 ?>
                 <div class="d-block d-md-flex listing overflow zoom">
@@ -67,7 +67,7 @@
               </div>
                 <?php 
                   include 'config/koneksi.php';
-                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE NOT kategori='1' order by id_info desc");
+                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE NOT kategori='1' order by id_info desc");
                   foreach($qTampil as $row){
                 ?>
               <div class="col-lg-6"><br>
@@ -122,11 +122,23 @@
 
             <div class="mb-5">
               <h3 class="h5 text-black mb-3">Info Populer</h3>
-              <div class="d-block d-md-flex listing">
-                <div class="lh-content">
-                  <h3><a href="listings-single.html">Own New House</a></h3>
-                  <h3><a href="listings-single.html">Own New House Loream Ipsum</a></h3>
-                </div>
+              <div class="widget-content popular-posts">
+                <ul>
+                  <?php 
+                    include 'config/koneksi.php';
+                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 3");
+                    foreach($qTampil as $row){
+                  ?>
+                  <li>
+                    <div class="item-thumbnail">
+                      <img class="circle" src="admin/img/<?php echo $row['img']; ?>" height="72" width="72">
+                      <span>
+                        <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>"><?php echo $row['judul']; ?></a>
+                      </span>
+                    </div>
+                  </li>
+                <?php } ?>
+                </ul>
               </div>
             </div>
           </div>

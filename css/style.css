@@ -1,10 +1,131 @@
-/* Base */
+/*fixed top */
+.navbar-expand-lg .navbar-nav.side-nav{
+  flex-direction: column;
+}
+.card{
+  margin-bottom: 15px; 
+  border-radius:0; 
+  box-shadow: 0 3px 5px rgba(0,0,0,.1); 
+}
+.header-top{
+  box-shadow: 0 3px 5px rgba(0,0,0,.1);
+  background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
+}
+.leftmenutrigger{
+  color: #fff;
+}
+@media(min-width:992px) {
+  .leftmenutrigger{
+    display: block;display: block;margin: 7px 20px 4px 0;
+    cursor: pointer;
+  }
+  #wrapper{
+    padding: 90px 15px 15px 15px; 
+  }
+  .navbar-nav.side-nav.open {
+    left:0;
+  }
+  .navbar-nav.side-nav{background: #585f66;
+    box-shadow: 2px 1px 2px rgba(0,0,0,.1);
+    position:fixed;
+    top:56px;
+    flex-direction: column!important;
+    left:-220px;
+    width:200px;
+    overflow-y:auto;
+    bottom:0;
+    overflow-x:hidden;
+    padding-bottom:40px
+  }
+}
+.animate{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 
-body {
-  line-height: 1.7;
-  color: #4d4d4d;
-  font-weight: 400;
-  font-size: 1rem; }
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+
+
+/*////////////////////////////////*/
+body { 
+  background: #fbfbfb;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+}
 
 ::-moz-selection {
   background: #000;
@@ -66,13 +187,20 @@ h1, h2, h3, h4, h5,
     visibility: visible; }
 
 .btn {
-  border-radius: 50px; }
+    border-radius: 7px;
+    background-repeat: repeat-x;
+    color: #fff;
+    border: none;
+}
+  .btn:btn-danger {
+    background-color: #fff;
+}
   .btn:hover, .btn:active, .btn:focus {
     outline: none;
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
   .btn.btn-black {
-    color: #fff;
+    color: #fbfbfb;
     background-color: #000; }
     .btn.btn-black:hover {
       color: #000;
@@ -141,7 +269,7 @@ h1, h2, h3, h4, h5,
 
 .site-footer {
   padding: 4em 0;
-  background: #333333; }
+  background-image: linear-gradient(to left, #134E5E 0%, #71B280 100%); }
   @media (min-width: 768px) {
     .site-footer {
       padding: 4em 0; } }
@@ -2176,6 +2304,7 @@ figure figcaption {
     box-shadow: 0 2px 20px -2px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+    background: #fff;
 }
 .popular-posts ul li {
     box-sizing: border-box;

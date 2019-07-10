@@ -54,73 +54,49 @@
 		         		<div class="mb-5">
 			              <div class="d-block d-md-flex listing">
 			                <div class="lh-content">
-				                <h5 class="card-title text-left"><i class="icon-address-card"></i> PROFIL ANGGOTA</h5>
+				                <h5 class="card-title text-left"><i class="icon-gear"></i> SETTING</h5>
+				                <small>Halaman pengaturan akun</small>
 								<hr><br>
-				                <table class="table table-striped">
-										<thead>
-											<?php
-			                    				include ('../config/koneksi.php');
-											  	$username = $_SESSION['username'];
-											  	$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE username='$username'");
-											  	foreach($qTampil as $row){
-											?>
-											<tr>
-												<th><strong>Nama : </strong></th>
-												<th><?php echo $row['nama']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>No. KTP : </strong></th>
-												<th><?php echo $row['no_ktp']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Jenis Kelamin : </strong></th>
-												<th><?php echo $row['jenis_kelamin']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Tempat Lahir : </strong></th>
-												<th><?php echo $row['tempat_lahir']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Tanggal Lahir : </strong></th>
-												<th><?php echo $row['tgl_lahir']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Desa / Dusun : </strong></th>
-												<th><?php echo $row['dusun_desa']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Kecamatan : </strong></th>
-												<th><?php echo $row['kecamatan']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Kota : </strong></th>
-												<th><?php echo $row['kota']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>No. Telpon : </strong></th>
-												<th><?php echo $row['no_telepon']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Jenjang : </strong></th>
-												<th><?php echo $row['jenjang']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>Jurusan : </strong></th>
-												<th><?php echo $row['jurusan']; ?></th>
-											</tr>
-											<tr>
-												<th><strong>PT / Universitas : </strong></th>
-												<th><?php echo $row['pt_univ']; ?></th>
-											</tr>
-										</thead>
-								</table>
-								
-								<a class="btn btn-success btn-md" href='edit-profil.php?id=<?php echo $row['id_anggota']; ?>'><i class="fa fa-edit"></i> Edit Profil</a>
-												
-								<a class="btn btn-warning btn-md" target="_blank" onclick="window.open('kartu.php?id=<?php echo $row['id_anggota']; ?>','Cetak Kartu');"><i class="fa fa-print"></i> Cetak Kartu</a>
 								<?php
-									}
+			                    	include ('../config/koneksi.php');
+									$username = $_SESSION['username'];
+									$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE username='$username'");
+									foreach($qTampil as $row){
 								?>
+				                <form method="post" action="aksi-editprofil.php?id_anggota=<?php echo $row['id_anggota']; ?>" enctype="multipart/form-data">
+					                <div class="row align-items-center">
+					                	<div class="col-lg-12">
+						                    <input type="hidden" name="id" class="form-control rounded" placeholder="" required value="<?php echo $row['id_anggota']; ?>">
+						                </div>
+
+					                  	<div class="col-lg-12">
+					                  		<label>Username :</label>
+						                    <input type="text" name="username" class="form-control rounded" placeholder="Masukkan Username" required value="<?php echo $row['username']; ?>">
+						                </div>
+
+						                <div class="col-lg-12">
+					                  		<label>Password Lama</label>
+						                    <input type="password" name="password_lama" class="form-control rounded" placeholder="Masukkan Password Lama" required >
+						                </div>
+
+						                <div class="col-lg-12">
+					                  		<label>Password Baru</label>
+						                    <input type="password" name="password_baru" class="form-control rounded" placeholder="Masukkan Password Baru" required >
+						                </div>
+
+
+					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">
+					                  	<br>
+					                    <input type="submit" name="submit" class="btn btn-success btn-block rounded" value="Simpan">
+					                  </div>
+					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">
+					                  	<br>
+					                    <input type="reset" class="btn btn-warning btn-block rounded" value="Reset">
+					                  </div>
+					                  
+					                </div>
+					            </form>
+						            <?php }?>
 			                </div>
 			              </div>
 		            	</div>
