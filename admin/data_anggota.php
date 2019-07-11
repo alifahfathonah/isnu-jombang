@@ -8,10 +8,8 @@
           <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
           <li class="breadcrumb-item active">Data Anggota</li>
         </ol>
+
       		<div class="row">
-      			 <div class="col-md-3">
-		            <?php include 'public_part/menu_sidebar.php';?>
-		         </div>
 		         <div class="col-md-12">
 		         		<div class="mb-5">
                   <?php 
@@ -58,7 +56,7 @@
                             </thead>
                             <tbody>
                               <?php
-                                        include ('config/koneksi.php');
+                                include ('config/koneksi.php');
                                 $no = 1;
                                 $qTampil = mysqli_query($connect, "SELECT * FROM anggota order by id_anggota desc");
                                 foreach($qTampil as $row){

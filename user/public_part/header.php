@@ -63,10 +63,11 @@
                       <li class="has-children">
 
                         <a href="#">'.$_SESSION['username'].'</a>
-                        <ul class="dropdown">
-                          <li><a href="../index.php">Home</a></li>
-                          <li><a href="profil.php">Profil</a></li>
-                          <li><a href="../logout.php">Logout</a></li>
+                        <ul class="dropdown" style="right: 10px;">
+                          <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
+                          <li><a href="profil.php"><i class="icon-address-card"></i> Profil</a></li>
+                          <li><a href="setting.php"><i class="icon-gear"></i> Setting</a></li>
+                          <li><a href="../logout.php"><i class="icon-sign-out"></i> Logout</a></li>
                         </ul>
                       </li>
                       ';

@@ -68,7 +68,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                          include ('config/koneksi.php');
+                                  include ('config/koneksi.php');
                                   $no = 1;
                                   $qTampil = mysqli_query($connect, "SELECT * FROM kategori_info order by id_kategori desc");
                                   foreach($qTampil as $row){

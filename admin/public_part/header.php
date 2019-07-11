@@ -32,10 +32,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/color.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-
-    <style type="text/css">
-      
-    </style>
+    <script type="text/javascript" src="public_part/chartjs/Chart.js"></script>
+    
 
     
   </head>
@@ -90,26 +88,22 @@
       <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
           <a href="index.php" class="nav-link text-dark bg-light">
-            <i class="icon-dashboard mr-3 text-primary fa-fw"></i>
-            HOME
+            <i class="icon-dashboard mr-3 text-primary fa-fw"></i> DASHBOARD
           </a>
         </li>
         <li class="nav-item">
           <a href="data_anggota.php" class="nav-link text-dark bg-light">
-            <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-            DATA ANGGOTA
+            <i class="fa fa-address-card mr-3 text-primary fa-fw"></i> DATA ANGGOTA
           </a>
         </li>
         <li class="nav-item">
           <a href="post.php" class="nav-link text-dark bg-light">
-            <i class="icon-newspaper-o mr-3 text-primary fa-fw"></i>
-            POST
+            <i class="icon-newspaper-o mr-3 text-primary fa-fw"></i> POST
           </a>
         </li>
         <li class="nav-item">
           <a href="kategori_post.php" class="nav-link text-dark bg-light">
-            <i class="icon-tag mr-3 text-primary fa-fw"></i>
-            KATEGORI POST
+            <i class="icon-tag mr-3 text-primary fa-fw"></i> KATEGORI POST
           </a>
         </li>
       </ul>

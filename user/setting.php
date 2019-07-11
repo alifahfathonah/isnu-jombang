@@ -51,6 +51,55 @@
 		            </div>
 		         </div>
 		         <div class="col-md-6">
+		         		<?php 
+                    if(isset($_GET['pesan'])){
+                      if($_GET['pesan']=="gagal-ubah"){
+                        echo '
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <strong>Gagal!</strong> Mengedit.
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                              ';
+                      }
+
+                      if($_GET['pesan']=="password-tidak-sama"){
+                        echo '
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <strong>Maaf!</strong> Confirmasi password tidak sama.
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                              ';
+                      }
+
+                      if($_GET['pesan']=="password-5"){
+                        echo '
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <strong>Maaf!</strong> Password harus 5 karakter.
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                              ';
+                      }
+
+                      if($_GET['pesan']=="password-salah"){
+                        echo '
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <strong>Maaf!</strong> Password salah. 
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                              ';
+                      }
+
+
+                    }
+                  ?>
 		         		<div class="mb-5">
 			              <div class="d-block d-md-flex listing">
 			                <div class="lh-content">
@@ -63,10 +112,10 @@
 									$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE username='$username'");
 									foreach($qTampil as $row){
 								?>
-				                <form method="post" action="aksi-editprofil.php?id_anggota=<?php echo $row['id_anggota']; ?>" enctype="multipart/form-data">
+				                <form method="post" action="aksi-edit-password.php">
 					                <div class="row align-items-center">
 					                	<div class="col-lg-12">
-						                    <input type="hidden" name="id" class="form-control rounded" placeholder="" required value="<?php echo $row['id_anggota']; ?>">
+						                    <input type="hidden" name="id_anggota" class="form-control rounded" placeholder="" required value="<?php echo $row['id_anggota']; ?>">
 						                </div>
 
 					                  	<div class="col-lg-12">
@@ -77,11 +126,19 @@
 						                <div class="col-lg-12">
 					                  		<label>Password Lama</label>
 						                    <input type="password" name="password_lama" class="form-control rounded" placeholder="Masukkan Password Lama" required >
+						                    
 						                </div>
 
 						                <div class="col-lg-12">
 					                  		<label>Password Baru</label>
 						                    <input type="password" name="password_baru" class="form-control rounded" placeholder="Masukkan Password Baru" required >
+						                    
+						                </div>
+
+						                <div class="col-lg-12">
+					                  		<label>Ulangi Password</label>
+						                    <input type="password" name="konfirmasi_password" class="form-control rounded" placeholder="Masukkan Confrimasi Password " required >
+						                    
 						                </div>
 
 
@@ -161,7 +218,6 @@
 			</div>
 		</div>
 	</div>
-
 
 <?php 
 	include 'public_part/footer.php';
