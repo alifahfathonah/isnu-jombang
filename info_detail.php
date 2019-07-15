@@ -1,20 +1,37 @@
-<?php include 'public_part/header.php';?>
+<?php 
+  include 'public_part/header.php';
+  include 'config/koneksi.php';
+  $id_info = $_GET["id_info"];
+  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE id_info=$id_info");
+  foreach($qTampil as $row){
+?>
 
-  <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/bg_isnu.jpg); min-height: 50px; bottom: 110px;" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(admin/img/<?php echo $row['img']; ?>); min-height: 300px; width: 100%;     background-position: 0px;
+" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-left">
+
+          <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
+            
+            
+            <div class="row justify-content-left" style="margin-bottom: 150px;">
+              <div class="col-md-12 text-left">
+                <h1><?php echo $row['judul'];?></h1>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
     </div> 
 
   <div class="site-section">
       <div class="container">
         <div class="row">
-            <?php 
-              include 'config/koneksi.php';
-              $id_info = $_GET["id_info"];
-              $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE id_info=$id_info");
-              foreach($qTampil as $row){
-            ?>
+            
 
-            <div class="col-md-8 text-left border-success" style="  bottom: 130px;">
-              <h1 class="font-weight-light text-success"><?php echo $row['judul'];?></h1>
+            <div class="col-md-8 text-left border-success" style=" top:1px;  bottom: 130px;">
 
               
               <p class="color-black-opacity-5">

@@ -15,7 +15,9 @@
     </footer>
   </div>
 
-  <script src="../js/jquery-3.3.1.min.js"></script>
+            
+
+  
   <script src="../js/jquery-migrate-3.0.1.min.js"></script>
   <script src="../js/jquery-ui.js"></script>
   <script src="../js/popper.min.js"></script>
@@ -27,6 +29,9 @@
   <script src="../js/bootstrap-datepicker.min.js"></script>
   <script src="../js/aos.js"></script>
   <script src="../js/rangeslider.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+
+            
 
   <script src="../js/main.js"></script>
   

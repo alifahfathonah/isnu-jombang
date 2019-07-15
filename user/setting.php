@@ -52,54 +52,54 @@
 		         </div>
 		         <div class="col-md-6">
 		         		<?php 
-                    if(isset($_GET['pesan'])){
-                      if($_GET['pesan']=="gagal-ubah"){
-                        echo '
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          <strong>Gagal!</strong> Mengedit.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
+		                    if(isset($_GET['pesan'])){
+		                      if($_GET['pesan']=="gagal-ubah"){
+		                        echo '
+		                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+		                          <strong>Gagal!</strong> Mengedit.
+		                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                            <span aria-hidden="true">&times;</span>
+		                          </button>
+		                        </div>
+		                              ';
+		                      }
 
-                      if($_GET['pesan']=="password-tidak-sama"){
-                        echo '
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          <strong>Maaf!</strong> Confirmasi password tidak sama.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
+		                      if($_GET['pesan']=="password-tidak-sama"){
+		                        echo '
+		                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+		                          <strong>Maaf!</strong> Confirmasi password tidak sama.
+		                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                            <span aria-hidden="true">&times;</span>
+		                          </button>
+		                        </div>
+		                              ';
+		                      }
 
-                      if($_GET['pesan']=="password-5"){
-                        echo '
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          <strong>Maaf!</strong> Password harus 5 karakter.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
+		                      if($_GET['pesan']=="password-5"){
+		                        echo '
+		                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+		                          <strong>Maaf!</strong> Password harus 5 karakter.
+		                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                            <span aria-hidden="true">&times;</span>
+		                          </button>
+		                        </div>
+		                              ';
+		                      }
 
-                      if($_GET['pesan']=="password-salah"){
-                        echo '
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          <strong>Maaf!</strong> Password salah. 
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
+		                      if($_GET['pesan']=="password-salah"){
+		                        echo '
+		                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+		                          <strong>Maaf!</strong> Password salah. 
+		                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                            <span aria-hidden="true">&times;</span>
+		                          </button>
+		                        </div>
+		                              ';
+		                      }
 
 
-                    }
-                  ?>
+		                    }
+		                ?>
 		         		<div class="mb-5">
 			              <div class="d-block d-md-flex listing">
 			                <div class="lh-content">

@@ -23,10 +23,14 @@
 									$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE id_anggota='$id_anggota'");
 									foreach($qTampil as $row){
 								?>
-				                <form method="post" action="aksi-edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>">
+				                <form method="post">
 					                <div class="row align-items-center">
 					                	<div class="col-lg-12">
 						                    <input type="hidden" name="id_anggota" class="form-control rounded" placeholder="" required value="<?php echo $row['id_anggota']; ?>">
+						                </div>
+						                <div class="col-lg-12">
+					                  		<label>Username :</label>
+						                    <input type="text" name="username" class="form-control rounded" placeholder="Masukkan Username" required value="<?php echo $row['username']; ?>">
 						                </div>
 					                  	<div class="col-lg-12">
 					                  		<label>Nama :</label>
@@ -95,7 +99,7 @@
 
 					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">
 					                  	<br>
-					                    <input type="submit" name="submit_anggota" class="btn btn-success btn-block rounded" value="Simpan">
+					                    <input type="submit" name="submit_edit" class="btn btn-success btn-block rounded" value="Simpan">
 					                  </div>
 					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">
 					                  	<br>
@@ -116,6 +120,49 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		function berhasil() {
+                    swal({
+                        title: "BERHASIL",
+                        text: "Data anggota telah diubah",
+                        icon: "success",
+                        buttons: [false, "OK"],
+                      }).then(function() {
+                        window.location.href="data_anggota.php";
+                      });
+                }
+	</script>
+
 <?php 
 	include 'public_part/footer.php';
+
+	if (isset($_POST['submit_edit'])) {	
+		$id_anggota		= $_POST['id_anggota'];
+		$username		= $_POST['username'];
+		$nama 			= $_POST['nama'];
+		$no_ktp 		= $_POST['no_ktp'];
+		$jenis_kelamin 	= $_POST['jenis_kelamin'];
+		$tempat_lahir 	= $_POST['tempat_lahir'];
+		$tgl_lahir 		= $_POST['tgl_lahir'];
+		$dusun_desa 	= $_POST['dusun_desa'];
+		$kecamatan 		= $_POST['kecamatan'];
+		$kota 			= $_POST['kota'];
+		$no_telepon 	= $_POST['no_telepon'];
+		$jenjang 		= $_POST['jenjang'];
+		$jurusan 		= $_POST['jurusan'];
+		$pt_univ 		= $_POST['pt_univ'];
+
+
+		$qEdit 	= "UPDATE anggota SET username='$username', nama='$nama', no_ktp='$no_ktp', jenis_kelamin='$jenis_kelamin', tempat_lahir='$tempat_lahir', tgl_lahir='$tgl_lahir', dusun_desa='$dusun_desa', kecamatan='$kecamatan', kota='$kota', no_telepon='$no_telepon', jenjang='$jenjang', jurusan='$jurusan', pt_univ='$pt_univ' WHERE id_anggota='$id_anggota'";
+		$edit 	= mysqli_query($connect, $qEdit);
+			
+		if($edit){
+			echo "
+				<script>berhasil();</script>
+			";
+		}else{
+			echo "<script>alert('Gagal update data!');history.go(-1);</script>";
+		}
+	}
 ?>

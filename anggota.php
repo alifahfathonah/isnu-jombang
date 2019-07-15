@@ -38,7 +38,8 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <table class="table table-striped table-bordered table-resposive" id="table_id">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered" id="table_id">
              <thead>
                   <tr>
                     <th><strong>No</strong></th>
@@ -68,7 +69,8 @@
                     }
                   ?>
                 </tbody>
-            </table>
+              </table>
+            </div>
           </div>
           
 

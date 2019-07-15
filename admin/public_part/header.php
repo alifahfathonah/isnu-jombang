@@ -31,9 +31,12 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/color.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="public_part/chartjs/Chart.js"></script>
     
+
 
     
   </head>
@@ -112,7 +115,7 @@
 
       <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
-          <a href="#" class="nav-link text-dark bg-light">
+          <a href="setting.php" class="nav-link text-dark bg-light">
             <i class="icon-gear mr-3 text-primary fa-fw"></i>
             SETTING
           </a>

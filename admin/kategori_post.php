@@ -11,18 +11,10 @@
       		<div class="row">
 		         <div class="col-md-12">
 		         		<div class="mb-5">
+
+
                   <?php 
-                    if(isset($_GET['pesan'])){
-                      if($_GET['pesan']=="hapus"){
-                        echo '
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          <strong>Sukses!</strong> Menghapus kategori.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
+                    
                       if($_GET['pesan']=="sukses"){
                         echo '
                         <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -33,14 +25,13 @@
                         </div>
                               ';
                       }
-                    }
                   ?>
 
 			              <div class="d-block d-md-flex listing">
 			                <div class="lh-content">
 				                <h5 class="card-title"><i class="fa fa-list-ul"></i> Data Anggota</h5>
                           <div class="col-md-12">
-                          <form method="post" action="aksi-tambah.php">
+                          <form method="post" action="kategori_post.php">
                             <div class="row align-items-center">
                               <input type="hidden" name="id" class="form-control rounded">
 
@@ -58,7 +49,8 @@
                         </div>
                         <hr>
                         <div class="col-md-12">
-                          <table class="table table-striped table-bordered table-responsive" id="table_id">
+                          <div class="table-responsive">
+                            <table class="table table-striped table-bordered" id="table_id">
                             <thead>
                               <tr>
                                 <th><strong>No</strong></th>
@@ -78,7 +70,8 @@
                                   <td><?php echo $no++; ?></td>
                                   <td><?php echo $row['nama_kategori']; ?></td>
                                   <td>
-                                    <a class="btn btn-danger" href='aksi-delete.php?id_kategori=<?php echo $row['id_kategori']; ?>'><i class="fa fa-trash"></i></a>
+                                    <button class="btn btn-danger delete-data" data-id="<?php echo $row['id_kategori']; ?>">
+                                    <i class="fa fa-trash"></i></a>
                                   </td>
                                 </tr>
 
@@ -87,6 +80,8 @@
                                 ?>
                               </tbody>
                           </table>
+                          </div>
+                          
                         </div>
                         
 			                </div>
@@ -97,6 +92,146 @@
 		  </div>
 	 </div>
 
+   <script>
+      //delete
+  jQuery("body").on("click", ".delete-data", function() {
+    var id = jQuery(this).attr("data-id");
+
+    swal({
+      title: "APAKAH KAMU YAKIN ?",
+      text: "INGIN MENGHAPUS DATA INI!",
+      icon: "warning",
+      buttons: [
+        'TIDAK',
+        'YA'
+      ],
+      dangerMode: true,
+    }).then(function(isConfirm) {
+      if (isConfirm) {
+
+        //ajax delete
+        jQuery.ajax({
+          url:  "aksi-delete.php",
+          data:   {
+            id: id
+          },
+          dataType: 'JSON',
+          type: 'POST',
+          success: function (response) {
+            if (response.sMessage == "success") {
+              swal({
+                title: 'BERHASIL!',
+                text: 'DATA BERHASIL DIHAPUS!',
+                icon: 'success',
+                timer: 1000,
+                showConfirmButton: false,
+                showCancelButton: false,
+                buttons: false,
+              }).then(function() {
+                location.reload();
+              });
+            }else{
+              swal({
+                title: 'GAGAL!',
+                text: 'DATA GAGAL DIHAPUS!',
+                icon: 'error',
+                timer: 1000,
+                showConfirmButton: false,
+                showCancelButton: false,
+                buttons: false,
+              }).then(function() {
+                location.reload();
+              });
+            }
+          }
+        });
+
+      } else {
+        return true;
+      }
+    })
+  })
+
+   </script>
+
+            <script type="text/javascript">
+                function hapus() {
+                    swal({
+                        title: "Apakah Data Akan Dihapus?",
+                        text: "Data akan di hapus",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                          
+
+                      .then((willDelete) => {
+                        if (willDelete) {
+                          swal("Sukses! Data berhasil dihapus", {
+                            icon: "success",
+                          })
+                          window.location.href="kategori_post.php";      
+                        } else {
+                          swal("Data batal dihapus!");
+                          exit();
+                        }
+
+                      });
+                }
+
+                function berhasil() {
+                    swal({
+                        title: "BERHASIL",
+                        text: "Data Telah ditambahkan",
+                        icon: "success",
+                        buttons: [false, "OK"],
+                      }).then(function() {
+                        window.location.href="kategori_post.php";
+                      });
+                }
+            </script>
+
+                          
+
+
 <?php 
 	include 'public_part/footer.php';
+
+
+
+  //fungsi hapus kategori
+  if ($_GET["id_kategori"]) {
+      $id_kategori = $_GET['id_kategori'];
+      $query="DELETE from kategori_info where id_kategori='$id_kategori'";
+          mysqli_query($connect, $query);
+     
+      $cek=mysqli_query($connect, $query);
+
+      if ($cek) {
+        echo '
+          <script>
+            hapus();
+          </script>'; 
+          exit();
+      }
+    }
+
+  //fungsi tambah kategori
+  if ($_POST["submit_kategori"]) {
+      
+      $nama_kategori  = $_POST['nama_kategori'];
+
+        $query="INSERT INTO kategori_info SET nama_kategori='$nama_kategori'";
+        $cek=mysqli_query($connect, $query);
+
+      if ($cek) {
+        echo '
+          <script>
+            berhasil();
+          </script>'; 
+          exit();
+      }
+  }
 ?>
+
+            

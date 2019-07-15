@@ -19,7 +19,7 @@
 				                <h5 class="card-title"><i class="fa fa-edit"></i> TAMBAH POST</h5>
 								<hr><br>
 								
-				                <form method="post" action="aksi-tambah.php" enctype="multipart/form-data">
+				                <form method="post" enctype="multipart/form-data">
 					                <div class="row align-items-center">
 					                	<input type="hidden" name="id" class="form-control rounded">
 
@@ -79,6 +79,39 @@
 			</div>
 		</div>
 	</div>
+
+
+	<script type="text/javascript">
+		function berhasil() {
+                    swal({
+                        title: "BERHASIL",
+                        text: "Post Telah ditambahkan",
+                        icon: "success",
+                        buttons: [false, "OK"],
+                      }).then(function() {
+                        window.location.href="post.php";
+                      });
+                }
+	</script>
 <?php 
 	include 'public_part/footer.php';
+
+	//fungsi tambah post
+	if ($_POST["submit_post"]) {
+			
+		$judul 			= $_POST['judul'];
+		$tanggal 		= $_POST['tanggal'];
+		$kategori	 	= $_POST['kategori'];
+		$isi		 	= $_POST['isi'];
+
+		$fileName = $_FILES['gambar']['name'];
+	  	$query="INSERT INTO info SET judul='$judul', tanggal='$tanggal', isi='$isi', kategori='$kategori', img='$fileName'";
+	  	$cek=mysqli_query($connect, $query);
+
+		// Simpan di Folder Gambar
+		move_uploaded_file($_FILES['gambar']['tmp_name'], "img/".$_FILES['gambar']['name']);
+		echo "<script>berhasil();</script>";
+	}
+
+	
 ?>

@@ -70,7 +70,7 @@
                                 <td><?php echo $row['pt_univ']; ?></td>
                                 <td>
                                   <a class="btn btn-success" href='edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-pen"></i></a><hr>
-                                  <a class="btn btn-danger" href='aksi-delete.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-trash"></i></a>
+                                  <a class="btn btn-danger" href='data_anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-trash"></i></a>
                                 </td>
                               </tr>
 
@@ -87,6 +87,40 @@
 		  </div>
 	</div>
 
+  <script type="text/javascript">
+    function hapus() {
+                    swal({
+                        title: "Apakah Anggota Akan Dihapus?",
+                        text: "Data anggota akan di hapus",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                          
+
+                      .then((willDelete) => {
+                        if (willDelete) {
+                          swal("Sukses! Anggota berhasil dihapus", {
+                            icon: "success",
+                          })
+                          window.location.href="data_anggota.php";      
+                        } else {
+                          swal("Data anggota batal dihapus!");
+                          exit();
+                        }
+
+                      });
+                }
+  </script>
+
 <?php 
 	include 'public_part/footer.php';
+
+  if ($_GET["id_anggota"]) {
+    $id_anggota = $_GET['id_anggota'];
+    $query="DELETE from anggota where id_anggota='$id_anggota'";
+        mysqli_query($connect, $query);
+   
+    echo "<script>hapus();</script>";
+  }
 ?>

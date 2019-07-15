@@ -11,31 +11,7 @@
       		<div class="row">
 		         <div class="col-md-12">
 		         		<div class="mb-5">
-                  <?php 
-                    if(isset($_GET['pesan'])){
-                      if($_GET['pesan']=="sukses"){
-                        echo '
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                          <strong>Sukses!</strong> Menambah Post.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
-
-                      if($_GET['pesan']=="hapus"){
-                        echo '
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                          <strong>Sukses!</strong> Menghapus anggota.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
-                    }
-                  ?>
+                  
 			              <div class="d-block d-md-flex listing">
 			                <div class="lh-content">
 				                <h5 class="card-title"><i class="fa fa-book"></i> Post</h5>
@@ -66,7 +42,7 @@
                                 <td><?php echo $row['nama_kategori']; ?></td>
                                 <td>
                                   <a class="btn btn-success" href='edit-post.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-pen"></i></a><hr>
-                                  <a class="btn btn-danger" href='aksi-delete.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-trash"></i></a>
+                                  <a class="btn btn-danger" href='post.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-trash"></i></a>
                                 </td>
                               </tr>
 
@@ -82,6 +58,43 @@
 			</div>
 		</div>
 	</div>
+
+  <script type="text/javascript">
+    function hapus() {
+                    swal({
+                        title: "Apakah Post Akan Dihapus?",
+                        text: "Post akan di hapus",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                          
+
+                      .then((willDelete) => {
+                        if (willDelete) {
+                          swal("Sukses! Post berhasil dihapus", {
+                            icon: "success",
+                          })
+                          window.location.href="post.php";      
+                        } else {
+                          swal("Post batal dihapus!");
+                          exit();
+                        }
+
+                      });
+                }
+  </script>
+
 <?php 
 	include 'public_part/footer.php';
+  //fungsi delete post
+  if ($_GET["id_post"]) {
+    $id_post = $_GET['id_post'];
+    $query="DELETE from info where id_info='$id_post'";
+        mysqli_query($connect, $query);
+    echo "
+      <script>
+            hapus();
+          </script>";
+  }
 ?>
