@@ -2,8 +2,16 @@
 <html lang="en">
   <head>
     <title>ISNU Jombang</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../images/header.png">
+    <meta name="author" content="Isnu Jombang">
+    <meta name="description" content="Ikatan Sarjana Nahdlatul Ulama Jombang">
+    <meta name="keywords" content='Isnu, Jombang, Jawa Timur, Ikatan Sarjana Nahdlatul Ulama, Ikatan Sarjana Nahdlatul Ulama Jombang, Isnu Jombang, Organisasi Isnu' />
+
+    <meta property="og:title" content="ISNU Jombang - Ikatan Sarjana Nahdlatul Ulama Jombang" />
+    <meta property="og:description" content="Ikatan Sarjana Nahdlatul Ulama Jombang" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="google-site-verification=z0XYBHIWm7l6MJF6hPuhJ_4iP8Tv1IkamAbIG3-2Qlk" />
+
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -21,7 +29,8 @@
 
     <link rel="stylesheet" href="../css/aos.css">
     <link rel="stylesheet" href="../css/rangeslider.css">
-
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/color.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
@@ -41,7 +50,7 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    <header class="site-navbar container-fluid py-0 " role="banner" style="background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);">
+    <header class="site-navbar container-fluid py-0 " role="banner" style="background-image: linear-gradient(to left, #134E5E 0%, #71B280 100%); position: fixed;  border-radius: 0px;">
       <div class="container-fluid">
         <!-- <div class="container"> -->
         <div class="row align-items-center">

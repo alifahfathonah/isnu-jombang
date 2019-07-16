@@ -27,7 +27,7 @@
   <script src="../js/bootstrap-datepicker.min.js"></script>
   <script src="../js/aos.js"></script>
   <script src="../js/rangeslider.min.js"></script>
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
   <script src="../js/main.js"></script>
   
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>

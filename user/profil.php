@@ -115,7 +115,7 @@
 										</thead>
 								</table>
 								
-								<a class="btn btn-success btn-md" href='edit-profil.php?id=<?php echo $row['id_anggota']; ?>'><i class="fa fa-edit"></i> Edit Profil</a>
+								<a class="btn btn-success btn-md" href='edit-profil.php'><i class="fa fa-edit"></i> Edit Profil</a>
 												
 								<a class="btn btn-warning btn-md" target="_blank" onclick="window.open('kartu.php?id=<?php echo $row['id_anggota']; ?>','Cetak Kartu');"><i class="fa fa-print"></i> Cetak Kartu</a>
 								<?php
@@ -160,13 +160,13 @@
 										echo ', ';
 										echo $row['kota']; ?>
 									</div><hr>
-									<form method="post" action="aksi-edit-foto.php" enctype="multipart/form-data">
+									<form method="post" enctype="multipart/form-data">
 										<input type="hidden" name="id" class="form-control" required value="<?php echo $row['id_anggota']; ?>">
 
 										<input type="file" name="foto" class="form-control" required>
 										<br>
-										<input type="submit" class="btn btn-success" name="" value="Edit Foto">
-										<input type="reset" class="btn btn-warning" name="" value="Reset">
+										<input type="submit" class="btn btn-success" name="submit_foto" value="Edit Foto">
+										<input type="reset" class="btn btn-warning" value="Reset">
 									</form>
 									
 				                </div>
@@ -185,8 +185,51 @@
 			</div>
 		</div>
 	</div>
-
+		<script type="text/javascript">
+			function berhasil() {
+				swal({
+	            	title: "BERHASIL",
+	                text: "Foto Telah diubah",
+	                icon: "success",
+	                buttons: [false, "OK"],
+	            }).then(function() {
+	            	window.location.href="profil.php";
+	            });
+	        }
+		</script>
 
 <?php 
 	include 'public_part/footer.php';
+
+	if (isset($_POST['submit_foto'])) {
+		$id = $_POST['id'];
+		// Ambil data foto yang dipilih dari form
+	  	$foto = $_FILES['foto']['name'];
+	  	$tmp = $_FILES['foto']['tmp_name'];
+	  	
+	  	$fotobaru = date('dmYHis').$foto;
+
+	  	// Set path folder tempat menyimpan fotonya
+	  	$path = "img/".$fotobaru;
+	 	 // Proses upload
+	  	if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
+		    // Query untuk mengecek yang dikirim
+		    $query = "SELECT * FROM anggota WHERE id_anggota='".$id."'";
+		    $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
+		    $data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
+		    // Cek apakah file foto sebelumnya ada di folder images
+		    if(is_file("img/".$data['img'])) // Jika foto ada
+		      unlink("img/".$data['img']); // Hapus file foto sebelumnya yang ada di folder images
+		    
+		    // Proses ubah data ke Database
+		    $query = "UPDATE anggota SET
+						img = '$fotobaru'
+						WHERE id_anggota='$id'";
+		    $sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
+		    if($sql){ // Cek jika proses simpan ke database sukses atau tidak
+		      // Jika Sukses, Lakukan :
+		      echo "<script>berhasil();</script>";
+		    }
+	  	}
+	}
 ?>

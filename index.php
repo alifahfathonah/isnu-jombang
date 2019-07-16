@@ -116,7 +116,7 @@
                 <ul>
                   <?php 
                     include 'config/koneksi.php';
-                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 3");
+                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 7");
                     foreach($qTampil as $row){
                   ?>
                   <li>

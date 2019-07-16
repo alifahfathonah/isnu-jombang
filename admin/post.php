@@ -42,7 +42,8 @@
                                 <td><?php echo $row['nama_kategori']; ?></td>
                                 <td>
                                   <a class="btn btn-success" href='edit-post.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-pen"></i></a><hr>
-                                  <a class="btn btn-danger" href='post.php?id_post=<?php echo $row['id_info']; ?>'><i class="fa fa-trash"></i></a>
+
+                                  <button class="btn btn-danger delete-data" data-id="<?php echo $row['id_info']; ?>"><i class="fa fa-trash"></i>
                                 </td>
                               </tr>
 
@@ -59,42 +60,68 @@
 		</div>
 	</div>
 
-  <script type="text/javascript">
-    function hapus() {
-                    swal({
-                        title: "Apakah Post Akan Dihapus?",
-                        text: "Post akan di hapus",
-                        icon: "warning",
-                        buttons: true,
-                        dangerMode: true,
-                      })
-                          
 
-                      .then((willDelete) => {
-                        if (willDelete) {
-                          swal("Sukses! Post berhasil dihapus", {
-                            icon: "success",
-                          })
-                          window.location.href="post.php";      
-                        } else {
-                          swal("Post batal dihapus!");
-                          exit();
-                        }
 
-                      });
+   <script>
+      //delete
+      jQuery("body").on("click", ".delete-data", function() {
+        var id = jQuery(this).attr("data-id");
+
+        swal({
+          title: "APAKAH KAMU YAKIN ?",
+          text: "INGIN MENGHAPUS DATA INI!",
+          icon: "warning",
+          buttons: [
+            'TIDAK',
+            'YA'
+          ],
+          dangerMode: true,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
+
+            //ajax delete
+            jQuery.ajax({
+              url:  "aksi-delete.php",
+              data:   {
+              id_post: id
+              },
+              dataType: 'JSON',
+              type: 'POST',
+              success: function (response) {
+                if (response.sMessage == "success") {
+                  swal({
+                    title: 'BERHASIL!',
+                    text: 'DATA BERHASIL DIHAPUS!',
+                    icon: 'success',
+                    timer: 1000,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    buttons: false,
+                  }).then(function() {
+                    location.reload();
+                  });
+                }else{
+                  swal({
+                    title: 'GAGAL!',
+                    text: 'DATA GAGAL DIHAPUS!',
+                    icon: 'error',
+                    timer: 1000,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    buttons: false,
+                  }).then(function() {
+                    location.reload();
+                  });
                 }
-  </script>
+              }
+            });
 
+          } else {
+            return true;
+          }
+        })
+      })
+   </script>
 <?php 
-	include 'public_part/footer.php';
-  //fungsi delete post
-  if ($_GET["id_post"]) {
-    $id_post = $_GET['id_post'];
-    $query="DELETE from info where id_info='$id_post'";
-        mysqli_query($connect, $query);
-    echo "
-      <script>
-            hapus();
-          </script>";
-  }
+  include 'public_part/footer.php';
 ?>

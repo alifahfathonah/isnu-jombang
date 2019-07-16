@@ -9,7 +9,7 @@
 }
 .header-top{
   box-shadow: 0 3px 5px rgba(0,0,0,.1);
-  background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
+  background-image: linear-gradient(to left, #134E5E 0%, #71B280 100%);
 }
 .leftmenutrigger{
   color: #fff;

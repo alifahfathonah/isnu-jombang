@@ -31,7 +31,7 @@
 			                <div class="lh-content">
 				                <h5 class="card-title"><i class="fa fa-list-ul"></i> Data Anggota</h5>
                           <div class="col-md-12">
-                          <form method="post" action="kategori_post.php">
+                          <form method="post">
                             <div class="row align-items-center">
                               <input type="hidden" name="id" class="form-control rounded">
 
@@ -94,127 +94,81 @@
 
    <script>
       //delete
-  jQuery("body").on("click", ".delete-data", function() {
-    var id = jQuery(this).attr("data-id");
+      jQuery("body").on("click", ".delete-data", function() {
+        var id = jQuery(this).attr("data-id");
 
-    swal({
-      title: "APAKAH KAMU YAKIN ?",
-      text: "INGIN MENGHAPUS DATA INI!",
-      icon: "warning",
-      buttons: [
-        'TIDAK',
-        'YA'
-      ],
-      dangerMode: true,
-    }).then(function(isConfirm) {
-      if (isConfirm) {
+        swal({
+          title: "APAKAH KAMU YAKIN ?",
+          text: "INGIN MENGHAPUS DATA INI!",
+          icon: "warning",
+          buttons: [
+            'TIDAK',
+            'YA'
+          ],
+          dangerMode: true,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
 
-        //ajax delete
-        jQuery.ajax({
-          url:  "aksi-delete.php",
-          data:   {
-            id: id
-          },
-          dataType: 'JSON',
-          type: 'POST',
-          success: function (response) {
-            if (response.sMessage == "success") {
-              swal({
-                title: 'BERHASIL!',
-                text: 'DATA BERHASIL DIHAPUS!',
-                icon: 'success',
-                timer: 1000,
-                showConfirmButton: false,
-                showCancelButton: false,
-                buttons: false,
-              }).then(function() {
-                location.reload();
-              });
-            }else{
-              swal({
-                title: 'GAGAL!',
-                text: 'DATA GAGAL DIHAPUS!',
-                icon: 'error',
-                timer: 1000,
-                showConfirmButton: false,
-                showCancelButton: false,
-                buttons: false,
-              }).then(function() {
-                location.reload();
-              });
-            }
+            //ajax delete
+            jQuery.ajax({
+              url:  "aksi-delete.php",
+              data:   {
+                id_kategori: id
+              },
+              dataType: 'JSON',
+              type: 'POST',
+              success: function (response) {
+                if (response.sMessage == "success") {
+                  swal({
+                    title: 'BERHASIL!',
+                    text: 'DATA BERHASIL DIHAPUS!',
+                    icon: 'success',
+                    timer: 1000,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    buttons: false,
+                  }).then(function() {
+                    location.reload();
+                  });
+                }else{
+                  swal({
+                    title: 'GAGAL!',
+                    text: 'DATA GAGAL DIHAPUS!',
+                    icon: 'error',
+                    timer: 1000,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    buttons: false,
+                  }).then(function() {
+                    location.reload();
+                  });
+                }
+              }
+            });
+
+          } else {
+            return true;
           }
-        });
+        })
+      })
 
-      } else {
-        return true;
+      //insert kategori
+      function berhasil() {
+        swal({
+            title: "BERHASIL",
+            text: "Data Telah ditambahkan",
+            icon: "success",
+            buttons: [false, "OK"],
+          }).then(function() {
+            window.location.href="kategori_post.php";
+          });
       }
-    })
-  })
-
    </script>
-
-            <script type="text/javascript">
-                function hapus() {
-                    swal({
-                        title: "Apakah Data Akan Dihapus?",
-                        text: "Data akan di hapus",
-                        icon: "warning",
-                        buttons: true,
-                        dangerMode: true,
-                      })
-                          
-
-                      .then((willDelete) => {
-                        if (willDelete) {
-                          swal("Sukses! Data berhasil dihapus", {
-                            icon: "success",
-                          })
-                          window.location.href="kategori_post.php";      
-                        } else {
-                          swal("Data batal dihapus!");
-                          exit();
-                        }
-
-                      });
-                }
-
-                function berhasil() {
-                    swal({
-                        title: "BERHASIL",
-                        text: "Data Telah ditambahkan",
-                        icon: "success",
-                        buttons: [false, "OK"],
-                      }).then(function() {
-                        window.location.href="kategori_post.php";
-                      });
-                }
-            </script>
-
                           
 
 
 <?php 
 	include 'public_part/footer.php';
-
-
-
-  //fungsi hapus kategori
-  if ($_GET["id_kategori"]) {
-      $id_kategori = $_GET['id_kategori'];
-      $query="DELETE from kategori_info where id_kategori='$id_kategori'";
-          mysqli_query($connect, $query);
-     
-      $cek=mysqli_query($connect, $query);
-
-      if ($cek) {
-        echo '
-          <script>
-            hapus();
-          </script>'; 
-          exit();
-      }
-    }
 
   //fungsi tambah kategori
   if ($_POST["submit_kategori"]) {

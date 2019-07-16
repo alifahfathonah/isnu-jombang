@@ -53,7 +53,7 @@
                   <?php
                             include ('config/koneksi.php');
                     $no = 1;
-                    $qTampil = mysqli_query($connect, "SELECT * FROM anggota");
+                    $qTampil = mysqli_query($connect, "SELECT * FROM anggota order by id_anggota desc");
                     foreach($qTampil as $row){
                   ?>
 

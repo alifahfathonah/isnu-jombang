@@ -12,31 +12,6 @@
       		<div class="row">
 		         <div class="col-md-12">
 		         		<div class="mb-5">
-                  <?php 
-                    if(isset($_GET['pesan'])){
-                      if($_GET['pesan']=="hapus"){
-                        echo '
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                          <strong>Sukses!</strong> Menghapus anggota.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
-                      if($_GET['pesan']=="sukses"){
-                        echo '
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                          <strong>Sukses!</strong> Menambah anggota.
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                              ';
-                      }
-                    }
-                  ?>
-
 			              <div class="d-block d-md-flex listing">
 			                <div class="lh-content">
 				                <h5 class="card-title"><i class="fa fa-list-ul"></i> Data Anggota</h5>
@@ -70,7 +45,7 @@
                                 <td><?php echo $row['pt_univ']; ?></td>
                                 <td>
                                   <a class="btn btn-success" href='edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-pen"></i></a><hr>
-                                  <a class="btn btn-danger" href='data_anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-trash"></i></a>
+                                  <button class="btn btn-danger delete-data" data-id="<?php echo $row['id_anggota']; ?>"><i class="fa fa-trash"></i>
                                 </td>
                               </tr>
 
@@ -87,40 +62,67 @@
 		  </div>
 	</div>
 
-  <script type="text/javascript">
-    function hapus() {
-                    swal({
-                        title: "Apakah Anggota Akan Dihapus?",
-                        text: "Data anggota akan di hapus",
-                        icon: "warning",
-                        buttons: true,
-                        dangerMode: true,
-                      })
-                          
+   <script>
+      //delete
+      jQuery("body").on("click", ".delete-data", function() {
+        var id = jQuery(this).attr("data-id");
 
-                      .then((willDelete) => {
-                        if (willDelete) {
-                          swal("Sukses! Anggota berhasil dihapus", {
-                            icon: "success",
-                          })
-                          window.location.href="data_anggota.php";      
-                        } else {
-                          swal("Data anggota batal dihapus!");
-                          exit();
-                        }
+        swal({
+          title: "APAKAH KAMU YAKIN ?",
+          text: "INGIN MENGHAPUS DATA INI!",
+          icon: "warning",
+          buttons: [
+            'TIDAK',
+            'YA'
+          ],
+          dangerMode: true,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
 
-                      });
+            //ajax delete
+            jQuery.ajax({
+              url:  "aksi-delete.php",
+              data:   {
+              id_anggota: id
+              },
+              dataType: 'JSON',
+              type: 'POST',
+              success: function (response) {
+                if (response.sMessage == "success") {
+                  swal({
+                    title: 'BERHASIL!',
+                    text: 'DATA BERHASIL DIHAPUS!',
+                    icon: 'success',
+                    timer: 1000,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    buttons: false,
+                  }).then(function() {
+                    location.reload();
+                  });
+                }else{
+                  swal({
+                    title: 'GAGAL!',
+                    text: 'DATA GAGAL DIHAPUS!',
+                    icon: 'error',
+                    timer: 1000,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    buttons: false,
+                  }).then(function() {
+                    location.reload();
+                  });
                 }
-  </script>
+              }
+            });
+
+          } else {
+            return true;
+          }
+        })
+      })
+   </script>
 
 <?php 
 	include 'public_part/footer.php';
-
-  if ($_GET["id_anggota"]) {
-    $id_anggota = $_GET['id_anggota'];
-    $query="DELETE from anggota where id_anggota='$id_anggota'";
-        mysqli_query($connect, $query);
-   
-    echo "<script>hapus();</script>";
-  }
 ?>

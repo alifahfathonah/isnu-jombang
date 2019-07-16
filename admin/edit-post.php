@@ -21,7 +21,7 @@
 								
 								<?php
 									$id_post = $_GET['id_post'];
-									$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A RIGHT JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE id_info='$id_post'");
+									$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE id_info='$id_post'");
 									foreach($qTampil as $row){
 								?>
 				                <form method="post" enctype="multipart/form-data">
@@ -62,7 +62,7 @@
 
 						                <div class="col-lg-12">
 					                  		<label>Isi :</label>
-						                    <textarea name="isi" class="ckeditor" placeholder="Masukkan Isi" required><?php echo $row['isi']; ?></textarea>
+						                    <textarea class="ckeditor" name="isi"><?php echo $row['isi']; ?></textarea>
 						                </div>
 
 						               

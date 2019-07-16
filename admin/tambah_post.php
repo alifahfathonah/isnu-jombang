@@ -83,15 +83,15 @@
 
 	<script type="text/javascript">
 		function berhasil() {
-                    swal({
-                        title: "BERHASIL",
-                        text: "Post Telah ditambahkan",
-                        icon: "success",
-                        buttons: [false, "OK"],
-                      }).then(function() {
-                        window.location.href="post.php";
-                      });
-                }
+			swal({
+            	title: "BERHASIL",
+                text: "Post Telah ditambahkan",
+                icon: "success",
+                buttons: [false, "OK"],
+            }).then(function() {
+            	window.location.href="post.php";
+            });
+        }
 	</script>
 <?php 
 	include 'public_part/footer.php';

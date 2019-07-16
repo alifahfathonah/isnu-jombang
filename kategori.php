@@ -1,4 +1,5 @@
-<?php include 'public_part/header.php'; ?>
+<?php include 'public_part/header.php'; 
+?>
     
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/bg_isnu.jpg); min-height: 300px;" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
@@ -27,15 +28,17 @@
           <div class="col-lg-8">
             <div class="row">
               <div class="col-md-7 text-left border-primary">
-                <h2 class="font-weight-light text-primary">Berita Terbaru</h2>
+                <h2 class="font-weight-light text-primary">Kategori <?php echo $nama_kategori;?></h2>
 
               </div>
               <div class="col-lg-12">
                 <br>
                 <?php 
                   include 'config/koneksi.php';
-                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 3");
+                  $kategori = $_GET['kategori'];
+                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='$kategori' order by id_info desc");
                   foreach($qTampil as $row){
+                    $nama_kategori = $row['nama_kategori'];
                 ?>
                 <div class="d-block d-md-flex listing overflow zoom">
                   <a href="listings-single.html" class="img d-block " style="background-image: url('admin/img/<?php echo $row['img']; ?>')"></a>
@@ -118,7 +121,7 @@
                 <ul>
                   <?php 
                     include 'config/koneksi.php';
-                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 10");
+                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc");
                     foreach($qTampil as $row){
                   ?>
                   <li>
