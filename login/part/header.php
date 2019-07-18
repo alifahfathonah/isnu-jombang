@@ -2,9 +2,19 @@
 <html>  
 <head>  
     <title>ISNU Login</title>
+    <link rel="icon" href="images/header.png">
+    <meta name="author" content="Isnu Jombang">
+    <meta name="description" content="Ikatan Sarjana Nahdlatul Ulama Jombang">
+    <meta name="keywords" content='Isnu, Jombang, Jawa Timur, Ikatan Sarjana Nahdlatul Ulama, Ikatan Sarjana Nahdlatul Ulama Jombang, Isnu Jombang, Organisasi Isnu' />
+
+    <meta property="og:title" content="ISNU Jombang - Ikatan Sarjana Nahdlatul Ulama Jombang" />
+    <meta property="og:description" content="Ikatan Sarjana Nahdlatul Ulama Jombang" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="google-site-verification=z0XYBHIWm7l6MJF6hPuhJ_4iP8Tv1IkamAbIG3-2Qlk" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/color.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <style type="text/css">
 :root {
         --input-padding-x: 1.5rem;

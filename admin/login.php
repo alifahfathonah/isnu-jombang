@@ -13,6 +13,9 @@
     					if($_GET['pesan']=="gagal"){
     						echo "<div class='alert alert-danger'><center>Username atau Password Anda salah!</center></div>";
     					}
+              if($_GET['pesan']=="captcha"){
+                echo "<div class='alert alert-danger'><center>Maaf! Captcha harus diisi.</center></div>";
+              }
     					if($_GET['pesan']=="sukses"){
     						echo "<div class='alert alert-success'><center>Berhasil daftar, silahkan login!</center></div>";
     					}
@@ -36,8 +39,7 @@
               </div>
 
               <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
+                <div class="g-recaptcha" name="g-recaptcha-response" data-sitekey="6Le3Pa4UAAAAAGwsyUDQl2udcQWz5knjj9GZLgvd"></div>
               </div>
               <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Login</button>
               <hr class="my-4">

@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
     
     
   </head>

@@ -44,10 +44,10 @@
 											  <option value="<?php echo $row["id_kategori"];?>"><?php echo $row["nama_kategori"];?></option>
 											  <?php 
 								                  $qTampil = mysqli_query($connect, "SELECT * FROM kategori_info");
-								                  foreach($qTampil as $row){
+								                  foreach($qTampil as $kat){
 								                ?>
-											  <option value="<?php echo $row["id_kategori"];?>">
-											  		<?php echo $row["nama_kategori"];?>
+											  <option value="<?php echo $kat["id_kategori"];?>">
+											  		<?php echo $kat["nama_kategori"];?>
 											  </option>
 
 											<?php } ?>
@@ -88,7 +88,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<script type="text/javascript">
 		function berhasil() {
                     swal({

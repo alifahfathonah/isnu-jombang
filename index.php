@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
-          <div class="col-md-12" style="top: 35px;">
+          <div class="col-md-12" style="top: 100px;">
             
             
             <div class="row justify-content-center mb-4">
@@ -16,15 +16,20 @@
               </div>
             </div>
 
-            <div class="form-search-wrap mb-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="form-search-wrap mb-3" data-aos="fade-up" data-aos-delay="200" style="top: 0px;">
               <h2>DAFTAR JADI ANGGOTA ISNU</h2><hr>
               <form method="post" action="login/aksi-daftar.php">
                 <div class="row align-items-center">
-                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-5">
+                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                     <input type="text" name="username" class="form-control rounded" placeholder="Buat Username" required>
                   </div>
-                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-5">
+                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                       <input type="password" name="password" class="form-control rounded" placeholder="Buat Password" required> 
+                  </div>
+                  <input type="hidden" name="img" id="inputPassword" class="form-control">
+
+                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                    <div class="g-recaptcha" name="g-recaptcha-response" data-sitekey="6Le3Pa4UAAAAAGwsyUDQl2udcQWz5knjj9GZLgvd"></div>
                   </div>
                   <input type="hidden" name="img" id="inputPassword" class="form-control" value="avatar.png">
                   <div class="col-lg-12 col-xl-2 ml-auto text-right">
@@ -38,7 +43,7 @@
         </div>
       </div>
     </div>  
-
+    <br>
     <div class="site-section bg-light">
       <div class="container">
         <div class="row justify-content-center mb-5">

@@ -76,7 +76,7 @@
 			<tr bgcolor="#e7e7e7">
 				<td><br></td>
 				<td></td>
-				<td style="text-align: center; font-size: 13px;">H. Abdul Hanan Majdy S.Kom</td>
+				<td style="text-align: center; font-size: 13px;">H. Abdul Hanan Majdy, S.Kom</td>
 			</tr>
 			
 			<?php } ?>

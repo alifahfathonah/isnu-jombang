@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="public_part/chartjs/Chart.js"></script>
-    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 
     

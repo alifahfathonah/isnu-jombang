@@ -32,8 +32,7 @@
               </div>
 
               <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
+                <div class="g-recaptcha" name="g-recaptcha-response" data-sitekey="6Le3Pa4UAAAAAGwsyUDQl2udcQWz5knjj9GZLgvd"></div>
               </div>
               <input type="hidden" name="img" id="inputPassword" class="form-control" value="avatar.png">
 
