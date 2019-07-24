@@ -34,7 +34,8 @@
                 <br>
                 <?php 
                   include 'config/koneksi.php';
-                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 3");
+                  $search = $_POST['search'];
+                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where judul LIKE '%$search%' order by id_info desc");
                   foreach($qTampil as $row){
                 ?>
                 <div class="d-block d-md-flex listing overflow zoom">
@@ -102,7 +103,7 @@
               <h3 class="h5 text-black mb-3">Cari Info</h3>
               <div class="d-block d-md-flex listing">
                 <div class="lh-content">
-                  <form id="custom-search-input" method="post" action="cari.php">
+                  <form id="custom-search-input" method="post">
                       <div class="input-group col-md-12">
                           <input type="text" name="search" class="form-control input-lg" placeholder="Cari Disini" required />
                           <span class="input-group-btn">

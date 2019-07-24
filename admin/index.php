@@ -12,7 +12,7 @@
       			<div class="row">
 
 			        <div class="col-md-4 col-xl-4">
-			            <div class="card bg-c-blue order-card">
+			            <a href="data_anggota.php" class="card bg-c-blue order-card">
 			                <div class="card-block">
 			                    <h1 class="text-right"><i class="icon-address-card f-left" style="font-size: 50px;"></i>
 			                    	<?php
@@ -30,11 +30,11 @@
 			                    </h1>
 			                    <p class="m-b-0 f-right">DATA ANGGOTA</p>
 			                </div>
-			            </div>
+			            </a>
 			        </div>
 			        
 			        <div class="col-md-4 col-xl-4">
-			            <div class="card bg-c-green order-card">
+			            <a href="post.php" class="card bg-c-green order-card">
 			                <div class="card-block">
 			                    <h1 class="text-right"><i class="icon-newspaper-o f-left" style="font-size: 50px;"></i>
 			                    	<?php
@@ -51,11 +51,11 @@
 			                    </h1>
 			                    <p class="m-b-0 f-right">POST</p>
 			                </div>
-			            </div>
+			            </a>
 			        </div>
 			        
 			        <div class="col-md-4 col-xl-4">
-			            <div class="card bg-c-yellow order-card">
+			            <a href="kategori_post.php" class="card bg-c-yellow order-card">
 			                <div class="card-block">
 			                    <h1 class="text-right"><i class="icon-tag f-left" style="font-size: 50px;"></i>
 			                    	<?php
@@ -72,7 +72,7 @@
 			                    </h1>
 			                    <p class="m-b-0 f-right">KATEGORI POST</p>
 			                </div>
-			            </div>
+			            </a>
 			        </div>
 			        
 

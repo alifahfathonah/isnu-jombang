@@ -34,7 +34,9 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/color.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-
+    <style type="text/css">
+      
+    </style>
     
   </head>
   <body>
@@ -98,4 +100,5 @@
         <!-- </div> -->
       </div>
     </header>
+
     

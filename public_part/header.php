@@ -35,8 +35,39 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <style type="text/css">
+      #custom-search-input{
+          padding: 3px;
+          border: solid 1px #E4E4E4;
+          border-radius: 6px;
+          background-color: #fff;
+      }
 
-    
+      #custom-search-input input{
+          border: 0;
+          box-shadow: none;
+      }
+
+      #custom-search-input button{
+          margin: 10px 0 0 0;
+          background: none;
+          box-shadow: none;
+          border: 0;
+          color: #666666;
+          padding: 0 0px 0 10px;
+          border-left: solid 1px #ccc;
+      }
+
+      #custom-search-input button:hover{
+          border: 0;
+          box-shadow: none;
+          border-left: solid 1px #ccc;
+      }
+
+      #custom-search-input .icon-search{
+          font-size: 25px;
+      }
+    </style> 
     
   </head>
   <body>

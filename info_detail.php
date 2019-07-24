@@ -163,18 +163,6 @@
 
             <!-- side bar-->
           <div class="col-lg-4 ml-auto">
-            <div class="mb-5">
-              <h3 class="h5 text-black mb-3">Cari Info</h3>
-              <div class="d-block d-md-flex listing">
-                <div class="lh-content">
-                  <form action="#" method="post">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Cari info disini...">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
 
             <div class="mb-5">
               <h3 class="h5 text-black mb-3">Info Populer</h3>
