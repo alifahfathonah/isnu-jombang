@@ -61,7 +61,15 @@
 											<?php
 			                    				include ('../config/koneksi.php');
 											  	$username = $_SESSION['username'];
-											  	$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE username='$username'");
+											  	$qTampil = mysqli_query($connect, "
+
+											SELECT A.*,B.*,C.*,D.* FROM anggota AS A 
+
+											INNER JOIN desa AS B ON A.dusun_desa = B.id
+											INNER JOIN kecamatan AS C ON A.kecamatan = C.id
+											INNER JOIN universitas AS D ON A.pt_univ = D.id
+
+											  	WHERE username='$username'");
 											  	foreach($qTampil as $row){
 											?>
 											<tr>
@@ -86,7 +94,7 @@
 											</tr>
 											<tr>
 												<th><strong>Desa / Dusun : </strong></th>
-												<th><?php echo $row['dusun_desa']; ?></th>
+												<th><?php echo $row['desa']; ?></th>
 											</tr>
 											<tr>
 												<th><strong>Kecamatan : </strong></th>
@@ -109,8 +117,8 @@
 												<th><?php echo $row['jurusan']; ?></th>
 											</tr>
 											<tr>
-												<th><strong>PT / Universitas : </strong></th>
-												<th><?php echo $row['pt_univ']; ?></th>
+												<th><strong>Universitas : </strong></th>
+												<th><?php echo $row['universitas']; ?></th>
 											</tr>
 										</thead>
 								</table>
@@ -135,7 +143,14 @@
 				                <?php
 									$username = $_SESSION['username'];
 
-									$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE username='$username'");
+									$qTampil = mysqli_query($connect, "
+										SELECT A.*,B.*,C.*,D.* FROM anggota AS A 
+
+										INNER JOIN desa AS B ON A.dusun_desa = B.id
+										INNER JOIN kecamatan AS C ON A.kecamatan = C.id
+										INNER JOIN universitas AS D ON A.pt_univ = D.id
+
+										WHERE username='$username'");
 										foreach($qTampil as $row){
 											$img = $row['img'];
 								?>
@@ -153,7 +168,7 @@
 				                    <div class="title">
 				                        <h6><?php echo $row['nama']; ?></h6>
 				                    </div>
-				                    <div class="desc"><?php echo $row['dusun_desa'];
+				                    <div class="desc"><?php echo $row['desa'];
 										echo ', ';
 										echo $row['kecamatan'];
 										echo ', ';

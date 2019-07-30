@@ -122,8 +122,8 @@
   <div class="site-section">
       <div class="container">
         <div class="row">
-            <div class="col-md-8 text-left border-success" style=" top:1px;  bottom: 130px;">
-
+            <div class="col-md-8 d-block d-md-flex listing vertical lh-content" style=" top:1px;  bottom: 130px;">
+              <br>
               <h2><b><?php echo $row['judul'];?></b></h2>
               <p class="color-black-opacity-5">
 
@@ -160,12 +160,15 @@
             </div>
             
             <?php } ?>
-
+            
             <!-- side bar-->
+        
           <div class="col-lg-4 ml-auto">
 
             <div class="mb-5">
-              <h3 class="h5 text-black mb-3">Info Populer</h3>
+              <div class="d-block d-md-flex listing bg-success">
+                <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"><i class="icon-bell"></i> INFO POPULER</h2>
+              </div>
               <div class="widget-content popular-posts">
                 <ul>
                   <?php 
@@ -186,6 +189,11 @@
               </div>
             </div>
           </div>
+
+            <div class="col-md-8 d-block d-md-flex listing vertical lh-content">
+              <h2 class="lh-content" style="font-weight: bold; font-size: 20px;"><i class="icon-comment"></i> KOMENTAR</h2>
+              
+            </div>
         </div>
       </div>
     </div> 

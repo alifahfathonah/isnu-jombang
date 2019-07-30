@@ -1,4 +1,12 @@
 <?php
+  session_start();
+  include '../config/koneksi.php';
+  if(empty($_SESSION['admin'])){
+      header("location:login.php");
+  }
+?>
+
+<?php
 // Fungsi header dengan mengirimkan raw data excel
 header("Content-type: application/vnd-ms-excel");
  

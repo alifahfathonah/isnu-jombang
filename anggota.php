@@ -53,7 +53,15 @@
                   <?php
                             include ('config/koneksi.php');
                     $no = 1;
-                    $qTampil = mysqli_query($connect, "SELECT * FROM anggota order by id_anggota desc");
+                    $qTampil = mysqli_query($connect, "
+
+                    SELECT A.*,B.*,C.*,D.* FROM anggota AS A 
+
+                    INNER JOIN desa AS B ON A.dusun_desa = B.id
+                    INNER JOIN kecamatan AS C ON A.kecamatan = C.id
+                    INNER JOIN universitas AS D ON A.pt_univ = D.id
+
+                    order by id_anggota desc");
                     foreach($qTampil as $row){
                   ?>
 
@@ -62,7 +70,7 @@
                     <td><?php echo $row['nama']; ?></td>
                     <td><?php echo $row['jenjang']; ?></td>
                     <td><?php echo $row['jurusan']; ?></td>
-                    <td><?php echo $row['pt_univ']; ?></td>
+                    <td><?php echo $row['universitas']; ?></td>
                   </tr>
 
                   <?php

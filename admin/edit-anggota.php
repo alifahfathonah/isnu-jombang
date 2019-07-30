@@ -20,7 +20,14 @@
 								<hr><br>
 								<?php
 									$id_anggota = $_GET['id_anggota'];
-									$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE id_anggota='$id_anggota'");
+									$qTampil = mysqli_query($connect, "
+									SELECT A.*,B.*,C.*,D.* FROM anggota AS A 
+
+									INNER JOIN desa AS B ON A.dusun_desa = B.id
+									INNER JOIN kecamatan AS C ON A.kecamatan = C.id
+									INNER JOIN universitas AS D ON A.pt_univ = D.id
+
+									WHERE id_anggota='$id_anggota'");
 									foreach($qTampil as $row){
 								?>
 				                <form method="post">
@@ -42,12 +49,17 @@
 						                    <input type="text" name="no_ktp" class="form-control rounded" placeholder="Masukkan No. KTP" required value="<?php echo $row['no_ktp']; ?>">
 						                </div>
 
-						                <div class="col-lg-12">
+						                <div class="col-lg-6">
 					                  		<label>Jenis Kelamin :</label>
-						                    <input type="text" name="jenis_kelamin" class="form-control rounded" placeholder="Masukkan Jenis Kelamin" required value="<?php echo $row['jenis_kelamin']; ?>">
+						                    <select class="browser-default custom-select" name="jenis_kelamin" required>
+											  
+											  <option value="<?php echo $row["jenis_kelamin"];?>"><?php echo $row["jenis_kelamin"];?></option>
+											  <option value="Laki-Laki">Laki-Laki</option>
+											  <option value="Perempuan">Perempuan</option>
+											</select>
 						                </div>
 
-						                <div class="col-lg-12">
+						                <div class="col-lg-6">
 					                  		<label>Tempat Lahir :</label>
 						                    <input type="text" name="tempat_lahir" class="form-control rounded" placeholder="Masukkan Tempat Lahir" required value="<?php echo $row['tempat_lahir']; ?>">
 						                </div>
@@ -58,18 +70,46 @@
 						                </div>
 
 						                <div class="col-lg-12">
-					                  		<label>Dusun / Desa :</label>
-						                    <input type="text" name="dusun_desa" class="form-control rounded" placeholder="Masukkan Dusun / Desa" required value="<?php echo $row['dusun_desa']; ?>">
-						                </div>
+						                	<br>
+							                <b>ALAMAT ANGGOTA</b>
 
-						                <div class="col-lg-12">
-					                  		<label>Kecamatan :</label>
-						                    <input type="text" name="kecamatan" class="form-control rounded" placeholder="Masukkan Kecamatan" required value="<?php echo $row['kecamatan']; ?>">
 						                </div>
-
-						                <div class="col-lg-12">
+						                <div class="col-lg-4">
 					                  		<label>Kota :</label>
-						                    <input type="text" name="kota" class="form-control rounded" placeholder="Masukkan Kota" required value="<?php echo $row['kota']; ?>">
+						                    <select class="browser-default custom-select" name="kota" required>
+											  <option value="<?php echo $row['kota'];?>">
+											  		<?php echo $row['kota'];?>
+											  </option>
+											  <option value="Jombang">
+											  		Jombang
+											  </option>
+											</select>
+						                </div>
+
+						                <div class="col-lg-4">
+					                  		<label>Kecamatan :</label>
+						                    <select class="browser-default custom-select" name="kecamatan" id="kecamatan" required>
+											  <option selected>-- Pilih Kecamatan --</option>
+											  <?php 
+								                  $qTampil = mysqli_query($connect, "SELECT * FROM kecamatan");
+								                  foreach($qTampil as $kec){
+								                ?>
+											  <option value="<?php echo $kec["id"];?>">
+											  		<?php echo $kec["kecamatan"];?>
+											  </option>
+
+											<?php } ?>
+											</select>
+						                </div>
+
+						                <div class="col-lg-4">
+					                  		<label>Dusun / Desa :</label>
+						                    <select class="browser-default custom-select" name="dusun_desa" id="dusun_desa" required>
+											  <option value="">-- Pilih Desa --</option>
+											  
+											  <option></option>
+
+											</select>
 						                </div>
 
 						                <div class="col-lg-12">
@@ -89,12 +129,19 @@
 
 						                <div class="col-lg-12">
 					                  		<label>PT / Universitas :</label>
-						                    <input type="text" name="pt_univ" class="form-control rounded" placeholder="Masukkan PT / Universitas" required value="<?php echo $row['pt_univ']; ?>">
-						                </div>
+						                    <select class="browser-default custom-select" name="pt_univ" id="pt_univ" required>
+											  <option value="<?php echo $row["id"];?>"><?php echo $row["universitas"];?></option>
+											  <?php 
+								                  $qTampil = mysqli_query($connect, "SELECT * FROM universitas");
+								                  foreach($qTampil as $row){
+								                ?>
+								                
+											  <option value="<?php echo $row["id"];?>">
+											  		<?php echo $row["universitas"];?>
+											  </option>
 
-						                <div class="col-lg-12">
-					                  		
-						                    
+											<?php } ?>
+											</select>
 						                </div>
 
 					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">

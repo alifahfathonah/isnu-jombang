@@ -43,12 +43,17 @@
 						                    <input type="text" name="no_ktp" class="form-control rounded" placeholder="Masukkan No. KTP" required >
 						                </div>
 
-						                <div class="col-lg-12">
+						                <div class="col-lg-6">
 					                  		<label>Jenis Kelamin :</label>
-						                    <input type="text" name="jenis_kelamin" class="form-control rounded" placeholder="Masukkan Jenis Kelamin" required>
+						                    <select class="browser-default custom-select" name="jenis_kelamin">
+											  <option value="">-- Pilih Jenis Kelamin --</option>
+											  
+											  <option value="Laki-Laki">Laki-Laki</option>
+											  <option value="Perempuan">Perempuan</option>
+											</select>
 						                </div>
 
-						                <div class="col-lg-12">
+						                <div class="col-lg-6">
 					                  		<label>Tempat Lahir :</label>
 						                    <input type="text" name="tempat_lahir" class="form-control rounded" placeholder="Masukkan Tempat Lahir" required >
 						                </div>
@@ -59,20 +64,46 @@
 						                </div>
 
 						                <div class="col-lg-12">
-					                  		<label>Dusun / Desa :</label>
-						                    <input type="text" name="dusun_desa" class="form-control rounded" placeholder="Masukkan Dusun / Desa" required>
-						                </div>
+						                	<br>
+							                <b>ALAMAT ANGGOTA</b>
 
-						                <div class="col-lg-12">
-					                  		<label>Kecamatan :</label>
-						                    <input type="text" name="kecamatan" class="form-control rounded" placeholder="Masukkan Kecamatan" required>
 						                </div>
-
-						                <div class="col-lg-12">
+						                <div class="col-lg-4">
 					                  		<label>Kota :</label>
-						                    <input type="text" name="kota" class="form-control rounded" placeholder="Masukkan Kota" required>
+						                    <select class="browser-default custom-select" name="kota">
+											  <option selected>-- Pilih Kota --</option>
+											  <option value="Jombang">
+											  		Jombang
+											  </option>
+											</select>
 						                </div>
 
+						                <div class="col-lg-4">
+					                  		<label>Kecamatan :</label>
+						                    <select class="browser-default custom-select" name="kecamatan" id="kecamatan">
+											  <option selected>-- Pilih Kecamatan --</option>
+											  <?php 
+								                  $qTampil = mysqli_query($connect, "SELECT * FROM kecamatan");
+								                  foreach($qTampil as $row){
+								                ?>
+											  <option value="<?php echo $row["id"];?>">
+											  		<?php echo $row["kecamatan"];?>
+											  </option>
+
+											<?php } ?>
+											</select>
+						                </div>
+
+						                <div class="col-lg-4">
+					                  		<label>Dusun / Desa :</label>
+						                    <select class="browser-default custom-select" name="dusun_desa" id="dusun_desa">
+											  <option value="">-- Pilih Desa --</option>
+											  
+											  <option></option>
+
+											</select>
+						                </div>
+						                
 						                <div class="col-lg-12">
 					                  		<label>No. Telepon :</label>
 						                    <input type="text" name="no_telepon" class="form-control rounded" placeholder="Masukkan No. Telepon" required>
@@ -89,8 +120,19 @@
 						                </div>
 
 						                <div class="col-lg-12">
-					                  		<label>PT / Universitas :</label>
-						                    <input type="text" name="pt_univ" class="form-control rounded" placeholder="Masukkan PT / Universitas" required>
+					                  		<label>Universitas :</label>
+						                    <select class="browser-default custom-select" name="pt_univ" id="pt_univ">
+											  <option selected>-- Pilih Universitas --</option>
+											  <?php 
+								                  $qTampil = mysqli_query($connect, "SELECT * FROM universitas");
+								                  foreach($qTampil as $row){
+								                ?>
+											  <option value="<?php echo $row["id"];?>">
+											  		<?php echo $row["universitas"];?>
+											  </option>
+
+											<?php } ?>
+											</select>
 						                </div>
 
 					                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-2">
@@ -108,12 +150,10 @@
 		            	</div>
 		         </div>				
 			</div>
-			<br>
-			<div class="row">
-				
-			</div>
 		</div>
 	</div>
+
+
 
 	<script type="text/javascript">
 		function berhasil() {

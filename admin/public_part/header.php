@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ISNU Jombang</title>
+    <title>ADMIN | ISNU Jombang</title>
     <link rel="icon" href="../images/header.png">
     <meta name="author" content="Isnu Jombang">
     <meta name="description" content="Ikatan Sarjana Nahdlatul Ulama Jombang">
@@ -40,10 +40,25 @@
     <link rel="stylesheet" href="../css/color.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="public_part/chartjs/Chart.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+      $(document).ready(function(){
+        $('#kecamatan').change(function(){
+          var kecamatan_id = $(this).val();
 
+          $.ajax({
+            type : 'POST',
+            url : 'desa.php',
+            data : 'id_kecamatan='+kecamatan_id,
+            success: function(response){
+              $('#dusun_desa').html(response);
+            }
+          });
+        })
+      });
+    </script>
 
     
   </head>

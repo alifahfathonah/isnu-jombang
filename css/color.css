@@ -1226,7 +1226,7 @@ input:focus ~ .bg-success {
 	color: #16D39A !important; }
 
 .bg-success {
-	background-color: #16D39A !important; }
+	background-image: linear-gradient(to left, #134E5E 0%, #71B280 100%); }
 .bg-success .card-header, .bg-success .card-footer {
 	background-color: transparent; }
 

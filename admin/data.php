@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  include '../config/koneksi.php';
+  if(empty($_SESSION['admin'])){
+      header("location:login.php");
+  }
+?>
+
 <h2>
 	<center>
 		Daftar Anggota<br>
@@ -34,7 +42,13 @@
 			<?php
                 include ('../config/koneksi.php');
 				$no = 1;
-				$qTampil = mysqli_query($connect, "SELECT * FROM anggota");
+				$qTampil = mysqli_query($connect, "
+					SELECT A.*,B.*,C.*,D.* FROM anggota AS A 
+
+					INNER JOIN desa AS B ON A.dusun_desa = B.id
+					INNER JOIN kecamatan AS C ON A.kecamatan = C.id
+					INNER JOIN universitas AS D ON A.pt_univ = D.id
+				");
 				foreach($qTampil as $row){
 			?>
 
@@ -45,12 +59,12 @@
                 <td><?php echo $row['jenis_kelamin']; ?></td>
 				<td><?php echo $row['tempat_lahir']; ?></td>
                 <td><?php echo $row['tgl_lahir']; ?></td>
-                <td><?php echo $row['dusun_desa']; ?>, <?php echo $row['kecamatan']; ?>, 		<?php echo $row['kota']; ?>
+                <td><?php echo $row['desa']; ?>, <?php echo $row['kecamatan']; ?>, 		<?php echo $row['kota']; ?>
                 </td>
 				<td><?php echo $row['no_telepon']; ?></td>
                 <td><?php echo $row['jenjang']; ?></td>
 				<td><?php echo $row['jurusan']; ?></td>
-                <td><?php echo $row['pt_univ']; ?></td>
+                <td><?php echo $row['universitas']; ?></td>
 			</tr>
 
 			<?php

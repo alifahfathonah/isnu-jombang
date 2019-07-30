@@ -35,6 +35,33 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+       $("#load").click(function(){
+        loadmore();
+       });
+      });
+
+      function loadmore()
+      {
+       var val = document.getElementById("result_no").value;
+       $.ajax({
+       type: 'post',
+       url: 'kontent.php',
+       data: {
+        getresult:val
+       },
+       success: function (response) {
+        var content = document.getElementById("result_para");
+        content.innerHTML = content.innerHTML+response;
+
+        document.getElementById("result_no").value = Number(val)+4;
+       }
+       });
+      }
+    </script>
     <style type="text/css">
       #custom-search-input{
           padding: 3px;

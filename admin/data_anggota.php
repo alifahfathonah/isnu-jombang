@@ -33,7 +33,12 @@
                               <?php
                                 include ('config/koneksi.php');
                                 $no = 1;
-                                $qTampil = mysqli_query($connect, "SELECT * FROM anggota order by id_anggota desc");
+                                $qTampil = mysqli_query($connect, "
+                                  SELECT A.*,D.* FROM anggota AS A 
+
+                                  INNER JOIN universitas AS D ON A.pt_univ = D.id
+
+                                  order by id_anggota desc");
                                 foreach($qTampil as $row){
                               ?>
 
@@ -42,9 +47,10 @@
                                 <td><?php echo $row['nama']; ?></td>
                                 <td><?php echo $row['jenjang']; ?></td>
                                 <td><?php echo $row['jurusan']; ?></td>
-                                <td><?php echo $row['pt_univ']; ?></td>
+                                <td><?php echo $row['universitas']; ?></td>
                                 <td>
-                                  <a class="btn btn-success" href='edit-anggota.php?id_anggota=<?php echo $row['id_anggota']; ?>'><i class="fa fa-pen"></i></a><hr>
+                                  <a class="btn btn-success" href='detail.php?id=<?php echo $row['id_anggota']; ?>'><i class="icon-eye"></i></a><hr>
+                                  
                                   <button class="btn btn-danger delete-data" data-id="<?php echo $row['id_anggota']; ?>"><i class="fa fa-trash"></i>
                                 </td>
                               </tr>

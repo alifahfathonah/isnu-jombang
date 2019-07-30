@@ -34,9 +34,23 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/color.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-    <style type="text/css">
-      
-    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#kecamatan').change(function(){
+          var kecamatan_id = $(this).val();
+
+          $.ajax({
+            type : 'POST',
+            url : 'desa.php',
+            data : 'id_kecamatan='+kecamatan_id,
+            success: function(response){
+              $('#dusun_desa').html(response);
+            }
+          });
+        })
+      });
+    </script>
     
   </head>
   <body>

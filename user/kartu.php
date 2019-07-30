@@ -30,7 +30,7 @@
 	    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 
 	    <style type="text/css">
-			td {padding: 5px; padding-left: 10px;}
+			td {padding: 10px; padding-left: 10px;}
 			table {margin: auto;margin-top: 90px;}
 		</style>
 	</head> 
@@ -38,7 +38,7 @@
 		<table border="0" width="600" cellpadding="0" cellspacing="0">
 			<tr style="background-color: #3cd879;" >
 				<td style="margin-left: 10px;"><img src="../images/header.png" width="75"></td>
-				<td colspan="3" align="left">
+				<td colspan="3" align="center">
 					<h3>Kartu Anggota ISNU Jombang<br>
 						Tahun 2019/2020
 					</h3>
@@ -47,17 +47,25 @@
 			<?php
 			    include ('../config/koneksi.php');
 				$username = $_SESSION['username'];
-				$qTampil = mysqli_query($connect, "SELECT * FROM anggota WHERE username='$username'");
+				$qTampil = mysqli_query($connect, "
+
+				SELECT A.*,B.*,C.*,D.* FROM anggota AS A 
+
+				INNER JOIN desa AS B ON A.dusun_desa = B.id
+				INNER JOIN kecamatan AS C ON A.kecamatan = C.id
+				INNER JOIN universitas AS D ON A.pt_univ = D.id
+
+				WHERE username='$username'");
 				foreach($qTampil as $row){
 			?>
 			<tr bgcolor="#e7e7e7">
-				<td width="150"><b>Nama Lengkap</b></td>
-				<td width="250">: <?php echo $row['nama']; ?></td>
+				<td width="50"><b>Nama</b></td>
+				<td width="300">: <?php echo $row['nama']; ?></td>
 				<td rowspan="4" style="text-align: center;"><img src="img/<?php echo $row['img'];?>" width="125" class="img-responsive"></td>
 			</tr>
 			<tr bgcolor="#e7e7e7">
 				<td><b>Alamat </b></td>
-				<td>: <?php echo $row['dusun_desa']; ?>, <?php echo $row['kecamatan']; ?>, <?php echo $row['kota']; ?></td>
+				<td>: <?php echo $row['desa']; ?>, <?php echo $row['kecamatan']; ?>, <?php echo $row['kota']; ?></td>
 			</tr>
 			<tr bgcolor="#e7e7e7">
 				<td><b>Jenjang</b></td>
@@ -65,7 +73,7 @@
 			</tr>
 			<tr bgcolor="#e7e7e7">
 				<td><b>Lulusan</b></td>
-				<td>: <?php echo $row['pt_univ']; ?></td>
+				<td>: <?php echo $row['universitas']; ?></td>
 			</tr>
 
 			<tr bgcolor="#e7e7e7">
@@ -81,7 +89,7 @@
 			
 			<?php } ?>
 			<tr style="background-color: #3cd879;">
-				<td colspan="3" align="center">Created By : ISNU Jombang</td>
+				<td colspan="3" align="center">Created By : ISNU JOMBANG</td>
 			</tr>
 		</table>
 	

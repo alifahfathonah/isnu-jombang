@@ -1,4 +1,12 @@
 <?php
+  session_start();
+  include '../config/koneksi.php';
+  if(empty($_SESSION['admin'])){
+      header("location:login.php");
+  }
+?>
+
+<?php
 	include '../config/koneksi.php';
 
 	session_start();
