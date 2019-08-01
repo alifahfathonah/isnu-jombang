@@ -94,7 +94,9 @@
           </div>
           <div class="col-md-4 ml-auto">
             <div class="mb-5">
-              <h3 class="h5 text-black mb-3">Info Populer</h3>
+              <div class="d-block d-md-flex listing bg-success">
+                <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"><i class="icon-bell"></i> INFO POPULER</h2>
+              </div>
               <div class="widget-content popular-posts">
                 <ul>
                   <?php 

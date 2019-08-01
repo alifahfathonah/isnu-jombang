@@ -1,4 +1,11 @@
-<?php include 'public_part/header.php'; 
+<?php 
+include 'public_part/header.php'; 
+include 'config/koneksi.php';
+$kategori = $_GET['kategori'];
+$qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='$kategori' order by id_info desc limit 10");
+foreach($qTampil as $kat){
+  $nama_kategori = $kat['nama_kategori'];
+}
 ?>
     
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/bg_isnu.jpg); min-height: 300px;" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -26,17 +33,13 @@
         <div class="row"> 
 
           <div class="col-lg-8">
-            <div class="row">
-              <div class="col-md-7 text-left border-primary">
-                <h2 class="font-weight-light text-primary">Kategori <?php echo $nama_kategori;?></h2>
-
-              </div>
+            <div class="row">              
               <div class="col-lg-12">
-                <br>
+                <div class="d-block d-md-flex listing vertical bg-success">
+                  <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"> Kategori / <?php echo $kat['nama_kategori'];?></h2>
+                </div>
                 <?php 
-                  include 'config/koneksi.php';
-                  $kategori = $_GET['kategori'];
-                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='$kategori' order by id_info desc");
+                  
                   foreach($qTampil as $row){
                     $nama_kategori = $row['nama_kategori'];
                 ?>
@@ -62,39 +65,46 @@
                 <?php
                 }
                 ?>
+                <br><br>
               </div>
 
 
-              <div class="col-md-7 text-left border-primary">
-                <h2 class="font-weight-light text-primary">Info Lainya</h2>
+              <div class="col-md-12 d-block d-md-flex listing vertical bg-success">
+                <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"><i class="icon-book"></i> INFO LAINNYA</h2>
               </div>
-                <?php 
-                  include 'config/koneksi.php';
-                  $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori WHERE NOT kategori='1' order by id_info desc");
-                  foreach($qTampil as $row){
-                ?>
-              <div class="col-lg-6"><br>
-                <div class="d-block d-md-flex listing vertical">
-                  <a href="#" class="img d-block" style="background-image: url('admin/img/<?php echo $row['img']; ?>')"></a>
-                  <div class="lh-content">
-                    
-                    <p class="mb-0">
-                      <a href="kategori.php?kategori=<?php echo $row['kategori']; ?>">
-                        <span class="category"><?php echo $row['nama_kategori']; ?></span>
-                      </a>
-                      <span class="review"><i class="icon-calendar"></i> <?php echo $row['tanggal']; ?></span>
-                    </p>
-                    <h3>
-                      <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>"><?php echo $row['judul']; ?></a>
-                    </h3>
-                    <address><?php echo substr($row['isi'], 0,160); ?>...</address>
-                    
+                <div class="row" id="result_para">
+                    <?php
+                        include 'config/koneksi.php';
+                        $qTampil = mysqli_query($connect, "
+                                   SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori 
+                                  where not id_kategori='1' order by id_info desc limit 4");
+                        foreach($qTampil as $row){
+                      ?>
+                  <div class="col-lg-6">
+                    <div class="d-block d-md-flex listing vertical">
+                      <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>" class="img d-block" style="background-image: url('admin/img/<?php echo $row['img'];?>')"></a>
+                      <div class="lh-content">
+                        <a href="kategori.php?kategori=<?php echo $row['kategori']; ?>">
+                          <span class="category"><?php echo $row['nama_kategori']; ?></span>
+                        </a>
+                        
+                          <i class="icon-calendar"></i> 
+                          <span class="review"><?php echo $row['tanggal']; ?></span>
+                        
+                        <h3><a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>"><?php echo $row['judul']; ?></a></h3>
+                        <address><?php echo substr($row['isi'], 0,160); ?>...</address>
+                        
+                      </div>
+                    </div>
                   </div>
+                  <?php } ?>
                 </div>
-              </div>
-                <?php 
-                  }
-                ?>
+
+                <div class="col-md-12 text-center">
+                  <input type="hidden" id="result_no" value="4">
+                  <button id="load" class="btn btn-success rounded py-2 px-4 text-white"> Lihat Lainnya</button>
+                </div>
+                <br>
             </div>
 
             
@@ -103,25 +113,33 @@
           <!-- side bar-->
           <div class="col-lg-4 ml-auto">
             <div class="mb-5">
-              <h3 class="h5 text-black mb-3">Cari Info</h3>
+              
               <div class="d-block d-md-flex listing">
                 <div class="lh-content">
-                  <form action="#" method="post">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Cari info disini...">
-                    </div>
+                  <form id="custom-search-input" method="post" action="cari.php">
+                      <div class="input-group col-md-12">
+                          <input type="text" name="search" class="form-control input-lg" placeholder="Cari Info Disini" required />
+                          <span class="input-group-btn">
+                              <button type="submit">
+                                  <i class="icon-search"></i>
+                              </button>
+                          </span>
+                      </div>
                   </form>
                 </div>
               </div>
             </div>
 
             <div class="mb-5">
-              <h3 class="h5 text-black mb-3">Info Populer</h3>
+              <div class="d-block d-md-flex listing bg-success">
+                <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"><i class="icon-bell"></i> INFO POPULER</h2>
+              </div>
               <div class="widget-content popular-posts">
+
                 <ul>
                   <?php 
                     include 'config/koneksi.php';
-                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc");
+                    $qTampil = mysqli_query($connect, "SELECT A.*,B.* FROM info AS A INNER JOIN kategori_info AS B ON A.kategori = B.id_kategori where kategori='1' order by id_info desc limit 10");
                     foreach($qTampil as $row){
                   ?>
                   <li>
@@ -134,6 +152,23 @@
                   </li>
                 <?php } ?>
                 </ul>
+              </div>
+              <br><br>
+              <div class="d-block d-md-flex listing bg-success">
+                <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"><i class="icon-tag"></i> KATEGORI</h2>
+              </div>
+              <div class="d-block d-md-flex listing">
+                <div class="lh-content">
+                  <?php 
+                    include 'config/koneksi.php';
+                    $qTampil = mysqli_query($connect, "SELECT * FROM kategori_info");
+                    foreach($qTampil as $row){
+                  ?>
+                  <a href="kategori.php?kategori=<?php echo $row['id_kategori']; ?>">
+                      <span class="category"><i class="icon-tag"></i> <?php echo $row['nama_kategori']; ?></span>
+                    </a>
+                <?php } ?>
+                </div>
               </div>
             </div>
           </div>

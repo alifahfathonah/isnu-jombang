@@ -77,7 +77,9 @@
                 <div class="d-block d-md-flex listing vertical">
                   <a href="info_detail.php?id_info=<?php echo $row['id_info']; ?>" class="img d-block" style="background-image: url('admin/img/<?php echo $row['img'];?>')"></a>
                   <div class="lh-content">
-                    <span class="category"><?php echo $row['nama_kategori'];?></span>
+                    <a href="kategori.php?kategori=<?php echo $row['kategori']; ?>">
+                      <span class="category"><?php echo $row['nama_kategori']; ?></span>
+                    </a>
                     
                       <i class="icon-calendar"></i> 
                       <span class="review"><?php echo $row['tanggal']; ?></span>
@@ -92,7 +94,7 @@
             </div>
             <div class="col-md-12 text-center">
               <input type="hidden" id="result_no" value="4">
-              <button id="load" class="btn btn-success rounded py-2 px-4 text-white">Lihat Lainnya</button>
+              <button id="load" class="btn btn-success rounded py-2 px-4 text-white"> Lihat Lainnya</button>
             </div>
             <br>
           </div>
@@ -141,6 +143,23 @@
                 <?php } ?>
                 </ul>
               </div>
+              <br><br>
+              <div class="d-block d-md-flex listing bg-success">
+                <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"><i class="icon-tag"></i> KATEGORI</h2>
+              </div>
+              <div class="d-block d-md-flex listing">
+                <div class="lh-content">
+                  <?php 
+                    include 'config/koneksi.php';
+                    $qTampil = mysqli_query($connect, "SELECT * FROM kategori_info");
+                    foreach($qTampil as $row){
+                  ?>
+                  <a href="kategori.php?kategori=<?php echo $row['id_kategori']; ?>">
+                      <span class="category"><i class="icon-tag"></i> <?php echo $row['nama_kategori']; ?></span>
+                    </a>
+                <?php } ?>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -159,7 +178,6 @@ $(document).ready(function(){
     );
 });
 </script>
-
 
 
 <?php include 'public_part/footer.php';?>

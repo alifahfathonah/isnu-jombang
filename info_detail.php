@@ -50,6 +50,37 @@
         color: #000;
         font-weight: bold;
       }
+      #custom-search-input{
+          padding: 3px;
+          border: solid 1px #E4E4E4;
+          border-radius: 6px;
+          background-color: #fff;
+      }
+
+      #custom-search-input input{
+          border: 0;
+          box-shadow: none;
+      }
+
+      #custom-search-input button{
+          margin: 10px 0 0 0;
+          background: none;
+          box-shadow: none;
+          border: 0;
+          color: #666666;
+          padding: 0 0px 0 10px;
+          border-left: solid 1px #ccc;
+      }
+
+      #custom-search-input button:hover{
+          border: 0;
+          box-shadow: none;
+          border-left: solid 1px #ccc;
+      }
+
+      #custom-search-input .icon-search{
+          font-size: 25px;
+      }
     </style>
   </head>
   <body>
@@ -124,18 +155,28 @@
         <div class="row">
             <div class="col-md-8 d-block d-md-flex listing vertical lh-content" style=" top:1px;  bottom: 130px;">
               <br>
-              <h2><b><?php echo $row['judul'];?></b></h2>
-              <p class="color-black-opacity-5">
+              <h2><b><?php echo $row['judul'];?></b></h2><br>
+                <p class="color-black-opacity-5" style="float: left;">
 
-                <a class="category" href="kategori.php?kategori=<?php echo $row['kategori']; ?>"><?php echo $row['nama_kategori'];?></a>
+                  <a class="category" href="kategori.php?kategori=<?php echo $row['kategori']; ?>"><?php echo $row['nama_kategori'];?></a>
 
-                <small>
-                  <i class="fas fa-calendar-alt"></i> <?php echo $row['tanggal']; ?>
-                </small>
-                <small style="margin-left: 15px;">
-                  <i class="fas fa-user"></i> ISNU Jombang
-                </small>
-              </p>
+                  
+                    <i class="fas fa-calendar-alt"></i> <?php echo $row['tanggal']; ?>
+                  
+                  <small style="margin-left: 15px; font-size: 15px;">
+                    <i class="fas fa-user"></i> ISNU Jombang
+                  </small>
+                    <div style="float: right;"> 
+                      <a href="" target="_BLANK" class="btn waves-effect waves-light" style="background-color:#3B5998;margin:1px;" title="Bagikan ke Facebbok"><i class="icon-facebook" style="color:#fff"></i> <span style="color:#fff">Facebook</span></a>
+
+                      <a href="" target="_BLANK" class="btn waves-effect waves-light" style="background-color:#55acee;margin:1px;" title="Bagikan ke Twitter"><i class="icon-twitter" style="color:#fff"></i> <span style="color:#fff">Tweet</span></a>
+
+                      <a href="" target="_BLANK" class="btn waves-effect waves-light" style="background-color:green;margin:1px;" title="Bagikan ke WhatsApp"><i class="icon-whatsapp" style="color:#fff"></i> <span style="color:#fff">WhatsApp</span></a>
+                    </div>
+                </p>
+                
+
+              
 
               <img src="admin/img/<?php echo $row['img']; ?>" alt="Image" class="img-fluid" style="width: 100%;">
 
@@ -164,6 +205,22 @@
             <!-- side bar-->
         
           <div class="col-lg-4 ml-auto">
+            <div class="mb-5">
+              <div class="d-block d-md-flex listing">
+                <div class="lh-content">
+                  <form id="custom-search-input" method="post" action="cari.php">
+                      <div class="input-group col-md-12">
+                          <input type="text" name="search" class="form-control input-lg" placeholder="Cari Info Disini" required />
+                          <span class="input-group-btn">
+                              <button type="submit">
+                                  <i class="icon-search"></i>
+                              </button>
+                          </span>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
 
             <div class="mb-5">
               <div class="d-block d-md-flex listing bg-success">
@@ -186,6 +243,24 @@
                   </li>
                 <?php } ?>
                 </ul>
+              </div>
+
+              <br><br>
+              <div class="d-block d-md-flex listing bg-success">
+                <h2 class="lh-content text-white" style="font-weight: bold; font-size: 20px;"><i class="icon-tag"></i> KATEGORI</h2>
+              </div>
+              <div class="d-block d-md-flex listing">
+                <div class="lh-content">
+                  <?php 
+                    include 'config/koneksi.php';
+                    $qTampil = mysqli_query($connect, "SELECT * FROM kategori_info");
+                    foreach($qTampil as $row){
+                  ?>
+                  <a href="kategori.php?kategori=<?php echo $row['id_kategori']; ?>">
+                      <span class="category"><i class="icon-tag"></i> <?php echo $row['nama_kategori']; ?></span>
+                    </a>
+                <?php } ?>
+                </div>
               </div>
             </div>
           </div>
